@@ -1,6 +1,6 @@
 class RateCard < ActiveRecord::Base
-  
-  
+
+
   # External libs
   include SharedMethods
 
@@ -19,7 +19,7 @@ class RateCard < ActiveRecord::Base
   validates :service_type, :length => { :maximum => 150 }
   validates_uniqueness_of :service_type, :case_sensitive => false, :message => "already exists", :scope => [:account_id]
   validates :daily_cost, :numericality => {:only_integer => false, :greater_than => -1}, :allow_blank => true
-  
+
 
   # Virtual attributes
 
@@ -30,7 +30,7 @@ class RateCard < ActiveRecord::Base
 
   # Mass assignment protection
   attr_accessible :service_type, :daily_cost
-  
+
 
   # Plugins
 
@@ -44,7 +44,7 @@ class RateCard < ActiveRecord::Base
 
 
   # Named scopes
-  scope :service_type_ordered, order('rate_cards.service_type')
+  scope :service_type_ordered, -> { order('rate_cards.service_type') }
 
 
   #
@@ -56,8 +56,8 @@ class RateCard < ActiveRecord::Base
       nil
     end
   end
-  
-  
+
+
   #
   # Set the daily cost from the highest delimitation
   def daily_cost=(amount_dollars)
@@ -67,7 +67,7 @@ class RateCard < ActiveRecord::Base
       write_attribute(:daily_cost_cents, nil)
     end
   end
-  
+
 
 #
 # Save functions
@@ -84,8 +84,8 @@ class RateCard < ActiveRecord::Base
   def custom_for_client(client_id)
     self.client_rate_cards.where(["client_rate_cards.client_id = ?", client_id]).first
   end
-  
-  
+
+
   #
   # return the most relevant rete_card
   def most_relevant_rate_card_for(client_id)
@@ -94,11 +94,11 @@ class RateCard < ActiveRecord::Base
       client_rate_card = self.custom_for_client(client_id)
       return client_rate_card if client_rate_card.present?
     end
-    
+
     self
   end
-  
-  
+
+
   #
   # Get cost for a minutes work for a given client
   def cost_per_min_for_client(client_id, account_instance)
@@ -107,11 +107,11 @@ class RateCard < ActiveRecord::Base
     r_card = self.most_relevant_rate_card_for(client_id)
     cost_cents_per_min = r_card.daily_cost_cents.to_s.to_d / mins_in_day
   end
-  
+
 
 protected
-  
 
-  
-    
+
+
+
 end

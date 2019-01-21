@@ -29,8 +29,8 @@ class Timing < ActiveRecord::Base
 
 
   # Named scopes
-  scope :submitted_timings, where(['timings.submitted = ?', true])
-  scope :date_ordered, order('timings.started_at')
+  scope :submitted_timings, -> { where(['timings.submitted = ?', true]) }
+  scope :date_ordered, -> { order('timings.started_at') }
 
 
   def started_at_utc
@@ -85,42 +85,42 @@ class Timing < ActiveRecord::Base
   def self.for_period_and_team(team_id, start_date, end_date)
     Timing.where(['teams.id = ? AND timings.started_at <= ? AND timings.ended_at >= ?', team_id, end_date.end_of_day, start_date.to_datetime]).includes({:user => :teams}).order('timings.started_at')
   end
-  
-  
+
+
   # Find all timings between a given date range (pass in date object) for a given project (submitted time only).
   def self.submitted_for_period_by_project(project_id, start_date, end_date)
     Timing.where(['timings.project_id = ? AND timings.started_at <= ? AND timings.ended_at >= ? AND timings.submitted = ?', project_id, end_date.end_of_day, start_date.to_datetime, true]).order('timings.started_at')
   end
-  
-  
+
+
   # Duration between a given date range (pass in date object) for a given project (submitted time only).
   def self.minute_duration_submitted_for_period_by_project(project_id, start_date, end_date)
     timings = Timing.submitted_for_period_by_project(project_id, start_date, end_date)
     timings.sum(:duration_minutes)
   end
-  
-  
+
+
   def self.minute_duration_submitted_for_period_and_client(client_id, start_date, end_date)
     Timing.where(['projects.client_id = ? AND timings.started_at <= ? AND timings.ended_at >= ? AND timings.submitted = ?', client_id, end_date.end_of_day, start_date.to_datetime, true]).includes(:project).sum(:duration_minutes)
   end
-  
-  
+
+
   def self.minute_duration_submitted_for_client(client_id)
     Timing.where(['projects.client_id = ? AND timings.submitted = ?', client_id, true]).includes(:project).sum(:duration_minutes)
   end
-  
+
 
   # Duration in minutes of the total submitted time for a given team between a date range
   def self.minute_duration_submitted_for_period_and_team(team_id, start_date, end_date)
     Timing.where(['team_users.team_id = ? AND timings.started_at <= ? AND timings.ended_at >= ? AND timings.submitted = ?', team_id, end_date.end_of_day, start_date.to_datetime, true]).includes({:user => :team_users}).sum(:duration_minutes)
   end
-  
-  
+
+
   # Duration in minutes of the total submitted time for a given team and project between a date range
   def self.minute_duration_submitted_for_period_and_team_and_project(team_id, project_id, start_date, end_date)
     Timing.where(['team_users.team_id = ? AND timings.project_id = ? AND timings.started_at <= ? AND timings.ended_at >= ? AND timings.submitted = ?', team_id, project_id, end_date.end_of_day, start_date.to_datetime, true]).includes({:user => :team_users}).sum(:duration_minutes)
   end
-  
+
 
   # Find timings for a given user or team
   def self.search(account, cal, params)
@@ -140,7 +140,7 @@ class Timing < ActiveRecord::Base
   def self.users_for_project(project_id)
     User.includes([:timings]).group('users.id').order('users.firstname').where(['timings.project_id = ? AND timings.submitted = ?', project_id, true])
   end
-  
+
 
   def self.users_for_project_in_period(project_id, start_date, end_date)
     User.includes([:timings]).group('users.id').order('users.firstname').where(['timings.project_id = ? AND timings.started_at <= ? AND timings.ended_at >= ? AND timings.submitted = ?', project_id, end_date.end_of_day, start_date.to_datetime, true])
@@ -150,8 +150,8 @@ class Timing < ActiveRecord::Base
   def self.users_for_client_in_period(client_id, start_date, end_date)
     User.includes([{:timings => :project}]).group('users.id').order('users.firstname').where(['projects.client_id = ? AND timings.started_at <= ? AND timings.ended_at >= ? AND timings.submitted = ?', client_id, end_date.end_of_day, start_date.to_datetime, true])
   end
-  
-  
+
+
   # Get all the projects for a given client that have had time tracked to them between the given date range
   def self.projects_for_client_in_period(client_id, start_date, end_date)
     Project.includes([:timings]).group('projects.id').order('projects.name').where(['projects.client_id = ? AND timings.started_at <= ? AND timings.ended_at >= ? AND timings.submitted = ?', client_id, end_date.end_of_day, start_date.to_datetime, true])

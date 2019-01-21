@@ -8,7 +8,7 @@ class Team < ActiveRecord::Base
   belongs_to :account
   has_many :team_users, :dependent => :destroy
   has_many :users, :through => :team_users
-  
+
   has_many :projects, :dependent => :nullify
   has_many :timings, :through => :users
   has_many :entries, :through => :users
@@ -21,15 +21,15 @@ class Team < ActiveRecord::Base
 
   # Callbacks
   before_validation :remove_whitespace
-  
-  
+
+
   # Mass assignment protection
   attr_accessible  :name
 
 
   # Named scopes
-  scope :name_ordered, order('teams.name')
-  scope :has_users, where(['users.id IS NOT ?', nil]).includes([:users])
+  scope :name_ordered, -> { order('teams.name') }
+  scope :has_users, -> { where(['users.id IS NOT ?', nil]).includes([:users]) }
 
 
   # Checks to see if the current user is a member of the given team

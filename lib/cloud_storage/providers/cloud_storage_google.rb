@@ -1,16 +1,16 @@
 # Class to wrap up google drive and return data / perform actions in a common way to all other provider integrations
-require 'google/api_client'
+# require 'google/api_client'
 
 module CloudStorage
-  
-  
+
+
   class GoogleProvider
-    
-    
+
+
     # Required vars
     attr_reader :client, :authorized
-    
-    
+
+
     # Public: initialize
     def initialize(current_user, perform_auth)
       self.build_client(current_user, perform_auth)
@@ -47,16 +47,16 @@ module CloudStorage
       rescue
         return false
       end
-      saved = OauthDriveToken.create_or_update(:user => current_user, 
-        :access_token => @client.authorization.access_token, 
+      saved = OauthDriveToken.create_or_update(:user => current_user,
+        :access_token => @client.authorization.access_token,
         :refresh_token => @client.authorization.refresh_token,
-        :client_number => @client.authorization.client_id, 
+        :client_number => @client.authorization.client_id,
         :expires_at => Time.now + @client.authorization.expires_in.seconds,
         :provider_number => APP_CONFIG['oauth']['google']['provider_number'])
       saved
     end
 
-  
+
     # Public: Checks to see if google drive us authorized
     #
     # Returns (Boolean) true or false depending on if the current instance has been authorized or not
@@ -73,17 +73,17 @@ module CloudStorage
     def get_directory_listing_for(params)
       # Get parent folder id
       parent_folder_id = params[:folder_id].present? ? self.get_parent_folder_id(params[:folder_id]) : nil
-      
+
       # Get root folder id if blank
       params[:folder_id] ||= self.get_root_folder_id
       return nil if params[:folder_id].blank?
-      
+
       # Set default params
       result = {:folder_id => params[:folder_id], :parent_folder_id => parent_folder_id, :per_page => 500, :results => []}
       parameters = {}
       parameters['q'] = "'#{params[:folder_id]}' in parents"
       parameters['maxResults'] = result[:per_page]
-      
+
       # Make api request
       begin
         drive = @client.discovered_api('drive', 'v2')
@@ -91,19 +91,19 @@ module CloudStorage
       rescue
         return nil
       end
-      
-      
+
+
       if api_result.status == 200
         files = api_result.data
         files.items.each do |item|
           result[:results] << self.item_into_standard_format(item)
         end
       else
-        result[:error] = {:code => api_result.status, :message => api_result.data['error']['message']} 
+        result[:error] = {:code => api_result.status, :message => api_result.data['error']['message']}
       end
       result
     end
-    
+
 
     # Public: Search for files using the given search term
     #
@@ -113,23 +113,23 @@ module CloudStorage
     def search_files(params)
       # return if no search term entered
       return nil if params[:term].blank?
- 
+
       result = {:term => params[:term], :current_page => params[:page], :per_page => 100, :previous_page => nil, :next_page => nil, :results => []}
       search_term_escaped = params[:term].gsub("'", %q(\\\'))
-      
+
       # Build out search params
       parameters = {}
       parameters['q'] = "title contains '#{search_term_escaped}'"
       parameters['pageToken'] = result[:current_page].to_s if result[:current_page].to_s.present?
       parameters['maxResults'] = result[:per_page]
-      
+
       begin
         drive = @client.discovered_api('drive', 'v2')
         api_result = @client.execute(:api_method => drive.files.list, :parameters => parameters)
       rescue
         return nil
       end
-      
+
       if api_result.status == 200
         files = api_result.data
         files.items.each do |item|
@@ -138,13 +138,13 @@ module CloudStorage
         # Pagination
         #result[:next_page] = files.next_page_token
       else
-        result[:error] = {:code => api_result.status, :message => api_result.data['error']['message']} 
+        result[:error] = {:code => api_result.status, :message => api_result.data['error']['message']}
       end
       result
     end
-    
-    
-    # Public: Get the parent folder id 
+
+
+    # Public: Get the parent folder id
     #
     # file_id - The file or folder to look-up
     #
@@ -156,7 +156,7 @@ module CloudStorage
       rescue
         return nil
       end
-      
+
       if result.status == 200
         self.item_into_standard_format(result.data) if result.data.present?
       else
@@ -207,8 +207,8 @@ protected
         end
       end
     end
-    
-    
+
+
     # Protected: Checks to see that the token is still valid and hasnt been revoked or anything
     #
     # Returns (Boolean) Depending on if the taken is valid or not
@@ -219,7 +219,7 @@ protected
       rescue
         return false
       end
-      
+
       if result.status == 200
         true
       else
@@ -241,16 +241,16 @@ protected
         oauth_drive_token.destroy
         return false
       end
-      
-      saved = OauthDriveToken.create_or_update(:user => oauth_drive_token.user, 
-        :access_token => @client.authorization.access_token, 
+
+      saved = OauthDriveToken.create_or_update(:user => oauth_drive_token.user,
+        :access_token => @client.authorization.access_token,
         :refresh_token => @client.authorization.refresh_token,
         :expires_at => Time.now + @client.authorization.expires_in.seconds,
         :provider_number => APP_CONFIG['oauth']['google']['provider_number'])
 
       # Hasn't been updated, so lets remove token
       oauth_drive_token.destroy if !saved
-      
+
       saved
     end
 
@@ -272,8 +272,8 @@ protected
       file[:file_type] = self.get_doc_type(item)
       file
     end
-    
-    
+
+
     # Protected: Get the root folder id for a given user
     #
     # Returns (String) the root folder id
@@ -284,16 +284,16 @@ protected
       rescue
         return nil
       end
-    
+
       if result.status == 200
         result.data.rootFolderId
       else
         nil
       end
     end
-    
-    
-    # Protected: Get the parent folder id 
+
+
+    # Protected: Get the parent folder id
     #
     # file_id - The file or folder to look-up
     #
@@ -305,15 +305,15 @@ protected
       rescue
         return nil
       end
-      
+
       if result.status == 200
         result.data.parents[0].id if result.data.parents.present?
       else
         nil
       end
     end
-    
-    
+
+
     # Protected: Get the document type e.g. pdf
     #
     # file_id - The file type
@@ -343,6 +343,6 @@ protected
 
 
   end
-  
-  
+
+
 end

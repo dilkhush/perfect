@@ -17,7 +17,7 @@ class Project < ActiveRecord::Base
   has_many   :entries, :dependent => :destroy
   has_many   :tasks, :dependent => :nullify
   has_many   :features, :dependent => :destroy
-  has_many   :timings, :dependent => :restrict
+  has_many   :timings, :dependent => :restrict_with_error
   has_one    :account_setting, :foreign_key  => 'common_project_id'
   has_many   :payment_profiles, :dependent => :destroy
   has_many   :invoices, :dependent => :destroy
@@ -27,7 +27,7 @@ class Project < ActiveRecord::Base
   has_many   :project_comments, :dependent => :destroy
   has_many   :payment_profile_rollovers, :dependent => :nullify
   has_many   :qa_stats, dependent: :destroy
-  
+
 
 
   # Validation
@@ -50,14 +50,14 @@ class Project < ActiveRecord::Base
   validates :current_rag_status, :expected_rag_status, :inclusion => { :in => SELECTIONS['rag_status'].keys }
   validates :percentage_complete, :numericality => {:only_integer => true, :greater_than => -1, :less_than => 101}, :allow_blank => true, :presence => true
   validate :issue_track_project_id_exists
-  
+
 
   # Callbacks
   before_validation :remove_whitespace
   before_validation :update_status, :unless => Proc.new { |p| p.project_status_overridden? }
   after_touch       :touch_status, :unless => Proc.new { |p| p.project_status_overridden? }
 
-  
+
   # Virtual attributes
   attr_accessor :validate_issue_tracker_id
 
@@ -72,11 +72,11 @@ class Project < ActiveRecord::Base
 
 
   # Named scopes
-  scope :name_ordered, order('projects.name')
-  scope :not_archived, where(["archived = ?", false])
-  scope :stale_opportunities, where(project_status: :opportunity).where('updated_at < ?', 2.weeks.ago)
-  scope :not_closed, where(["projects.project_status != ?", 'Closed'])
-  
+  scope :name_ordered, -> { order('projects.name') }
+  scope :not_archived, -> { where(["archived = ?", false]) }
+  scope :stale_opportunities, -> { where(project_status: :opportunity).where('updated_at < ?', 2.weeks.ago) }
+  scope :not_closed, -> { where(["projects.project_status != ?", 'Closed']) }
+
   STATUSES = {
     :opportunity => 'Opportunity',
     :approved => 'Approved',
@@ -135,13 +135,13 @@ class Project < ActiveRecord::Base
     Entry.users_for_project(self.id)
   end
 
-  
+
   # Get all people who have tracked time to the project
   def all_people_tracked
     Timing.users_for_project(self.id)
   end
 
-  
+
   # Get the date that the project is due to start according to the schedule
   def schedule_start_date
     entry = self.entries.order('entries.start_date').first
@@ -175,20 +175,20 @@ class Project < ActiveRecord::Base
     difference = days_predicted - date_range
     difference.days.from_now.to_date
   end
-  
+
   # Project costs
   def total_project_cost_cents
     self.payment_profiles.sum(:expected_cost_cents)
   end
-  
-  
+
+
   # Project cost which has not yet been invoiced
   def total_project_cost_cents_not_invoiced
     profiles = self.payment_profiles.includes(:invoice_item).select { |p| p.invoice_item.blank? }
     profiles.sum(&:expected_cost_cents)
   end
-  
-  
+
+
   # Project cost which has been invoiced
   def total_project_cost_cents_invoiced
     profiles = self.payment_profiles.includes(:invoice_item).select { |p| p.invoice_item.present? }
@@ -200,95 +200,95 @@ class Project < ActiveRecord::Base
   def has_tasks?
     self.tasks.present?
   end
-  
-  
+
+
   # Get projects which are expecting a payment this month
   def self.number_with_payment_expected_for_period(account, start_date, end_date)
     Project.includes([:payment_profiles])
       .where(["projects.account_id = ? AND (payment_profiles.expected_payment_date >= ? AND payment_profiles.expected_payment_date <= ?)", account.id, start_date, end_date])
       .count
   end
-  
-  
+
+
   # Get projects which are expecting a payment this month
   def self.number_with_payment_expected_for_period_with_raised_invoice(account, start_date, end_date)
     Project.includes([{:payment_profiles => :invoice_item}])
       .where(["projects.account_id = ? AND payment_profiles.expected_payment_date >= ? AND payment_profiles.expected_payment_date <= ? AND invoice_items.id IS NOT ?", account.id, start_date, end_date, nil])
       .count
   end
-  
-  
+
+
   # Extract results for the payments predications report
   def self.payment_prediction_results(account, params, start_date, end_date)
     sql = "SELECT DISTINCT(projects.id), projects.name AS project_name, clients.name AS client_name, teams.name AS team_name, CONCAT_WS(' ', users.firstname, users.lastname) AS account_owner, MAX(invoices.pre_payment) AS pre_payment, projects.project_status AS project_status,
-         sum(case when invoice_items.id IS NULL 
-         then 
-          payment_profiles.expected_cost_cents 
-         else 
-          (invoice_items.default_currency_amount_cents * invoice_items.quantity) 
-         end) AS amount_cents, 
-         case when invoice_items.id IS NULL 
-          then 
-           'expected' 
-          else 
-            case when invoices.invoice_status = 0 
-             then 
-              'requested' 
-             else 
-              'sent' 
+         sum(case when invoice_items.id IS NULL
+         then
+          payment_profiles.expected_cost_cents
+         else
+          (invoice_items.default_currency_amount_cents * invoice_items.quantity)
+         end) AS amount_cents,
+         case when invoice_items.id IS NULL
+          then
+           'expected'
+          else
+            case when invoices.invoice_status = 0
+             then
+              'requested'
+             else
+              'sent'
              end
           end AS status,
          payment_profiles.expected_payment_date AS expected_payment_date
-         FROM projects 
-         LEFT OUTER JOIN payment_profiles ON payment_profiles.project_id = projects.id 
-         LEFT OUTER JOIN invoice_items ON invoice_items.payment_profile_id = payment_profiles.id 
-         LEFT OUTER JOIN invoices ON invoices.id = invoice_items.invoice_id 
-         LEFT OUTER JOIN clients ON clients.id = projects.client_id 
+         FROM projects
+         LEFT OUTER JOIN payment_profiles ON payment_profiles.project_id = projects.id
+         LEFT OUTER JOIN invoice_items ON invoice_items.payment_profile_id = payment_profiles.id
+         LEFT OUTER JOIN invoices ON invoices.id = invoice_items.invoice_id
+         LEFT OUTER JOIN clients ON clients.id = projects.client_id
          LEFT OUTER JOIN teams ON teams.id = projects.team_id
          LEFT OUTER JOIN users ON users.id = projects.business_owner_id
          WHERE projects.account_id = ?
          AND (payment_profiles.expected_payment_date >= ? AND payment_profiles.expected_payment_date <= ?)"
          sql += " AND projects.team_id = ?" if params[:team_id].present?
-         sql += " GROUP BY projects.id, status 
+         sql += " GROUP BY projects.id, status
          ORDER BY clients.name, projects.name, projects.id"
-     
+
      sql_array = [sql, account.id, start_date, end_date]
      sql_array << params[:team_id] if params[:team_id].present?
      results = Project.find_by_sql(sql_array)
-     
+
      projects = {}
      results.each do |result|
        unless projects.has_key?(result.id)
          projects[result.id] = {:id => result.id, :project_name => result.project_name, :team_name => result.team_name, :client_name => result.client_name, :expected => 0, :requested => 0, :sent => 0, :expected_incl_pre_payment => false, :requested_incl_pre_payment => false, :sent_incl_pre_payment => false, :account_owner => result.account_owner, :project_status => result.project_status, :expected_payment_date => result.expected_payment_date }
        end
-       
+
        projects[result.id][result.status.to_sym] += result.amount_cents.to_i
        projects[result.id]["#{result.status}_incl_pre_payment".to_sym] = true if result.pre_payment?
      end
-     
+
      projects
   end
-  
-  
+
+
   # Payment preduction totals
   def self.payment_prediction_totals(account, params, start_date, end_date)
     given_month_totals = Project.prediction_total_sql(account, params, start_date, end_date)
     last_years_totals = Project.prediction_total_sql(account, params, (start_date - 1.year), (end_date - 1.year))
     total_pre_paid = Project.prediction_total_pre_paid_sql(account, params, start_date, end_date)
-    
+
     details = {:current_year => {:expected => 0, :requested => 0, :sent => 0, :total => 0, :pre_payment_total => 0}, :last_year => {:expected => 0, :requested => 0, :sent => 0, :total => 0}}
     given_month_totals.each do |result|
       details[:current_year][result.status.to_sym] = result.amount_cents.to_i
     end
     details[:current_year][:total] = details[:current_year][:expected ] + details[:current_year][:requested] + details[:current_year][:sent]
-    
+
     last_years_totals.each do |result|
       details[:last_year][result.status.to_sym] = result.amount_cents.to_i
     end
     details[:last_year][:total] = details[:last_year][:expected ] + details[:last_year][:requested] + details[:last_year][:sent]
 
     details[:current_year][:pre_payment_total] = total_pre_paid.first.amount_cents.to_i if total_pre_paid.first.present?
-    
+
     details
   end
 
@@ -320,12 +320,12 @@ class Project < ActiveRecord::Base
     self.update_attributes(:archived => true)
   end
 
-  
+
   # Un archive the project
   def un_archive_now
     self.update_attributes(:archived => false)
   end
-  
+
   # Public: Converts database value into a human readable String
   #
   # Returns a String
@@ -364,17 +364,17 @@ class Project < ActiveRecord::Base
     end
     result
   end
-  
-  
+
+
   # Public: Send project budget emails
   def self.send_project_budget_email
     # Find in batches
     Project.where(["projects.project_status != ?", STATUSES[:closed]]).find_each do |project|
-      
+
       # Check has time tracked and has an estimate
       if project.total_tracked > 0 && project.total_estimate > 0
         new_percentage = ((project.total_tracked / project.total_estimate.to_f) * 100)
-        
+
         # Only do if we have someone to send the email to
         if project.project_manager.present? || project.account.account_setting.budget_warning_email.present?
           if project.last_budget_check < 100.0 && new_percentage >= 100.0
@@ -387,7 +387,7 @@ class Project < ActiveRecord::Base
             ProjectMailer.project_budget_email(project, project.account.account_setting, '25').deliver
           end
         end
-        
+
         project.last_budget_check = new_percentage
         project.save(:validate => false)
       end
@@ -438,7 +438,7 @@ class Project < ActiveRecord::Base
 
 protected
 
-  
+
   # Protected: Check that the issue tracker project id can be accessed using the api
   def issue_track_project_id_exists
     if self.issue_tracker_id.present? && self.validate_issue_tracker_id.present?
@@ -447,7 +447,7 @@ protected
     end
   end
 
-  
+
   # Internal: Updates the project with appropriate status
   #
   # require_save - if save needs to be called on the model
@@ -468,7 +468,7 @@ protected
 
     self.save if require_save
   end
-  
+
   # Internal: Updates the project after association touch
   #
   # Returns project_status assigned with appropriate String
@@ -476,74 +476,74 @@ protected
     update_status(true)
   end
 
-  
+
   # Check that all foreign keys being saved belong ot the same account as the project does
   def relations_must_belong_to_same_account
     if self.account_id.present?
       if self.client.present?
         errors.add(:client_id, "must belong to the same account") if self.account_id != self.client.account_id
       end
-      
+
       if self.team.present?
         errors.add(:team_id, "must belong to the same account") if self.account_id != self.team.account_id
       end
-      
+
       if self.business_owner.present?
         errors.add(:business_owner_id, "must belong to the same account") if self.account_id != self.business_owner.account_id
       end
-      
+
       if self.project_manager.present?
         errors.add(:project_manager_id, "must belong to the same account") if self.account_id != self.project_manager.account_id
       end
     end
   end
 
-  
-  
+
+
   # Payment predictions sql
   def self.prediction_total_sql(account, params, start_date, end_date)
-    sql = "SELECT sum(case when invoice_items.id IS NULL 
-         then 
-          payment_profiles.expected_cost_cents 
-         else 
-          (invoice_items.default_currency_amount_cents * invoice_items.quantity) 
-         end) AS amount_cents, 
-         case when invoice_items.id IS NULL 
-          then 
-           'expected' 
-          else 
-            case when invoices.invoice_status = 0 
-             then 
-              'requested' 
-             else 
-              'sent' 
+    sql = "SELECT sum(case when invoice_items.id IS NULL
+         then
+          payment_profiles.expected_cost_cents
+         else
+          (invoice_items.default_currency_amount_cents * invoice_items.quantity)
+         end) AS amount_cents,
+         case when invoice_items.id IS NULL
+          then
+           'expected'
+          else
+            case when invoices.invoice_status = 0
+             then
+              'requested'
+             else
+              'sent'
              end
-          end AS status 
-         FROM projects 
-         LEFT OUTER JOIN payment_profiles ON payment_profiles.project_id = projects.id 
-         LEFT OUTER JOIN invoice_items ON invoice_items.payment_profile_id = payment_profiles.id 
-         LEFT OUTER JOIN invoices ON invoices.id = invoice_items.invoice_id 
-         LEFT OUTER JOIN clients ON clients.id = projects.client_id 
+          end AS status
+         FROM projects
+         LEFT OUTER JOIN payment_profiles ON payment_profiles.project_id = projects.id
+         LEFT OUTER JOIN invoice_items ON invoice_items.payment_profile_id = payment_profiles.id
+         LEFT OUTER JOIN invoices ON invoices.id = invoice_items.invoice_id
+         LEFT OUTER JOIN clients ON clients.id = projects.client_id
          WHERE projects.account_id = ?
          AND (payment_profiles.expected_payment_date >= ? AND payment_profiles.expected_payment_date <= ?)"
          sql += " AND projects.team_id = ?" if params[:team_id].present?
-         sql += " GROUP BY status 
+         sql += " GROUP BY status
          ORDER BY clients.name, projects.name, projects.id"
 
     sql_array = [sql, account.id, start_date, end_date]
     sql_array << params[:team_id] if params[:team_id].present?
     Project.find_by_sql(sql_array)
   end
-  
-  
+
+
   # Payment predictions get total amount pre-paid
   def self.prediction_total_pre_paid_sql(account, params, start_date, end_date)
     sql = "SELECT sum((invoice_items.default_currency_amount_cents * invoice_items.quantity)) AS amount_cents
-         FROM projects 
-         LEFT OUTER JOIN payment_profiles ON payment_profiles.project_id = projects.id 
-         LEFT OUTER JOIN invoice_items ON invoice_items.payment_profile_id = payment_profiles.id 
-         LEFT OUTER JOIN invoices ON invoices.id = invoice_items.invoice_id 
-         LEFT OUTER JOIN clients ON clients.id = projects.client_id 
+         FROM projects
+         LEFT OUTER JOIN payment_profiles ON payment_profiles.project_id = projects.id
+         LEFT OUTER JOIN invoice_items ON invoice_items.payment_profile_id = payment_profiles.id
+         LEFT OUTER JOIN invoices ON invoices.id = invoice_items.invoice_id
+         LEFT OUTER JOIN clients ON clients.id = projects.client_id
          WHERE projects.account_id = ?
          AND (payment_profiles.expected_payment_date >= ? AND payment_profiles.expected_payment_date <= ?)
          AND invoices.pre_payment = ?"
@@ -553,6 +553,6 @@ protected
     sql_array << params[:team_id] if params[:team_id].present?
     Project.find_by_sql(sql_array)
   end
-  
-  
+
+
 end

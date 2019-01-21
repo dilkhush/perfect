@@ -24,8 +24,8 @@ class AccountPlan < ActiveRecord::Base
 
   # Named scopes
 
-  scope :expensive_first, order('account_plans.price_in_cents DESC')
-  scope :viewable, where(:show_plan => true)
+  scope :expensive_first, -> { order('account_plans.price_in_cents DESC') }
+  scope :viewable, -> { where(:show_plan => true) }
 
 
   #
@@ -41,7 +41,7 @@ class AccountPlan < ActiveRecord::Base
     return limit_types
   end
 
-  
+
   # Check to see if plan is free or not
   def free_plan?
     self.price == 0

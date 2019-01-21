@@ -2,7 +2,7 @@ class PagesController < FrontApplicationController
 
 
   def index
-    @tweets = Tweet.active.find(:all, :limit => 3)
+    @tweets = Tweet.active.all.limit(3)
 
     respond_to do |format|
       format.html
@@ -43,7 +43,7 @@ class PagesController < FrontApplicationController
 
 
   def signup
-    @account_plans = AccountPlan.viewable.expensive_first.find(:all)
+    @account_plans = AccountPlan.viewable.expensive_first.all
     @account_components = AccountComponent.viewable.priority_order.all
 
     respond_to do |format|
@@ -74,17 +74,17 @@ class PagesController < FrontApplicationController
       format.html {redirect_to scheduling_tool_path}
     end
   end
-  
-  
+
+
   # Thankyou page after singup containing google tracking code
   def thanks
     @account = Account.find_active_account(params[:account_name])
     raise ActiveRecord::RecordNotFound if @account.blank?
-    
+
     respond_to do |format|
       format.html {render layout: 'tool_blank'}
     end
   end
-  
+
 end
 

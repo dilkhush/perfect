@@ -3,7 +3,7 @@ class Tweet < ActiveRecord::Base
   # External libs
   include SharedMethods
   include HTTParty
-  
+
   format :xml
 
 
@@ -23,7 +23,7 @@ class Tweet < ActiveRecord::Base
 
 
   # Scope
-  default_scope :order => 'tweets.published_at DESC'
+  default_scope { order('tweets.published_at DESC') }
 
 
   #
@@ -34,7 +34,7 @@ class Tweet < ActiveRecord::Base
 
 
   # Named scopes
-  scope :active, :conditions => { :active => true }, :order => 'top_priority DESC, tweets.published_at DESC'
+  scope :active, -> { where(active: true).order('top_priority DESC, tweets.published_at DESC') }
 
 
   #
@@ -82,7 +82,7 @@ class Tweet < ActiveRecord::Base
     Tweet.find(:first)
   end
 
-  
+
   # Get and save new tweets from twtter
   def self.get_and_save_new_tweets_user(last_tweet_id_ref, number_results = 100)
     query = "screen_name=#{APP_CONFIG['twitter']['user']}"

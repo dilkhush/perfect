@@ -76,9 +76,9 @@ class User < ActiveRecord::Base
 
 
   # Named scopes
-  scope :name_ordered, order('users.firstname, users.lastname')
-  scope :not_archived, where(["archived = ?", false])
-  
+  scope :name_ordered, -> { order('users.firstname, users.lastname') }
+  scope :not_archived, -> { where(["archived = ?", false]) }
+
 
   # Custom json output. Alternative would be using Active Model serializers
   def serializable_hash(opts = {})
@@ -169,7 +169,7 @@ class User < ActiveRecord::Base
     suitable_entries = Entry.for_user_period(self.id, start_date, end_date)
     Project.find(suitable_entries.map(&:project_id))
   end
-  
+
   # Public: Returns Scheduled projects between two dates as an ICS file
   #
   # start_date = Date to filter from
@@ -193,7 +193,7 @@ class User < ActiveRecord::Base
     a_conditions << ["users.account_id = ?", account.id]
     a_conditions << ["users.firstname LIKE ?", params[:firstname] + '%'] if params[:firstname].present?
     a_conditions << ["users.lastname LIKE ?", params[:lastname] + '%'] if params[:lastname].present?
-    
+
     # Archived
     if params[:archived] == '0'
       a_conditions << ["users.archived = ?", false]
@@ -379,7 +379,7 @@ class User < ActiveRecord::Base
 
   # Public: Get list of User's working days without time tracked
   #
-  # look_back - Amount of time to look back in time for days 
+  # look_back - Amount of time to look back in time for days
   # without time tracked. Default: 1 week
   #
   # Returns an Array of Dates. This is empty if the User has an up
@@ -468,7 +468,7 @@ class User < ActiveRecord::Base
       ''
     end
 
-    
+
   end
 
   # Access token and API keys

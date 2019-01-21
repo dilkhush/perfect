@@ -66,7 +66,7 @@ module Scheduling
         config.assets.enabled = true
 
         # Version of your assets, change this if you want to expire all your assets
-        config.assets.version = Date.today.to_time.to_i
+        config.assets.version = Date.today.to_time.to_i.to_s
 
         config.action_view.field_error_proc = Proc.new {|html_tag, instance|
             %(<span class="field_with_errors">#{html_tag}</span>).html_safe}

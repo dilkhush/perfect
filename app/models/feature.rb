@@ -30,7 +30,7 @@ class Feature < ActiveRecord::Base
 
 
   # Named scopes
-  scope :name_ordered, order('features.name')
+  scope :name_ordered, -> { order('features.name') }
 
 
 #
@@ -51,8 +51,8 @@ class Feature < ActiveRecord::Base
 #
 # General functions
 #
-  
-  
+
+
   protected
 
 

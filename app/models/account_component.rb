@@ -25,25 +25,25 @@ class AccountComponent < ActiveRecord::Base
 
 
   # Named scopes
-  scope :viewable, where(:show_component => true)
-  scope :priority_order, order('priority')
-  
+  scope :viewable, -> { where(:show_component => true) }
+  scope :priority_order, -> { order('priority') }
+
 
   # enable component for a given account
   def enable_for(account)
     unless account.component_enabled?(self.id)
       self.enable_in_chargify_for(account)
-      
+
       account.account_components << self
     end
   end
-  
-  
+
+
   # disable component for a given account
   def disable_for(account)
     if account.component_enabled?(self.id)
       self.disable_in_chargify_for(account)
-      
+
       AccountAccountComponent.where(["account_id = ? AND account_component_id = ?", account.id, self.id]).delete_all
     end
   end
@@ -90,8 +90,8 @@ class AccountComponent < ActiveRecord::Base
       chargify_component.save
     end
   end
-  
-  
+
+
   #
   # Disable the component in chargify
   def disable_in_chargify_for(account)

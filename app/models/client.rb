@@ -35,8 +35,8 @@ class Client < ActiveRecord::Base
 
 
   # Named scopes
-  scope :name_ordered, order('clients.name')
-  scope :not_internal, where(internal: false)
+  scope :name_ordered, -> { order('clients.name') }
+  scope :not_internal, -> { where(internal: false) }
 
   #
   # Search the clients for a given account
@@ -79,19 +79,19 @@ class Client < ActiveRecord::Base
   def all_people_tracked
     Timing.users_for_client(self.id)
   end
-  
-  
+
+
   # Work out the avg day rate per client
   def avg_rate_card_amount_cents
     all_rate_cards = {}
-    
+
     # Extract all custom rate cards
     if self.client_rate_cards.present?
       self.client_rate_cards.each do |client_rate_card|
         all_rate_cards[client_rate_card.rate_card_id] = client_rate_card.daily_cost_cents
       end
     end
-    
+
     # Add all core rate cards in if custom one doesnt exist
     cl_account = self.account
     if cl_account.rate_cards.present?
@@ -99,7 +99,7 @@ class Client < ActiveRecord::Base
         all_rate_cards[rate_card.id] = rate_card.daily_cost_cents unless all_rate_cards.has_key?(rate_card.id)
       end
     end
-    
+
     # Work out avg
     if all_rate_cards.length > 0
       total = all_rate_cards.values.inject(0) {|a,b|a+b}
@@ -202,13 +202,13 @@ class Client < ActiveRecord::Base
 # Update functions
 #
 
-  
+
   # Archive a client
   def archive_now
     self.update_attributes(:archived => true)
   end
 
-  
+
   # Un-archive a cleint
   def un_archive_now
     self.update_attributes(:archived => false)

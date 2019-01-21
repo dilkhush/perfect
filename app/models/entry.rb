@@ -36,8 +36,8 @@ class Entry < ActiveRecord::Base
 
   # Named scopes
 
-  scope :start_date_ordered, order('entries.start_date')
-  scope :ending_in_the_future, where('entries.end_date >= ?', Time.zone.now.to_date)
+  scope :start_date_ordered, -> { order('entries.start_date') }
+  scope :ending_in_the_future, -> { where('entries.end_date >= ?', Time.zone.now.to_date) }
 
 
   # Public: Create a bulk schedule
@@ -214,21 +214,21 @@ class Entry < ActiveRecord::Base
       (self.end_date - from).to_i + 1
     end
   end
-  
-  
+
+
   # Returns the number of minutes that an entry is scheudled for in the given time period
   def self.get_number_of_days_scheduled_for_project_by_period(project, start_period, end_period)
     # Find entries
     entries = Entry.for_project_period(project.id, start_period, end_period)
     total_number_of_days = 0
-    
+
     # Work out number of days
     if entries.present?
       entries.each do |entry|
         # Check is wihtin period and change if requreid for calculation (DONT SAVE!)
         entry.start_date = start_period if entry.start_date < start_period
         entry.end_date = end_period if entry.end_date > end_period
-        
+
         total_number_of_days += entry.number_of_days
       end
     end

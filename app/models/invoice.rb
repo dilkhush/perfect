@@ -10,9 +10,9 @@ class Invoice < ActiveRecord::Base
   belongs_to :user
   has_many :invoice_items, :dependent => :destroy
   has_many :payment_profiles, :through => :invoice_items
-  has_many :invoice_usages, :dependent => :restrict
-  
-  
+  has_many :invoice_usages, :dependent => :restrict_with_error
+
+
   # Validation
   validates :invoice_date, :due_on_date, :invoice_number, :currency, :project_id, :exchange_rate, :presence => true
   validates :vat_rate, :total_amount_cents_exc_vat, :total_amount_cents_inc_vat, :default_currency_total_amount_cents_exc_vat, :default_currency_total_amount_cents_inc_vat, :numericality => {:only_integer => false, :greater_than => -1}, :allow_blank => true, :presence => true
@@ -55,8 +55,8 @@ class Invoice < ActiveRecord::Base
 
 
   # Named scopes
-  scope :invoice_date_order, order('invoices.invoice_date')
-  scope :pre_payment_invoices, where(["invoices.pre_payment = ?", true])
+  scope :invoice_date_order, -> { order('invoices.invoice_date') }
+  scope :pre_payment_invoices, -> { where(["invoices.pre_payment = ?", true]) }
 
 
   # Output the iso currency code
@@ -118,7 +118,7 @@ class Invoice < ActiveRecord::Base
       :symbol => true)
   end
 
-  
+
   # Provides total_amount_cents_exc_vat in the correct currency formatted string
   def total_amount_exc_vat_in_currency
     amount_in_currency(total_amount_cents_exc_vat)
@@ -129,8 +129,8 @@ class Invoice < ActiveRecord::Base
   def total_amount_inc_vat_in_currency
     amount_in_currency(total_amount_cents_inc_vat)
   end
-  
-  
+
+
   # Set the defaults for when first showing a new form
   def set_defaults
     if self.project.present?
@@ -139,7 +139,7 @@ class Invoice < ActiveRecord::Base
         self.address = ''
         self.address += self.project.client.address if self.project.client.address.present?
         self.address += "\n" + self.project.client.zipcode if self.project.client.zipcode.present?
-        
+
         self.email = self.project.client.email if self.project.client.email.present?
       end
 
@@ -157,52 +157,52 @@ class Invoice < ActiveRecord::Base
       self.pre_payment = false
     end
   end
-  
-  
+
+
   # Work out the next invoice number
   def self.find_next_available_number_for(account, default=0)
     # Cast as int in mysql just incase there are some non-integer invoice numbers in there.
     (Invoice.where(["projects.account_id = ?", account.id]).includes([:project]).maximum('CAST(invoices.invoice_number AS SIGNED)').to_i || default).succ
   end
-  
-  
+
+
   # Total amount invoiced for a given cleint for a period of time
   def self.amount_cents_invoiced_for_period_and_client(client_id, start_date, end_date)
     Invoice.where(['projects.client_id = ? AND invoices.invoice_date <= ? AND invoices.invoice_date >= ?', client_id, end_date, start_date]).includes(:project).sum(:default_currency_total_amount_cents_exc_vat)
   end
-  
-  
+
+
   # Total amount invoiced for a given project for a period of time
   def self.amount_cents_invoiced_for_period_and_project(project_id, start_date, end_date)
     Invoice.where(['invoices.project_id = ? AND invoices.invoice_date <= ? AND invoices.invoice_date >= ?', project_id, end_date, start_date]).sum(:total_amount_cents_exc_vat)
-  end  
-  
+  end
+
   # Total amount invoiced for a period of time
   def self.amount_cents_invoiced_for_period(account, start_date, end_date)
     Invoice.where(['projects.account_id = ? AND invoices.invoice_date <= ? AND invoices.invoice_date >= ?', account.id, end_date, start_date]).includes([:project]).sum(:total_amount_cents_exc_vat)
   end
-  
-  
+
+
   # Total amount pre-paid invoices for a period of time
   def self.amount_cents_pre_payment_invoiced_for_period(account, start_date, end_date)
     Invoice.where(['projects.account_id = ? AND invoices.invoice_date <= ? AND invoices.invoice_date >= ? AND invoices.pre_payment = ?', account.id, end_date, start_date, true]).includes([:project]).sum(:total_amount_cents_exc_vat)
   end
-  
-  
+
+
   # Search the pre payments
   def self.search_pre_payments(account, start_date, end_date, params)
     projects = account.projects
       .where(['invoices.invoice_date <= ? AND invoices.invoice_date >= ? AND invoices.pre_payment = ?', end_date, start_date, true])
       .includes([:invoices, :client])
       .order('clients.name, projects.name')
-      
+
     projects = projects.where(["projects.id = ?", params[:project_id]]) if params[:project_id].present?
     projects = projects.where(["projects.client_id = ?", params[:client_id]]) if params[:client_id].present?
-    
+
     projects
   end
-  
-  
+
+
 #
 # Create functions
 #
@@ -254,7 +254,7 @@ class Invoice < ActiveRecord::Base
         end
       end
     end
-    
+
     if self.user_id.present?
       self.errors.add(:user_id, 'must belong to the same account as the invoice') if self.project.account_id != self.user.account_id
     end
@@ -312,19 +312,19 @@ class Invoice < ActiveRecord::Base
       self.total_amount_cents_inc_vat = 0
     end
   end
-  
-  
+
+
   #
   # Cache amounts in accounts default currency
   def set_default_currency_amounts
     if self.project.present?
       if self.exchange_rate.present? && self.exchange_rate == 1.0
-        
+
         # Set invoice items
         self.invoice_items.each do |invoice_item|
           invoice_item.default_currency_amount_cents = invoice_item.amount_cents
         end
-        
+
         # Set invoice
         self.default_currency_total_amount_cents_exc_vat = self.total_amount_cents_exc_vat
         self.default_currency_total_amount_cents_inc_vat = self.total_amount_cents_inc_vat
@@ -332,12 +332,12 @@ class Invoice < ActiveRecord::Base
         account_default_currency = self.project.account.account_setting.default_currency
         reverse_exchange_rate = Currency.get_exchange_for(self.currency, account_default_currency)
         Money.add_rate(self.currency, account_default_currency, reverse_exchange_rate)
-        
+
         # Set invoice items
         self.invoice_items.each do |invoice_item|
           invoice_item.default_currency_amount_cents = Money.new(invoice_item.amount_cents, self.currency).exchange_to(account_default_currency).cents
         end
-        
+
         # Set invoice default amounts from the invoice items so amoutns match.
         self.default_currency_total_amount_cents_exc_vat = self.invoice_items.collect(&:default_currency_amount_cents_incl_quantity).sum
         self.default_currency_total_amount_cents_inc_vat = self.invoice_items.collect{|invoice_item| invoice_item.vat? ? ((self.vat_rate / 100) * invoice_item.default_currency_amount_cents_incl_quantity) + invoice_item.default_currency_amount_cents_incl_quantity : invoice_item.default_currency_amount_cents_incl_quantity}.sum
@@ -352,8 +352,8 @@ class Invoice < ActiveRecord::Base
       self.exchange_rate = Currency.get_exchange_for(self.project.account.account_setting.default_currency, self.currency)
     end
   end
-  
-  
+
+
   # Sends an email to a given user if configured in settings to alert about the new invoice
   def send_alert_email
     if self.project.present?
@@ -362,7 +362,7 @@ class Invoice < ActiveRecord::Base
       end
     end
   end
-  
-  
+
+
 end
 

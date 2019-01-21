@@ -2,7 +2,7 @@ class Task < ActiveRecord::Base
 
   # External libs
   include SharedMethods
-  
+
 
   # Relationships
   belongs_to :project
@@ -31,25 +31,25 @@ class Task < ActiveRecord::Base
 
   # Mass assignment protection
   attr_accessible :name, :description, :feature_id, :count_towards_time_worked, :estimated, :estimate_scale, :quote_activity_id, :rate_card_id, :estimated_minutes
-  
-  
+
+
   # Virtual attributes
   attr_accessor :estimated
 
 
   # Plugins
   acts_as_list :scope => 'project_id = #{project_id} AND feature_id #{feature_id.present? ? "= " + feature_id.to_s : "IS NULL"}'
-  
-  
+
+
 #
 # Extract functions
 #
 
 
   # Named scopes
-  scope :name_ordered, order('tasks.name')
-  scope :position_ordered, order('tasks.position')
-  scope :no_associated_feature, where(['feature_id IS ?', nil])
+  scope :name_ordered, -> { order('tasks.name') }
+  scope :position_ordered, -> { order('tasks.position') }
+  scope :no_associated_feature, -> { where(['feature_id IS ?', nil]) }
 
 
   # The total time tracked for a task in minutes
@@ -58,7 +58,7 @@ class Task < ActiveRecord::Base
   def time_tracked_minutes
     timings.sum(:duration_minutes)
   end
-  
+
   # The total submitted time tracked for a task in minutes
   #
   # Returns integer
@@ -101,8 +101,8 @@ class Task < ActiveRecord::Base
     results = timings.where(["created_at >= ?", 1.month.ago])
     results.sum(:duration_minutes)
   end
-  
-  
+
+
   # Work out the amount of full hours (max)
   def estimated_out
     if estimated_minutes.present?
@@ -125,8 +125,8 @@ class Task < ActiveRecord::Base
       (read_attribute(:estimated_minutes) / divide_value.to_s.to_d).round(2)
     end
   end
-  
-  
+
+
   def self.total_estimated_minutes_for_client(client_id)
     Task.where(['projects.client_id = ?', client_id]).includes(:project).sum(:estimated_minutes)
   end
@@ -167,9 +167,9 @@ class Task < ActiveRecord::Base
       errors.add(:feature_id, "does not exist") unless self.project.features.exists?(self.feature_id)
     end
   end
-  
-  
-  
+
+
+
   # Takes the virtual attribtues and converts them to minutes for storage based on the scale that is being used
   def calc_estimate_from_form
     # Only perform calulation if we pass in some data
@@ -180,7 +180,7 @@ class Task < ActiveRecord::Base
       else
         acc_settings = self.project.account.account_setting
       end
-      
+
       # Convert to decimal
       self.estimated = self.estimated.to_s.to_d.round(2)
 
@@ -201,7 +201,7 @@ class Task < ActiveRecord::Base
       end
     end
   end
-  
+
 
 #
 # Destroy methods
