@@ -1,24 +1,23 @@
-source 'http://rubygems.org'
-
+source 'https://rubygems.org'
 # Always run the latest version of all gems unless
 # absolutely necessary. Much easier to fix one or two
 # bits as you go along rather than huge changes
 # between major version releases.
 
 # Standard Rails Stuff
-gem 'rails', '3.2.16'
+gem 'rails', '~> 4.0.0'
 gem 'mysql2', '~> 0.3.13'
 gem 'jquery-rails', '~> 2.1.1'
 gem 'jquery-ui-rails', '~> 2.0.0'
 
-# App Specific Stuff
+# # App Specific Stuff
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'chargify_api_ares', '0.4.4'
 gem 'execjs', '~> 1.4.0'
 gem 'will_paginate', '~> 3.0.3'
 gem 'acts_as_list', '~> 0.2.0'
 gem 'ejs', '~> 1.1.1'
-gem 'money', '~> 5.1.1'
+gem 'money'
 gem 'httparty', '~> 0.10.2'
 gem 'prawn', '~> 0.12.0'
 gem 'google-api-client', '~> 0.6.4'
@@ -32,16 +31,22 @@ gem 'icalendar'
 gem 'pundit'
 gem 'faker'
 gem 'rdiscount'
-gem 'hopskip'
-
+# gem 'hopskip'
+# Rails 4 update support
+gem 'protected_attributes' # https://github.com/rails/protected_attributes
+gem 'activeresource' # https://github.com/rails/activeresource
+gem 'actionpack-action_caching' # https://github.com/rails/actionpack-action_caching
+gem 'activerecord-session_store' # https://github.com/rails/activerecord-session_store
+gem 'rails-observers' # https://github.com/rails/rails-observers
+# Note that there might be more functionalities that were extracted
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-    gem 'sass-rails', '~> 3.2.5'
-    gem 'coffee-rails', '~> 3.2.2'
-    gem 'uglifier', '~> 1.2.4'
-    gem 'therubyracer', '~> 0.10.1'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'therubyracer'
 end
 
 group :test do

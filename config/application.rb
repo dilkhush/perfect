@@ -33,7 +33,7 @@ end
 module Scheduling
     class Application < Rails::Application
 
-        
+
         # Settings in config/environments/* take precedence over those specified here.
         # Application configuration should go into files in config/initializers
         # -- all .rb files in that directory are automatically loaded.
@@ -62,15 +62,12 @@ module Scheduling
         # Configure the default encoding used in templates for Ruby 1.9.
         config.encoding = "utf-8"
 
-        # Configure sensitive parameters which will be filtered from the log file.
-        config.filter_parameters += [:password]
-
         # Enable the asset pipeline
         config.assets.enabled = true
 
         # Version of your assets, change this if you want to expire all your assets
         config.assets.version = Date.today.to_time.to_i
-        
+
         config.action_view.field_error_proc = Proc.new {|html_tag, instance|
             %(<span class="field_with_errors">#{html_tag}</span>).html_safe}
     end

@@ -5,3 +5,4 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 Scheduling::Application.config.secret_token = '2cdee3e5d4599aec410e92c6cdaec572'#APP_CONFIG['secrets']['secret_token']['code']
+Scheduling::Application.config.secret_key_base = '36df06d49aacc7e6416dc94ef06818575a6032b80a633eb9e5dafb640fcbe7caa5823807f69c790e462412ebfd0e6f8d527dc2d0dafed22dc105ad182b21c127' # this needs to be added
