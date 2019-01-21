@@ -65,6 +65,10 @@ group :development do
   gem 'puma'
 end
 
+group :test, :development do
+  gem 'byebug'
+end
+
 gem 'newrelic_rpm'
 gem 'ey_config'
 gem 'exception_notification', '~> 2.6.1'

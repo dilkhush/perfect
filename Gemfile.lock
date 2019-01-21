@@ -60,6 +60,7 @@ GEM
       uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
+    byebug (10.0.2)
     chargify_api_ares (0.4.4)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
@@ -272,6 +273,7 @@ DEPENDENCIES
   acts_as_list (~> 0.2.0)
   aws-sdk
   bcrypt-ruby (~> 3.0.1)
+  byebug
   chargify_api_ares (= 0.4.4)
   clbustos-rtf
   coffee-rails
