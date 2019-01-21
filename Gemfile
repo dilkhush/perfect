@@ -50,7 +50,7 @@ group :assets do
 end
 
 group :test do
-  gem 'jasminerice'
+  gem 'jasminerice', github: 'bradphelan/jasminerice'
   gem 'guard-jasmine'
   gem 'mocha', '~> 0.13.3', :require => false
   gem 'simplecov', :require => false
