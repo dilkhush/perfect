@@ -134,7 +134,7 @@ GEM
     jquery-ui-rails (2.0.2)
       jquery-rails
       railties (>= 3.1.0)
-    json (1.8.1)
+    json (1.8.2)
     jwt (0.1.8)
       multi_json (>= 1.5)
     launchy (2.3.0)
@@ -158,7 +158,7 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
-    mysql2 (0.3.13)
+    mysql2 (0.3.21)
     newrelic_rpm (3.6.6.147)
     nokogiri (1.5.10)
     paperclip (3.5.1)
@@ -197,7 +197,6 @@ GEM
       activerecord (= 3.2.16)
       activeresource (= 3.2.16)
       activesupport (= 3.2.16)
-      bundler (~> 1.0)
       railties (= 3.2.16)
     railties (3.2.16)
       actionpack (= 3.2.16)
@@ -285,7 +284,7 @@ DEPENDENCIES
   jquery-ui-rails (~> 2.0.0)
   mocha (~> 0.13.3)
   money (~> 5.1.1)
-  mysql2 (~> 0.3.11)
+  mysql2 (~> 0.3.13)
   newrelic_rpm
   paperclip
   prawn (~> 0.12.0)
@@ -300,3 +299,6 @@ DEPENDENCIES
   uglifier (~> 1.2.4)
   wicked_pdf (= 0.9.6)
   will_paginate (~> 3.0.3)
+
+BUNDLED WITH
+   2.0.1

@@ -7,7 +7,7 @@ source 'http://rubygems.org'
 
 # Standard Rails Stuff
 gem 'rails', '3.2.16'
-gem 'mysql2', '~> 0.3.11'
+gem 'mysql2', '~> 0.3.13'
 gem 'jquery-rails', '~> 2.1.1'
 gem 'jquery-ui-rails', '~> 2.0.0'
 

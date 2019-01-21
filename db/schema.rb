@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140110094656) do
+ActiveRecord::Schema.define(:version => 20140122162212) do
 
   create_table "account_account_components", :force => true do |t|
     t.integer  "account_id"
@@ -55,21 +55,21 @@ ActiveRecord::Schema.define(:version => 20140110094656) do
     t.datetime "updated_at",                                                            :null => false
     t.time     "working_day_start_time",             :default => '2000-01-01 09:00:00'
     t.time     "working_day_end_time",               :default => '2000-01-01 17:00:00'
-    t.integer  "common_project_id"
     t.string   "default_currency",                   :default => "usd"
+    t.integer  "common_project_id"
     t.string   "working_days"
     t.string   "invoice_alert_email"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "logo_fingerprint"
     t.string   "schedule_mail_email"
     t.integer  "schedule_mail_frequency",            :default => 1
     t.datetime "schedule_mail_last_sent_at"
     t.string   "expected_invoice_mail_email"
     t.integer  "expected_invoice_mail_frequency",    :default => 1
     t.datetime "expected_invoice_mail_last_sent_at"
-    t.string   "logo_file_name"
-    t.string   "logo_content_type"
-    t.integer  "logo_file_size"
-    t.datetime "logo_updated_at"
-    t.string   "logo_fingerprint"
     t.string   "rollover_alert_email"
     t.string   "budget_warning_email"
     t.string   "stale_opportunity_email"
@@ -563,8 +563,8 @@ ActiveRecord::Schema.define(:version => 20140110094656) do
     t.datetime "updated_at",                                                 :null => false
     t.string   "time_zone"
     t.boolean  "archived",                                :default => false
-    t.text     "biography"
     t.integer  "number_of_logins",                        :default => 0
+    t.text     "biography"
   end
 
   add_index "users", ["account_id", "firstname", "lastname"], :name => "index_users_on_account_id_and_firstname_and_lastname"
