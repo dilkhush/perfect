@@ -55,7 +55,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    acts_as_list (0.2.0)
+    acts_as_list (0.9.17)
       activerecord (>= 3.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
@@ -952,6 +952,7 @@ GEM
       loofah (~> 2.2, >= 2.2.2)
     rails-observers (0.1.5)
       activemodel (>= 4.0)
+    rails-perftest (0.0.7)
     railties (4.2.11)
       actionpack (= 4.2.11)
       activesupport (= 4.2.11)
@@ -968,6 +969,7 @@ GEM
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
     retriable (3.1.2)
+    ruby-prof (0.17.0)
     ruby-rc4 (0.1.5)
     ruby_dep (1.5.0)
     sass (3.7.3)
@@ -1026,7 +1028,7 @@ DEPENDENCIES
   actionpack-action_caching
   activerecord-session_store
   activeresource
-  acts_as_list (~> 0.2.0)
+  acts_as_list
   aws-sdk
   bcrypt-ruby (~> 3.0.1)
   byebug
@@ -1062,8 +1064,10 @@ DEPENDENCIES
   pundit
   rails (~> 4.2.11)
   rails-observers
+  rails-perftest
   rb-fsevent (~> 0.9)
   rdiscount
+  ruby-prof
   sass-rails
   simplecov
   therubyracer

@@ -15,7 +15,7 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'chargify_api_ares', '0.4.4'
 gem 'execjs', '~> 1.4.0'
 gem 'will_paginate', '~> 3.0.3'
-gem 'acts_as_list', '~> 0.2.0'
+gem 'acts_as_list'
 gem 'ejs', '~> 1.1.1'
 gem 'money'
 gem 'httparty', '~> 0.10.2'
@@ -59,6 +59,8 @@ group :test do
   gem 'delorean'
   gem 'factory_girl_rails'
   gem 'growl'
+  gem 'ruby-prof'
+  gem 'rails-perftest'
 end
 
 group :development do

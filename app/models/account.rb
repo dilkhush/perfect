@@ -81,7 +81,7 @@ class Account < ActiveRecord::Base
   #
   # Find an active account
   def self.find_active_account(subdomain)
-    self.find(:first, :conditions => ['site_address = ? AND account_deleted_at IS ?', subdomain, nil]) unless subdomain.blank?
+    self.where(['site_address = ? AND account_deleted_at IS ?', subdomain, nil]).first unless subdomain.blank?
   end
 
 
@@ -118,7 +118,7 @@ class Account < ActiveRecord::Base
   end
 
 
-  # 
+  #
   # Returns true if limit has been exceeded
   def exceeded_limit?
     table_names = AccountPlan.get_limit_model_types
@@ -151,7 +151,7 @@ class Account < ActiveRecord::Base
   #
   #
   def limit_reached_for?(class_name)
-    current_count = class_name.camelize.constantize.count(:conditions => ["account_id = ?", self.id])
+    current_count = class_name.camelize.constantize.where(["account_id = ?", self.id]).count
     table_name = class_name.camelize.constantize.table_name
 
     if self.account_plan.send('no_' + table_name) != nil && current_count >= self.account_plan.send('no_' + table_name)
@@ -165,7 +165,7 @@ class Account < ActiveRecord::Base
   #
   # Returns true if the limit has been exceeded
   def limit_exceeded_for?(class_name)
-    current_count = class_name.camelize.constantize.count(:conditions => ["account_id = ?", self.id])
+    current_count = class_name.camelize.constantize.where(["account_id = ?", self.id]).count
     table_name = class_name.camelize.constantize.table_name
 
     if self.account_plan.send('no_' + table_name) != nil && current_count > self.account_plan.send('no_' + table_name)
@@ -202,7 +202,7 @@ class Account < ActiveRecord::Base
   #
   #
   def count_for_model(class_name)
-    class_name.camelize.constantize.count(:conditions => ["account_id = ?", self.id])
+    class_name.camelize.constantize.where(["account_id = ?", self.id]).count
   end
 
 
@@ -271,7 +271,7 @@ class Account < ActiveRecord::Base
     chargify_subscription = Chargify::Subscription.find_by_customer_reference(self.id)
     chargify_subscription.statement(statement_id)
   end
-    
+
   #
   # Chargify update methods
   #
@@ -295,13 +295,13 @@ class Account < ActiveRecord::Base
 
       # Update stored chargify customer id
       new_chargify_user = self.update_account_chargify_id(chargify_subscription.customer)
-      
+
       # Update account state
       self.update_account_state(chargify_subscription)
 
       # Update account plan
       self.update_plan_by_handle(chargify_subscription.product.handle)
-      
+
       # Update components
       if new_chargify_user
         # Force update components in chargify as this is the first callback and we dont pass this info over on hosted pages
@@ -486,11 +486,11 @@ protected
   # Create the quote default sections
   def create_default_quote_sections
     self.quote_default_sections.create!(title: 'Summary')
-    
+
     quote_default_section = self.quote_default_sections.new(title: 'Costs')
     quote_default_section.cost_section = 1
     quote_default_section.save!
-    
+
     self.quote_default_sections.create!(title: 'Disclaimer')
   end
 

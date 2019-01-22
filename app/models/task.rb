@@ -9,7 +9,7 @@ class Task < ActiveRecord::Base
   belongs_to :feature
   belongs_to :quote_activity
   belongs_to :rate_card
-  has_many   :timings, :dependent => :restrict
+  has_many   :timings, :dependent => :restrict_with_error
 
 
   # Validation

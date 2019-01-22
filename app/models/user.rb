@@ -100,9 +100,7 @@ class User < ActiveRecord::Base
   #
   # find the most recently logged in users
   def self.most_recent_login(account)
-    account.users.find(:all, :conditions => ['last_login_at IS NOT ?', nil],
-                             :order => 'last_login_at DESC',
-                             :limit => 4)
+    account.users.where(['last_login_at IS NOT ?', nil]).order('last_login_at DESC').limit(4)
   end
 
 
@@ -131,7 +129,7 @@ class User < ActiveRecord::Base
 
   # Get the account holder for a given account
   def self.account_holder_for_account(account)
-    account.users.find(:first, :conditions => ["roles.title = ?", 'account_holder'], :include => [:roles])
+    account.users.includes(:roles).where(["roles.title = ?", 'account_holder']).first
   end
 
 

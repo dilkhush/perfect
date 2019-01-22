@@ -25,7 +25,7 @@ class PasswordResetsController < ToolApplicationController
 
 
   def create
-    @user = @account.users.find(:first, :conditions => ["email = ?", params[:user][:email]])
+    @user = @account.users.where(["email = ?", params[:user][:email]]).first
 
     respond_to do |format|
       unless @user.blank?
@@ -43,7 +43,7 @@ class PasswordResetsController < ToolApplicationController
 
 
   def edit
-    @user = @account.users.find(:first, :conditions => ["password_reset_code = ?", params[:id]]) if !params[:id].blank?
+    @user = @account.users.where(["password_reset_code = ?", params[:id]]).first if !params[:id].blank?
 
     respond_to do |format|
       unless @user.blank?
@@ -57,7 +57,7 @@ class PasswordResetsController < ToolApplicationController
 
 
   def update
-    @user = @account.users.find(:first, :conditions => ["password_reset_code = ?", params[:id]]) if !params[:id].blank?
+    @user = @account.users.where(["password_reset_code = ?", params[:id]]).first if !params[:id].blank?
     respond_to do |format|
       unless @user.blank?
         if (!params[:user].blank? && !params[:user][:password_confirmation].blank? && !params[:user][:password].blank?)

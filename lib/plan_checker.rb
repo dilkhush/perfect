@@ -17,7 +17,7 @@ module PlanChecker
         # Check if plan has reached limit for the class (used on validations)
         def has_reached_plan_limit?
             unless self.account.blank?
-                current_count = self.class.name.camelize.constantize.count(:conditions => ["account_id = ?", self.account_id])
+                current_count = self.class.name.camelize.constantize.where(["account_id = ?", self.account_id]).count
                 table_name = self.class.name.camelize.constantize.table_name
                 archived_users = self.account.users.where(archived: true).count
 
@@ -54,7 +54,7 @@ module PlanChecker
         #
         # Check if plan will reach a limit if x amount of additional records are added
         def will_exceed_plan_limit_if_additional_added?(account, additional_records = 0)
-            current_count = self.name.camelize.constantize.count(:conditions => ["account_id = ?", account.id])
+            current_count = self.name.camelize.constantize.where(["account_id = ?", account.id]).count
             table_name = self.name.camelize.constantize.table_name
 
             if account.account_plan.send('no_' + table_name) != nil && (current_count + additional_records) > account.account_plan.send('no_' + table_name)
