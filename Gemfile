@@ -31,7 +31,7 @@ gem 'icalendar'
 gem 'pundit'
 gem 'faker'
 gem 'rdiscount'
-# gem 'hopskip'
+gem 'hopskip', github: 'dilkhush/hopskip'
 # Rails 4 update support
 gem 'protected_attributes' # https://github.com/rails/protected_attributes
 gem 'activeresource' # https://github.com/rails/activeresource

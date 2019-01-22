@@ -5,6 +5,13 @@ GIT
     jasminerice (0.1.0)
       coffee-rails
 
+GIT
+  remote: git://github.com/dilkhush/hopskip.git
+  revision: cf5891777834cfbf1cb1adb443c4d51195884a53
+  specs:
+    hopskip (0.2.1)
+      rails (>= 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -1047,6 +1054,7 @@ DEPENDENCIES
   growl
   guard-jasmine
   guard-test
+  hopskip!
   httparty (~> 0.10.2)
   icalendar
   jasminerice!
