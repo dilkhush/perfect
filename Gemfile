@@ -6,7 +6,6 @@ source 'https://rubygems.org'
 
 # Standard Rails Stuff
 
-ruby "2.3.3"
 gem 'rails', '~> 5.2.2'
 group :production do
   gem 'pg'
