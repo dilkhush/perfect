@@ -6,7 +6,12 @@ source 'https://rubygems.org'
 
 # Standard Rails Stuff
 gem 'rails', '~> 5.2.2'
-gem 'mysql2'
+group :production do
+  gem 'pg'
+end
+group :development, :test do
+  gem 'mysql2'
+end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
