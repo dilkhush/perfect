@@ -1,4 +1,4 @@
-class CreatePaymentProfiles < ActiveRecord::Migration
+class CreatePaymentProfiles < ActiveRecord::Migration[5.2]
   def change
     create_table :payment_profiles do |t|
       t.integer :project_id, :expected_cost_cents
@@ -8,7 +8,7 @@ class CreatePaymentProfiles < ActiveRecord::Migration
       t.boolean :generate_cost_from_time, :default => false
       t.timestamps
     end
-    
+
     add_index :payment_profiles, [:project_id]
   end
 end

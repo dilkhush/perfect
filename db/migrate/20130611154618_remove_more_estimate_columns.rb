@@ -1,4 +1,4 @@
-class RemoveMoreEstimateColumns < ActiveRecord::Migration
+class RemoveMoreEstimateColumns < ActiveRecord::Migration[5.2]
   def up
     remove_column :tasks, :trackable
     drop_table :rate_card_features

@@ -1,7 +1,7 @@
-class AddIndexsToProject < ActiveRecord::Migration
+class AddIndexsToProject < ActiveRecord::Migration[5.2]
   def change
       remove_index :projects, [:account_id, :client_id]
-      
+
       add_index :projects, [:account_id, :name, :client_id]
       add_index :projects, [:account_id, :client_id]
   end

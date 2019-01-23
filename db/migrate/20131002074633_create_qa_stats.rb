@@ -1,4 +1,4 @@
-class CreateQaStats < ActiveRecord::Migration
+class CreateQaStats < ActiveRecord::Migration[5.2]
   def change
     create_table :qa_stats do |t|
       t.text    :ticket_breakdown

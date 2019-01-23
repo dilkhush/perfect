@@ -1,4 +1,4 @@
-class RemoveOldQuoteAccountSettings < ActiveRecord::Migration
+class RemoveOldQuoteAccountSettings < ActiveRecord::Migration[5.2]
   def up
     remove_column :account_settings, :quote_further_information
     remove_column :account_settings, :quote_disclaimer

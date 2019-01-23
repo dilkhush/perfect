@@ -1,4 +1,4 @@
-class CreateAccountSettings < ActiveRecord::Migration
+class CreateAccountSettings < ActiveRecord::Migration[5.2]
     def change
         create_table :account_settings do |t|
             t.integer "account_id"

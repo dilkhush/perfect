@@ -1,4 +1,4 @@
-class CreateQuoteSections < ActiveRecord::Migration
+class CreateQuoteSections < ActiveRecord::Migration[5.2]
   def change
     create_table :quote_sections do |t|
       t.string :title

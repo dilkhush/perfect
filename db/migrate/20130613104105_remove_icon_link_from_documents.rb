@@ -1,4 +1,4 @@
-class RemoveIconLinkFromDocuments < ActiveRecord::Migration
+class RemoveIconLinkFromDocuments < ActiveRecord::Migration[5.2]
   def up
     remove_column :documents, :icon_link
   end

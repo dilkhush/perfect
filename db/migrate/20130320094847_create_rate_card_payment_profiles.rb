@@ -1,4 +1,4 @@
-class CreateRateCardPaymentProfiles < ActiveRecord::Migration
+class CreateRateCardPaymentProfiles < ActiveRecord::Migration[5.2]
   def change
     create_table :rate_card_payment_profiles do |t|
       t.integer :payment_profile_id, :rate_card_id

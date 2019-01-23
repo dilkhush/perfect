@@ -1,4 +1,4 @@
-class UpdateTaskIndexs < ActiveRecord::Migration
+class UpdateTaskIndexs < ActiveRecord::Migration[5.2]
   def up
     remove_index :tasks, [:project_id]
     add_index :tasks, [:project_id, :feature_id]

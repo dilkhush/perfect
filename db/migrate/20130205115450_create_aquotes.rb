@@ -1,4 +1,4 @@
-class CreateAquotes < ActiveRecord::Migration
+class CreateAquotes < ActiveRecord::Migration[5.2]
   def change
     create_table :quotes do |t|
       t.integer :user_id, :project_id, :feature_percentage_complete, :task_percentage_complete, :estimate_scale

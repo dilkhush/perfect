@@ -1,4 +1,4 @@
-class ChangeTotalAmountFieldOnQuotes < ActiveRecord::Migration
+class ChangeTotalAmountFieldOnQuotes < ActiveRecord::Migration[5.2]
   def change
     remove_column :quotes, :total_cost
     add_column :quotes, :total_min_cost, :decimal, :precision => 7, :scale => 2

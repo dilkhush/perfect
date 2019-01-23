@@ -1,4 +1,4 @@
-class CreateProjects < ActiveRecord::Migration
+class CreateProjects < ActiveRecord::Migration[5.2]
     def change
         create_table :projects do |t|
             t.string  :name
@@ -7,7 +7,7 @@ class CreateProjects < ActiveRecord::Migration
             t.integer :account_id, :client_id
             t.timestamps
         end
-        
+
         add_index :projects, [:account_id, :client_id]
         add_index :projects, [:client_id]
     end

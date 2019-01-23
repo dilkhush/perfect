@@ -1,4 +1,4 @@
-class RemoveAreasFromQuote < ActiveRecord::Migration
+class RemoveAreasFromQuote < ActiveRecord::Migration[5.2]
   def up
     remove_column :quotes, :summary
     remove_column :quotes, :further_information

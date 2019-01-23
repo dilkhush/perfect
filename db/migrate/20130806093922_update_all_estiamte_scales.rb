@@ -1,4 +1,4 @@
-class UpdateAllEstiamteScales < ActiveRecord::Migration
+class UpdateAllEstiamteScales < ActiveRecord::Migration[5.2]
   def up
     change_column :tasks, :estimate_scale, :integer, :default => 1
     Task.where('estimate_scale = ?', 0).update_all(estimate_scale: 1)

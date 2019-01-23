@@ -1,5 +1,5 @@
-class CreateInvoices < ActiveRecord::Migration
-  
+class CreateInvoices < ActiveRecord::Migration[5.2]
+
   def change
     create_table :invoices do |t|
       t.integer :project_id, :total_amount_cents_exc_vat, :total_amount_cents_inc_vat
@@ -11,8 +11,8 @@ class CreateInvoices < ActiveRecord::Migration
       t.decimal :exchange_rate, :precision => 10, :scale => 6
       t.timestamps
     end
-    
+
     add_index :invoices, [:project_id]
   end
-  
+
 end

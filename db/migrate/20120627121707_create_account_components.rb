@@ -1,4 +1,4 @@
-class CreateAccountComponents < ActiveRecord::Migration
+class CreateAccountComponents < ActiveRecord::Migration[5.2]
   def change
     create_table :account_components do |t|
         t.string "name"

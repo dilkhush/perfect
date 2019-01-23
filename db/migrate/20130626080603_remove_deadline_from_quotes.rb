@@ -1,4 +1,4 @@
-class RemoveDeadlineFromQuotes < ActiveRecord::Migration
+class RemoveDeadlineFromQuotes < ActiveRecord::Migration[5.2]
   def up
     remove_column :quotes, :deadline_at
   end

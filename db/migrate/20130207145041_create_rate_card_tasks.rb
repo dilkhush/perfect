@@ -1,4 +1,4 @@
-class CreateRateCardTasks < ActiveRecord::Migration
+class CreateRateCardTasks < ActiveRecord::Migration[5.2]
   def change
     create_table :rate_card_tasks do |t|
       t.integer :rate_card_id, :task_id

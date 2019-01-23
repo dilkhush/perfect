@@ -1,4 +1,4 @@
-class RemoveCurrencyFromQuoteActivities < ActiveRecord::Migration
+class RemoveCurrencyFromQuoteActivities < ActiveRecord::Migration[5.2]
   def up
     remove_column :quotes, :currency
   end

@@ -1,6 +1,6 @@
-class CreateTimings < ActiveRecord::Migration
-    
-    
+class CreateTimings < ActiveRecord::Migration[5.2]
+
+
     #
     #
     def change
@@ -11,11 +11,11 @@ class CreateTimings < ActiveRecord::Migration
             t.text    :notes
             t.timestamps
         end
-        
+
         add_index :timings, [:user_id]
         add_index :timings, [:project_id]
         add_index :timings, [:task_id]
     end
-    
-    
+
+
 end

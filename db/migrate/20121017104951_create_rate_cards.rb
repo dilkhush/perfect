@@ -1,6 +1,6 @@
-class CreateRateCards < ActiveRecord::Migration
-    
-    
+class CreateRateCards < ActiveRecord::Migration[5.2]
+
+
     #
     #
     def change
@@ -10,9 +10,9 @@ class CreateRateCards < ActiveRecord::Migration
             t.integer :account_id
             t.timestamps
         end
-        
+
         add_index :rate_cards, [:account_id]
     end
-    
-    
+
+
 end

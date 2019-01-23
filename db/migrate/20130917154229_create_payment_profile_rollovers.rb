@@ -1,4 +1,4 @@
-class CreatePaymentProfileRollovers < ActiveRecord::Migration
+class CreatePaymentProfileRollovers < ActiveRecord::Migration[5.2]
   def change
     create_table :payment_profile_rollovers do |t|
       t.text :reason_for_date_change
@@ -6,7 +6,7 @@ class CreatePaymentProfileRollovers < ActiveRecord::Migration
       t.integer :payment_profile_id, :project_id, :account_id, :user_id
       t.timestamps
     end
-    
+
     add_index :payment_profile_rollovers, [:payment_profile_id]
     add_index :payment_profile_rollovers, [:project_id]
     add_index :payment_profile_rollovers, [:account_id]

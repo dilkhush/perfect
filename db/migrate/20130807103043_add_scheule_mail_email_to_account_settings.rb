@@ -1,4 +1,4 @@
-class AddScheuleMailEmailToAccountSettings < ActiveRecord::Migration
+class AddScheuleMailEmailToAccountSettings < ActiveRecord::Migration[5.2]
   def change
     add_column :account_settings, :schedule_mail_email, :string
     add_column :account_settings, :schedule_mail_frequency, :integer, :default => 1

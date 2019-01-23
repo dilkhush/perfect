@@ -1,4 +1,4 @@
-class CreateDocuments < ActiveRecord::Migration
+class CreateDocuments < ActiveRecord::Migration[5.2]
   def change
     create_table :documents do |t|
       t.integer :project_id, :user_id
@@ -7,7 +7,7 @@ class CreateDocuments < ActiveRecord::Migration
       t.datetime :file_created_at
       t.timestamps
     end
-    
+
     add_index :documents, [:project_id]
     add_index :documents, [:user_id]
   end
