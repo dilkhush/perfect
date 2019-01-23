@@ -1,7 +1,7 @@
 class TeamApi::UsersController < ToolApplicationController
 
   force_ssl
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -35,7 +35,7 @@ class TeamApi::UsersController < ToolApplicationController
     respond_to do |format|
       format.json { render json: ({ :error => :forbidden }).to_json, status: :forbidden }
     end
-    
+
   end
 
 end

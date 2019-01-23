@@ -1,14 +1,14 @@
 class SessionsController < ToolApplicationController
 
   # SSL
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
 
 
   # Callbacks
-  skip_before_filter :login_required, only: [:new, :create]
-  skip_before_filter :check_for_suspended_account
-  skip_after_filter  :store_location, :verify_authorized
+  skip_before_action :login_required, only: [:new, :create]
+  skip_before_action :check_for_suspended_account
+  skip_after_action  :store_location, :verify_authorized
 
 
   # Layout

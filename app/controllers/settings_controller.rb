@@ -1,10 +1,10 @@
 class SettingsController < ToolApplicationController
 
   # SSL
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl except: [:update_hopscotch]
 
-  before_filter :breadcrumbs
+  before_action :breadcrumbs
 
   def index
     @account_setting = @account.account_setting
@@ -109,8 +109,8 @@ class SettingsController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   def schedule
     @account_setting = @account.account_setting
 
@@ -120,8 +120,8 @@ class SettingsController < ToolApplicationController
       format.html
     end
   end
-  
-  
+
+
   def update_schedule
     @account_setting = @account.account_setting
 
@@ -137,13 +137,13 @@ class SettingsController < ToolApplicationController
       end
     end
   end
-  
+
 
   def remove_logo
     @account_setting = AccountSetting.find(params[:id])
 
     authorize @account, :destroy?
-    
+
     @account_setting.logo.destroy
     @account_setting.save
 
@@ -159,25 +159,25 @@ class SettingsController < ToolApplicationController
       format.html { render 'users/edit' }
     end
   end
-  
+
   def issue_tracker
     @account_setting = @account.account_setting
     @account_setting.decrypt_fields
     @account_setting.issue_tracker_password = nil
 
     authorize @account, :update?
-    
+
     respond_to do |format|
       format.html
     end
   end
-  
+
   def update_issue_tracker
     @account_setting = @account.account_setting
     @account_setting.updating_issue_tracker_credentails = true
 
     authorize @account, :update?
-    
+
     respond_to do |format|
       if @account_setting.update_attributes(params[:account_setting])
         flash[:notice] = "Issue tracker settings have been successfully updated"

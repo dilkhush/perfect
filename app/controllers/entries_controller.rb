@@ -2,7 +2,7 @@ class EntriesController < ToolApplicationController
 
   include Icalendar
 
-  before_filter :date_range
+  before_action :date_range
 
   def index
     authorize Entry, :read?

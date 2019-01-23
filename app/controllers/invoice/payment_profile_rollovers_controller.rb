@@ -1,15 +1,15 @@
 class Invoice::PaymentProfileRolloversController < ToolApplicationController
 
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
 
-  before_filter :find_project
+  before_action :find_project
 
   def edit
     @rollover = @project.payment_profile_rollovers.find(params[:id])
     authorize @rollover.payment_profile, :update?
     #raise ActiveRecord::RecordNotFound if @rollover.blank?
-    
+
     respond_to do |format|
       format.js
     end
@@ -28,7 +28,7 @@ class Invoice::PaymentProfileRolloversController < ToolApplicationController
   end
 
 protected
-  
+
   def find_project
     @project = @account.projects.find(params[:project_id])
   end

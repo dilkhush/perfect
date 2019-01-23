@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 # between major version releases.
 
 # Standard Rails Stuff
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.1.6'
 gem 'mysql2', '~> 0.3.13'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -21,7 +21,7 @@ gem 'money'
 gem 'httparty', '~> 0.10.2'
 gem 'prawn', '~> 0.12.0'
 gem 'google-api-client', '~> 0.11'
-gem 'wicked_pdf', '0.9.6'
+gem 'wicked_pdf'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'dropbox-sdk', '~> 1.6.1'

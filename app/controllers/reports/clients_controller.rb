@@ -1,28 +1,28 @@
 class Reports::ClientsController < ToolApplicationController
 
   # Callbacks
-  before_filter :breadcrumbs, :report_permissions
-  skip_after_filter :verify_authorized
+  before_action :breadcrumbs, :report_permissions
+  skip_after_action :verify_authorized
 
-  
+
   # Profit and loss based on invoice data
   def profit_and_loss
     @cal = Calendar.new(params)
     @cal.set_start_end_end_of_month if params[:start_date].blank?
-    
+
     @all_clients = @account.clients
                            .where(["clients.archived = ?", false])
                            .order("clients.name")
 
     @clients = @all_clients
                .paginate(page: params[:page], per_page: APP_CONFIG['pagination']['site_pagination_per_page'])
-    
+
     respond_to do |format|
       format.html
     end
   end
-  
-  
+
+
   # Profit and loss based on quote data
   def quote_profit_and_loss
     @all_clients = @account.clients
@@ -31,18 +31,18 @@ class Reports::ClientsController < ToolApplicationController
 
     @clients = @all_clients
                .paginate(page: params[:page], per_page: APP_CONFIG['pagination']['site_pagination_per_page'])
-    
+
     respond_to do |format|
       format.html
     end
   end
-  
-  
+
+
   #
   def project_profit_and_loss
     @cal = Calendar.new(params)
     @cal.set_start_end_end_of_month if params[:start_date].blank?
-    
+
     @client = @account.clients.find(params[:id])
     @projects = Project.includes([:timings, :invoices])
       .group('projects.id')
@@ -54,8 +54,8 @@ class Reports::ClientsController < ToolApplicationController
       format.js
     end
   end
-  
-  
+
+
   #
   def quote_project_profit_and_loss
     @client = @account.clients.find(params[:id])
@@ -68,8 +68,8 @@ class Reports::ClientsController < ToolApplicationController
       format.js
     end
   end
-  
-  
+
+
 private
 
 
@@ -77,6 +77,6 @@ private
     @breadcrumbs.add_breadcrumb('Dashboard', root_path)
     @breadcrumbs.add_breadcrumb('Reports', reports_path)
   end
-  
-  
+
+
 end

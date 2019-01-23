@@ -1,7 +1,7 @@
 class Track::TimingsController < ToolApplicationController
 
 
-  before_filter :check_track_is_active, :breadcrumbs
+  before_action :check_track_is_active, :breadcrumbs
 
 
   def index
@@ -87,7 +87,7 @@ class Track::TimingsController < ToolApplicationController
       }
     end
   end
-  
+
 private
 
   def breadcrumbs

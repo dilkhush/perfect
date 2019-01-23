@@ -1,14 +1,14 @@
 class DocumentsController < ToolApplicationController
-  
-  
+
+
   # Callbacks
-  before_filter :find_project, :breadcrumbs
-  
-  
+  before_action :find_project, :breadcrumbs
+
+
   # Helper method
   helper_method :can_edit?
-  
-  
+
+
   #
   #
   def index
@@ -18,26 +18,26 @@ class DocumentsController < ToolApplicationController
 
     @google_storage = CloudStorage::Base.start(:google, current_user)
     @dropbox_storage = CloudStorage::Base.start(:dropbox, current_user)
-    
+
     respond_to do |format|
       format.html
     end
   end
-  
-  
+
+
   #
   #
   def new
     authorize Document, :create?
     provider_search
-    
+
     respond_to do |format|
       format.html
       format.js
     end
   end
-  
-  
+
+
   #
   #
   def create
@@ -65,21 +65,21 @@ class DocumentsController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   # Upload form for local files
   def new_upload
     @document = @project.documents.new
 
     authorize @document, :create?
-    
+
     respond_to do |format|
       format.html
       format.js
     end
   end
-  
-  
+
+
   # Save upload for lcoal files
   def save_upload
     @document = @project.documents.new(params[:document])
@@ -88,7 +88,7 @@ class DocumentsController < ToolApplicationController
 
     @document.user_id = current_user.id
     @document.provider = 'local'
-    
+
     respond_to do |format|
       if @document.save
         format.html {redirect_to project_documents_path(@project)}
@@ -99,8 +99,8 @@ class DocumentsController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   # Generate a url to allow the user to download a given file. (Active for 60 seconds)
   def show
     @document = @project.documents.find(params[:id])
@@ -108,15 +108,15 @@ class DocumentsController < ToolApplicationController
     # 60 - URL will be valid for x number of seconds seconds
     redirect_to URI.parse(@document.attachment.expiring_url(60, 'original')).path
   end
-  
-  
+
+
   #
   #
   def destroy
     @document = @project.documents.find(params[:id])
 
     authorize @document, :destroy?
-    
+
     @document.destroy
     flash[:notice] = 'Document have been un-attached from the project'
 
@@ -124,21 +124,21 @@ class DocumentsController < ToolApplicationController
       format.html { redirect_to project_documents_path(@project) }
     end
   end
-  
-  
+
+
   # Change the logged in user within a provider
   def switch
     OauthDriveToken.remove_oauth_connection_for(current_user, APP_CONFIG['oauth'][params[:provider]]['provider_number'])
     @storage = CloudStorage::Base.start(params[:provider], current_user)
-    
+
     authorize Document, :create?
 
     respond_to do |format|
       format.html {redirect_to @storage.get_oauth_authorization_link(@account, @project)}
     end
   end
-  
-  
+
+
 protected
 
 
@@ -147,7 +147,7 @@ protected
   def find_project
     @project = @account.projects.find(params[:project_id])
   end
-  
+
 
   def breadcrumbs
     if @project
@@ -156,8 +156,8 @@ protected
       @breadcrumbs.add_breadcrumb(@project.name, project_path(@project))
     end
   end
-  
-  
+
+
   #
   # Perform folder or file lookup based on the provider which has been provided
   def provider_search
@@ -170,8 +170,8 @@ protected
       @results = @storage.search_files(params)
     end
   end
-  
-  
+
+
   # Checks to see if the given user can edit a docuemnt & comment
   def can_edit?(document)
     if has_permission?('account_holder || administrator') || current_user.id == document.user_id

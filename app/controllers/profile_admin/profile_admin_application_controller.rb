@@ -10,8 +10,8 @@ class ProfileAdmin::ProfileAdminApplicationController < ApplicationController
 
 
   # Callbacks
-  before_filter :authenticate_admin
-  skip_after_filter :verify_authorized
+  before_action :authenticate_admin
+  skip_after_action :verify_authorized
 
 
   def authenticate_admin

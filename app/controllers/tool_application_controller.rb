@@ -10,13 +10,13 @@ class ToolApplicationController < ApplicationController
 
 
   # Callbacks
-  before_filter :find_account
-  before_filter :ensure_correct_protocol
-  before_filter :login_required
-  before_filter :set_timezone
-  before_filter :check_for_suspended_account
-  after_filter  :store_location, :except => [:edit, :new, :update, :create, :destroy]
-  after_filter :verify_authorized
+  before_action :find_account
+  before_action :ensure_correct_protocol
+  before_action :login_required
+  before_action :set_timezone
+  before_action :check_for_suspended_account
+  after_action  :store_location, :except => [:edit, :new, :update, :create, :destroy]
+  after_action :verify_authorized
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 

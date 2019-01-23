@@ -1,12 +1,12 @@
 class AccountsController < FrontApplicationController
 
   # SSL
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
 
 
   # Callbacks
-  before_filter :find_plan, :except => [:verify_suite]
+  before_action :find_plan, :except => [:verify_suite]
 
 
   # TODO test

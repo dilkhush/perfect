@@ -2,8 +2,8 @@ class Api::V1::ProjectsController < Api::V1::ApplicationController
 
   respond_to :json
 
-  before_filter :parse_date_params
-  before_filter :default_filters
+  before_action :parse_date_params
+  before_action :default_filters
 
   # Public: Returns a list of Projects for an Account.
   #
@@ -36,7 +36,7 @@ class Api::V1::ProjectsController < Api::V1::ApplicationController
                                 .timings
                                 .where(started_at: @start_date...@end_date)
   end
-  
+
   # Public: Returns a list of Tasks for a Project.
   #
   # Endpoint: GET /api/v1/projects/{project_id}/tasks.json
@@ -46,7 +46,7 @@ class Api::V1::ProjectsController < Api::V1::ApplicationController
     @tasks = @account_projects.find(params[:id])
                               .tasks
   end
-  
+
   # Public: Returns a list of PaymentProfiles for a Project.
   #
   # Endpoint: GET /api/v1/projects/{project_id}/payment_profiles.json

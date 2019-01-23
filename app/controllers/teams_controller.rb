@@ -1,10 +1,10 @@
 class TeamsController < ToolApplicationController
 
   # SSL
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
-  
-  before_filter :breadcrumbs
+
+  before_action :breadcrumbs
 
   def index
     @teams = @account.teams.paginate(:page => params[:page],
@@ -80,11 +80,11 @@ class TeamsController < ToolApplicationController
       format.html {redirect_to(teams_path)}
     end
   end
-  
+
 
 private
-  
-  
+
+
   def breadcrumbs
     @breadcrumbs.add_breadcrumb('Dashboard', root_path)
     @breadcrumbs.add_breadcrumb('People', users_path)

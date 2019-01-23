@@ -1,8 +1,8 @@
 class Invoice::InvoicesController < ToolApplicationController
 
   # Callbacks
-  before_filter :check_invoice_is_active
-  before_filter :find_project, :breadcrumbs
+  before_action :check_invoice_is_active
+  before_action :find_project, :breadcrumbs
 
   def index
     @invoices = @project.invoices.invoice_date_order
@@ -134,8 +134,8 @@ class Invoice::InvoicesController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   # Change the invoice status
   def change_status
     @invoice = @project.invoices.find(params[:id])
@@ -143,32 +143,32 @@ class Invoice::InvoicesController < ToolApplicationController
     authorize @invoice, :update?
 
     @invoice.invoice_status = params[:status]
-    
+
     if @invoice.save
       flash[:notice] = "Status has been successfully changed"
     else
       flash[:alert] = @invoice.errors.full_messages.first
     end
-    
+
     respond_to do |format|
       format.html {redirect_to(invoice_project_invoice_path(@project, @invoice))}
     end
   end
-  
-  
-  # Remove 
+
+
+  # Remove
   def destroy
     @invoice = @project.invoices.find(params[:id])
 
     authorize @invoice, :destroy?
-    
+
     if @invoice.invoice_usages.blank?
       InvoiceDeletion.destroy_invoice(@invoice, current_user)
       flash[:notice] = "Invoice has been successfully removed"
     else
       flash[:alert] = "Please remove all associated invoice usages before attempting to delete this invoice"
     end
-    
+
     respond_to do |format|
       format.html {redirect_to(invoice_project_invoices_path(@project))}
     end

@@ -10,13 +10,14 @@ Scheduling::Application.configure do
 
   # Code is not reloaded between requests
   config.cache_classes = true
-config.eager_load = false
+  config.eager_load = false
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-config.active_record.migration_error = :page_load
+  config.active_record.migration_error = :page_load
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_files = false
+  config.public_file_server.enabled = false
+  config.public_file_server.headers = "public, max-age=3600"
 
   # Compress JavaScripts and CSS
   config.assets.compress = true

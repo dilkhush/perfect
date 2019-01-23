@@ -2,7 +2,7 @@ class TrackApi::TasksController < ToolApplicationController
 
 
   # Callbacks
-  before_filter :find_project
+  before_action :find_project
 
 
   #

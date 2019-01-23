@@ -1,10 +1,10 @@
 class ProjectsController < ToolApplicationController
 
   # Callbacks
-  before_filter :check_schedule_is_active, :only => [:schedule]
-  before_filter :check_track_is_active, :only => [:track]
-  before_filter :dont_edit_common_settings_project, :only => [:edit, :update, :archive, :activate]
-  before_filter :breadcrumbs
+  before_action :check_schedule_is_active, :only => [:schedule]
+  before_action :check_track_is_active, :only => [:track]
+  before_action :dont_edit_common_settings_project, :only => [:edit, :update, :archive, :activate]
+  before_action :breadcrumbs
 
   def index
     params[:status] ||= 'open'
@@ -47,8 +47,8 @@ class ProjectsController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   #
   #
   def update
@@ -62,16 +62,16 @@ class ProjectsController < ToolApplicationController
       if @project.update_attributes(params[:project])
         flash[:notice] = "Changes have been saved successfully"
 
-        format.html { 
-          redirect_back_or_default(project_path(@project)) 
+        format.html {
+          redirect_back_or_default(project_path(@project))
         }
       else
         format.html { render :action => 'edit' }
       end
     end
   end
-      
-  
+
+
   #
   #
   def show
@@ -79,7 +79,7 @@ class ProjectsController < ToolApplicationController
     authorize @project, :read?
     @estimate_time = @project.total_estimate
     @tracked_time = @project.total_tracked
-    
+
     # Schedule
     if @account.component_enabled?(1)
       @people_scheduled = @project.all_people_scheduled
@@ -150,8 +150,8 @@ class ProjectsController < ToolApplicationController
       format.html { redirect_to(project_path(@project)) }
     end
   end
-  
-  
+
+
   def edit_percentage_complete
     @project = @account.projects.find(params[:id])
     authorize @project, :update?
@@ -160,8 +160,8 @@ class ProjectsController < ToolApplicationController
       format.js
     end
   end
-  
-  
+
+
   def update_percentage_complete
     @project = @account.projects.find(params[:id])
     authorize @project, :update?
@@ -192,6 +192,6 @@ protected
     @project = @account.projects.find(params[:id])
     raise ActiveRecord::RecordNotFound if @account.account_setting.common_project_id == @project.id
   end
-  
-  
+
+
 end

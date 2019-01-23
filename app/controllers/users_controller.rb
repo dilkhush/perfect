@@ -2,13 +2,13 @@ class UsersController < ToolApplicationController
 
 
   # SSL
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
 
-  before_filter :breadcrumbs
+  before_action :breadcrumbs
 
   # Callbacks
-  skip_before_filter :check_for_suspended_account, :only => [:edit, :update]
+  skip_before_action :check_for_suspended_account, :only => [:edit, :update]
 
 
   def index
@@ -131,7 +131,7 @@ class UsersController < ToolApplicationController
 
     authorize @user, :update?
 
-    @user.roles = [role] if role    
+    @user.roles = [role] if role
 
     respond_to do |format|
       if role.title == 'account_holder' && current_user.roles.first.title != 'account_holder'

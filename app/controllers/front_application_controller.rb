@@ -6,8 +6,8 @@ class FrontApplicationController < ApplicationController
 
 
   # Callbacks
-  before_filter :ensure_correct_protocol
-  before_filter :dont_allow_subdomain
+  before_action :ensure_correct_protocol
+  before_action :dont_allow_subdomain
 
 
 protected

@@ -2,8 +2,8 @@ class Api::V1::ClientsController < Api::V1::ApplicationController
 
   respond_to :json
 
-  before_filter :parse_date_params
-  before_filter :default_filters
+  before_action :parse_date_params
+  before_action :default_filters
 
   # Public: Returns a list of Clients for an Account.
   #

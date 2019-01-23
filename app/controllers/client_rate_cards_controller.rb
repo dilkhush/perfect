@@ -1,7 +1,7 @@
 class ClientRateCardsController < ToolApplicationController
 
   # Callbacks
-  before_filter :find_client
+  before_action :find_client
 
 
   # Show all services along with over-rides

@@ -2,31 +2,31 @@ class Reports::PagesController < ToolApplicationController
 
 
   # Callbacks
-  before_filter :breadcrumbs, :report_permissions
-  skip_after_filter :verify_authorized
+  before_action :breadcrumbs, :report_permissions
+  skip_after_action :verify_authorized
 
   def index
     respond_to do |format|
       format.html
     end
   end
-  
-  
+
+
   # Show form enabling user to select the project they would like to see the report for
   def select_project
     get_default_data
-    
+
     respond_to do |format|
       format.html
       format.js
     end
   end
-  
-  
+
+
   # Check if project has been selected and redirect to correct page (remember selections if required)
   def submit_select_project
     set_remember_session_data
-    
+
     respond_to do |format|
       if params[:project_id].present?
         format.html { redirect_to URI.parse(params[:path].gsub('0', params[:project_id])).path }
@@ -37,8 +37,8 @@ class Reports::PagesController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   # Update project select
   def update_project
     if params[:client_id].present?
@@ -47,13 +47,13 @@ class Reports::PagesController < ToolApplicationController
     else
       @projects = @account.projects.not_archived.name_ordered
     end
-    
+
     respond_to do |format|
       format.js
     end
   end
-  
-  
+
+
 private
 
 
@@ -67,20 +67,20 @@ private
     # Rememebr funcionality
     if params[:remember].present?
       cookies[:defaults_report_selection_client_id] = params[:client_id]
-      cookies[:defaults_report_selection_project_id] = params[:project_id] 
+      cookies[:defaults_report_selection_project_id] = params[:project_id]
     else
       cookies[:defaults_report_selection_client_id] = nil
       cookies[:defaults_report_selection_project_id] = nil
     end
   end
-  
-  
+
+
   # Laod data based on defaults or start from scratch
   def get_default_data
     begin # Just incase the project or client has been deleted
       client  = @account.clients.find(cookies[:defaults_report_selection_client_id])   if cookies[:defaults_report_selection_client_id].present?
       project = @account.projects.find(cookies[:defaults_report_selection_project_id]) if cookies[:defaults_report_selection_project_id].present?
-    
+
       params[:client_id] = client.id if client.present?
       params[:project_id] = project.id if project.present?
     rescue
@@ -93,6 +93,6 @@ private
       @projects = @account.projects.not_archived.name_ordered
     end
   end
-  
-  
+
+
 end

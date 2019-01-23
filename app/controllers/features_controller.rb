@@ -1,7 +1,7 @@
 class FeaturesController < ToolApplicationController
 
   # Callbacks
-  before_filter :find_project
+  before_action :find_project
 
 
   def new

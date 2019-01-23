@@ -2,7 +2,7 @@ class DashboardsController < ToolApplicationController
 
 
   # Callbacks
-  skip_before_filter :check_for_suspended_account
+  skip_before_action :check_for_suspended_account
 
 
   def index

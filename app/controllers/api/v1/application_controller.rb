@@ -3,7 +3,7 @@ class Api::V1::ApplicationController < ActionController::Base
   DEFAULT_START_DATE = 1.year.ago
   DEFAULT_END_DATE = Time.now
 
-  before_filter :authenticate_user
+  before_action :authenticate_user
   force_ssl
 
   protected

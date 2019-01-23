@@ -1,9 +1,9 @@
 class Reports::ProjectsController < ToolApplicationController
 
   # Callbacks
-  before_filter :breadcrumbs, :report_permissions
-  skip_after_filter :verify_authorized
-  
+  before_action :breadcrumbs, :report_permissions
+  skip_after_action :verify_authorized
+
   # Project overview report
   def overview
     @projects = Project.select('projects.*')
@@ -47,18 +47,18 @@ class Reports::ProjectsController < ToolApplicationController
 
     @months = []
     (0...@number_of_months).to_a.collect{ |i| @months << (Date.today + i.months).strftime('%B') }
-  end  
-  
+  end
+
   # Percentage time spent on project report
   def percentage_time_spent
     @cal = Calendar.new(params)
     @cal.set_start_end_end_of_month if params[:start_date].blank?
     params[:project_id] ||= @account.projects.name_ordered.first.id.to_s
-    
+
     @project = @account.projects.find(params[:project_id])
-    
+
     @teams = @account.teams.order('name')
-    
+
     respond_to do |format|
       format.html
     end
@@ -85,20 +85,20 @@ class Reports::ProjectsController < ToolApplicationController
 
     @breadcrumbs.add_breadcrumb('Client Utilisation', nil)
   end
-  
-  
+
+
   def qa_stats
     @project = @account.projects.find(params[:id])
     @qa_stats = @project.qa_stats.order('qa_stats.created_at DESC').paginate(per_page: 100, page: params[:page])
     @priority_headings  = QaStat.get_all_column_headings_for(@qa_stats, :priority)
     @status_headings    = QaStat.get_all_column_headings_for(@qa_stats, :status)
-    
+
     respond_to do |format|
       format.html
     end
   end
-  
-  
+
+
 private
 
   def sanitized_sort_params(field, order)
@@ -116,5 +116,5 @@ private
     @breadcrumbs.add_breadcrumb('Dashboard', root_path)
     @breadcrumbs.add_breadcrumb('Reports', reports_path)
   end
-  
+
 end

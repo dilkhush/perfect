@@ -1,6 +1,6 @@
 class ClientsController < ToolApplicationController
-  
-  before_filter :breadcrumbs
+
+  before_action :breadcrumbs
 
   def index
     params[:archived] ||= '0'
@@ -115,10 +115,10 @@ class ClientsController < ToolApplicationController
       format.html { redirect_to(client_path(@client)) }
     end
   end
-  
-  
-  
-  
+
+
+
+
 private
 
   def breadcrumbs
@@ -126,5 +126,5 @@ private
     @breadcrumbs.add_breadcrumb('People', users_path)
     @breadcrumbs.add_breadcrumb('Clients', clients_path) unless params[:action] == 'index'
   end
-  
+
 end

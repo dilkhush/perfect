@@ -1,6 +1,6 @@
 class PhasesController < ToolApplicationController
 
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
 
   def index

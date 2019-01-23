@@ -2,13 +2,13 @@ class AccountSettingsController < ToolApplicationController
 
 
   # SSL
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
 
 
   # Callbacks
-  skip_before_filter :check_for_suspended_account
-  before_filter :breadcrumbs
+  skip_before_action :check_for_suspended_account
+  before_action :breadcrumbs
 
   def index
     authorize Account, :update?

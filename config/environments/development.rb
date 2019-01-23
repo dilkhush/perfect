@@ -12,12 +12,18 @@ Scheduling::Application.configure do
   config.action_mailer.default_url_options = { :host => APP_CONFIG['env_config']['site_host'] }
 
   config.cache_classes = false
-config.eager_load = false
+
+  config.eager_load = false
   # Log error messages when you accidentally call methods on nil.
   # config.whiny_nils = true
-config.active_record.migration_error = :page_load
+
+  config.action_controller.include_all_helpers = false
+
+  config.active_record.migration_error = :page_load
+
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
+
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send

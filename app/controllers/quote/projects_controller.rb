@@ -1,10 +1,10 @@
 class Quote::ProjectsController < ToolApplicationController
-  
-  
-  # Callbacks
-  before_filter :check_quote_is_active, :breadcrumbs
 
-  
+
+  # Callbacks
+  before_action :check_quote_is_active, :breadcrumbs
+
+
   #
   def index
     params[:archived] ||= '0'
@@ -14,8 +14,8 @@ class Quote::ProjectsController < ToolApplicationController
       format.html
     end
   end
-  
-  
+
+
   #
   def search
     @quotes = Quote.search(@account, params)

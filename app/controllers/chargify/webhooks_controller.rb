@@ -8,7 +8,7 @@ class Chargify::WebhooksController < ApplicationController
 
 
   # Callbacks
-  before_filter :verify, :only => :dispatch
+  before_action :verify, :only => :dispatch
 
 
   # Vars
@@ -94,7 +94,7 @@ class Chargify::WebhooksController < ApplicationController
 
   protected
 
-  
+
   def verify
     if params[:signature].nil?
       params[:signature] = request.headers["HTTP_X_CHARGIFY_WEBHOOK_SIGNATURE"]
@@ -119,6 +119,6 @@ class Chargify::WebhooksController < ApplicationController
   def sanitize_event(event)
     EVENTS.include?(event) ? event : nil
   end
-  
+
 
 end

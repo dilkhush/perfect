@@ -4,8 +4,8 @@ class TasksController < ToolApplicationController
   respond_to :html, :json
 
   # Callbacks
-  before_filter :find_project, :breadcrumbs
-  before_filter :dont_edit_common_settings_project, :only => [:edit, :update, :destroy, :create, :new]
+  before_action :find_project, :breadcrumbs
+  before_action :dont_edit_common_settings_project, :only => [:edit, :update, :destroy, :create, :new]
 
 
   #

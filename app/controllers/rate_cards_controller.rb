@@ -1,10 +1,10 @@
 class RateCardsController < ToolApplicationController
 
   # SSL
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
 
-  before_filter :breadcrumbs
+  before_action :breadcrumbs
 
   def index
     @rate_cards = @account.rate_cards.service_type_ordered

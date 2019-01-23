@@ -1,17 +1,17 @@
 class Quote::QuoteSectionsController < ToolApplicationController
-  
-  
+
+
   # Callbacks
-  before_filter :find_project_and_quote
-  
-  
+  before_action :find_project_and_quote
+
+
   #
   #
   def update
     authorize @quote, :update?
     @quote_section = @quote.quote_sections.find(params[:id])
     @saved = @quote_section.update_attributes(params[:quote_section])
-    
+
     respond_to do |format|
       if @saved
         @quote.update_last_saved_by_to(current_user)
@@ -29,14 +29,14 @@ class Quote::QuoteSectionsController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   #
   #
   def create
     authorize @quote, :create?
     @quote_section = @quote.quote_sections.create
-    
+
     respond_to do |format|
       @quote.update_last_saved_by_to(current_user)
       format.html {
@@ -46,8 +46,8 @@ class Quote::QuoteSectionsController < ToolApplicationController
       format.js
     end
   end
-  
-  
+
+
   #
   #
   def destroy
@@ -64,8 +64,8 @@ class Quote::QuoteSectionsController < ToolApplicationController
       format.js
     end
   end
-  
-  
+
+
   #
   #
   def sort
@@ -77,11 +77,11 @@ class Quote::QuoteSectionsController < ToolApplicationController
       end
       @quote.update_last_saved_by_to(current_user)
     end
-    
+
     render nothing: true
   end
-  
-  
+
+
 protected
 
 
@@ -90,6 +90,6 @@ protected
     @project = @account.projects.find(params[:project_id])
     @quote = @project.quotes.find(params[:quote_id])
   end
-  
-    
+
+
 end

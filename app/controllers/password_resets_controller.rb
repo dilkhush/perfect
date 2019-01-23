@@ -2,14 +2,14 @@ class PasswordResetsController < ToolApplicationController
 
 
   # SSL
-  skip_before_filter :ensure_correct_protocol
+  skip_before_action :ensure_correct_protocol
   force_ssl
 
 
   # Callbacks
-  skip_before_filter :login_required
-  skip_before_filter :check_for_suspended_account
-  skip_after_filter  :verify_authorized
+  skip_before_action :login_required
+  skip_before_action :check_for_suspended_account
+  skip_after_action  :verify_authorized
 
 
   # Layout

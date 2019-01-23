@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
-  
+
   include Pundit
   # Callbacks
-  before_filter :reload_libs if Rails.env.development?
-  before_filter :load_breadcrumbs
+  before_action :reload_libs if Rails.env.development?
+  before_action :load_breadcrumbs
 
-  
+
   protect_from_forgery
-  
+
   #
   # Dont allow ssl on non ssl pages
   def ensure_correct_protocol

@@ -2,7 +2,7 @@ class Schedule::EntriesController < ToolApplicationController
 
 
   # Callbacks
-  before_filter :check_schedule_is_active, :breadcrumbs
+  before_action :check_schedule_is_active, :breadcrumbs
 
   def index
     @cal = Calendar.new(params)

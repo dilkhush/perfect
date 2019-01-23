@@ -14,8 +14,8 @@ Scheduling::Application.configure do
   config.cache_classes = true
 
   # Configure static asset server for tests with Cache-Control for performance
-  config.serve_static_files = true
-  config.static_cache_control = "public, max-age=3600"
+  config.public_file_server.enabled = false
+  config.public_file_server.headers = "public, max-age=3600"
 
   # Log error messages when you accidentally call methods on nil
   # config.whiny_nils = true
@@ -34,12 +34,12 @@ Scheduling::Application.configure do
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
-config.eager_load = false
+  config.eager_load = false
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
   # config.active_record.schema_format = :sql
-config.active_record.migration_error = :page_load
+  config.active_record.migration_error = :page_load
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 

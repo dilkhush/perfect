@@ -1,10 +1,10 @@
 class Quote::QuoteActivitiesController < ToolApplicationController
-  
-  
+
+
   # Callbacks
-  before_filter :find_project_and_quote
-  
-  
+  before_action :find_project_and_quote
+
+
   #
   #
   def new
@@ -15,8 +15,8 @@ class Quote::QuoteActivitiesController < ToolApplicationController
       format.js
     end
   end
-  
-  
+
+
   #
   #
   def create
@@ -41,28 +41,28 @@ class Quote::QuoteActivitiesController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   #
   #
   def edit
     authorize @quote, :update?
     @quote_activity = @quote.quote_activities.find(params[:id])
     @quote_activity.attributes = {:min_estimated => @quote_activity.min_estimated_out, :max_estimated => @quote_activity.max_estimated_out, :discount_percentage => @quote_activity.discount_percentage_out}
-    
+
     respond_to do |format|
       format.html
       format.js
     end
   end
-  
-  
+
+
   #
   #
   def update
     authorize @quote, :update?
     @quote_activity = @quote.quote_activities.find(params[:id])
-    
+
     respond_to do |format|
       if @quote_activity.update_attributes(params[:quote_activity])
         @quote.update_last_saved_by_to(current_user)
@@ -77,8 +77,8 @@ class Quote::QuoteActivitiesController < ToolApplicationController
       end
     end
   end
-  
-  
+
+
   #
   #
   def destroy
@@ -86,7 +86,7 @@ class Quote::QuoteActivitiesController < ToolApplicationController
     @quote_activity = @quote.quote_activities.find(params[:id])
     @quote_activity.destroy
     @quote.update_last_saved_by_to(current_user)
-    
+
     respond_to do |format|
       format.html {
         flash[:notice] = 'Activity has been successfully removed'
@@ -95,8 +95,8 @@ class Quote::QuoteActivitiesController < ToolApplicationController
       format.js
     end
   end
-  
-  
+
+
   #
   #
   def sort
@@ -109,20 +109,20 @@ class Quote::QuoteActivitiesController < ToolApplicationController
       end
       @quote.update_last_saved_by_to(current_user)
     end
-    
+
     render nothing: true
   end
-  
-  
-  
+
+
+
 protected
 
-  
+
   # Find nested elements
   def find_project_and_quote
     @project = @account.projects.find(params[:project_id])
     @quote = @project.quotes.find(params[:quote_id])
   end
-  
-  
+
+
 end

@@ -2,8 +2,8 @@ class Api::V1::InvoicesController < Api::V1::ApplicationController
 
   respond_to :json
 
-  before_filter :parse_date_params
-  before_filter :default_filters
+  before_action :parse_date_params
+  before_action :default_filters
 
   DEFAULT_DUE_END_DATE = 30.days.from_now
 
