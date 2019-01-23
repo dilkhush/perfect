@@ -27,8 +27,7 @@ protected
   # Find account
   def find_account
     @account = Account.find_active_account(request.subdomain) unless request.subdomain.blank?
-    # NOTE: revert this just for demo
-    # raise ActiveRecord::RecordNotFound if @account.blank?
+    raise ActiveRecord::RecordNotFound if @account.blank?
   end
 
 
