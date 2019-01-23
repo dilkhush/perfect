@@ -6,8 +6,6 @@ tmp/
 bin/
 .sass-cache/
 .vagrant/
-config/database.yml
-config/secrets.yml
 .autotest
 *DS_Store
 
