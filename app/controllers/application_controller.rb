@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :reload_libs if Rails.env.development?
   before_action :load_breadcrumbs
 
+  helper :all
 
   protect_from_forgery
 

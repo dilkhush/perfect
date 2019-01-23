@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 # between major version releases.
 
 # Standard Rails Stuff
-gem 'rails', '~> 5.1.6'
-gem 'mysql2', '~> 0.3.13'
+gem 'rails', '~> 5.2.2'
+gem 'mysql2'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
@@ -64,6 +64,7 @@ group :test do
   gem 'test-unit'
   gem 'rails-controller-testing'
   gem 'minitest', '5.10.3'
+  gem 'shoulda-matchers'
 end
 
 group :development do

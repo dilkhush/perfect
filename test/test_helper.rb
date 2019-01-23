@@ -8,6 +8,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'unit/policies/policy_test'
 require 'delorean'
+
 include FactoryGirl::Syntax::Methods
 
 class ActiveSupport::TestCase
