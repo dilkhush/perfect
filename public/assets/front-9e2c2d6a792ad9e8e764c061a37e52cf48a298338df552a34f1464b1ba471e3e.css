@@ -1,0 +1,2902 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+
+
+
+
+*/
+/* line 1, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+option[disabled] {
+  display: none;
+}
+
+/* line 5, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.hidden {
+  display: none;
+}
+
+/* line 9, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.align_left {
+  text-align: left;
+}
+
+/* line 13, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.align_right {
+  text-align: right;
+}
+
+/* line 17, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.align_center {
+  text-align: center;
+}
+
+/* line 21, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.align_justify {
+  text-align: justify;
+}
+
+/* line 25, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.small_text {
+  font-size: 0.9em;
+}
+
+/* line 29, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.light_text {
+  color: #999999;
+}
+
+/* line 33, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.strong_text {
+  font-weight: bold;
+}
+
+/* line 37, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.float_right {
+  float: right;
+}
+
+/* line 41, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.float_left {
+  float: left;
+}
+
+/* line 45, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_0 {
+  padding: 0;
+}
+
+/* line 49, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_left_5 {
+  padding-left: 5px;
+}
+
+/* line 53, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_right_10 {
+  padding-right: 10px;
+}
+
+/* line 57, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_bottom_5 {
+  padding-bottom: 5px;
+}
+
+/* line 61, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_bottom_10 {
+  padding-bottom: 10px;
+}
+
+/* line 65, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_bottom_20 {
+  padding-bottom: 20px;
+}
+
+/* line 69, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_bottom_30 {
+  padding-bottom: 30px;
+}
+
+/* line 73, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_top_10 {
+  padding-top: 10px;
+}
+
+/* line 77, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_top_15 {
+  padding-top: 15px;
+}
+
+/* line 81, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.padding_top_30 {
+  padding-top: 30px;
+}
+
+/* line 85, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.margin_bottom_10 {
+  margin-bottom: 10px;
+}
+
+/* line 89, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.margin_bottom_30 {
+  margin-bottom: 30px;
+}
+
+/* line 93, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.margin_top_10 {
+  margin-top: 10px;
+}
+
+/* line 97, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_general.css.scss */
+.margin_right_30 {
+  margin-right: 30px;
+}
+/* line 1, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+body {
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 10, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+p {
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+
+/* line 15, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+img {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 20, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+form {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 24, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 29, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 34, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+ul {
+  list-style-type: none;
+}
+
+/* line 38, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 42, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.clearing {
+  clear: both;
+  height: 1px;
+  margin: 0 0 -1px 0;
+  padding: 0;
+}
+
+/* line 49, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+#top_of_page {
+  cursor: pointer;
+  left: 96%;
+  position: fixed;
+  top: 100%;
+  font-size: 28px;
+}
+
+/* @group Base */
+/* line 58, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container {
+  font-size: 13px;
+  position: relative;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+/* line 65, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-drop {
+  background: #fff;
+  border: 1px solid #aaa;
+  border-top: 0;
+  position: absolute;
+  top: 29px;
+  left: 0;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1010;
+}
+
+/* @end */
+/* @group Single Chosen */
+/* line 81, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-single {
+  background-color: #ffffff;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee', GradientType=0 );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #ffffff), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+  background-image: -webkit-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-image: -o-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-image: -ms-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  background-image: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid #aaaaaa;
+  -webkit-box-shadow: 0 0 3px #ffffff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 3px #ffffff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px #ffffff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  height: 23px;
+  line-height: 24px;
+  padding: 0 0 0 8px;
+  color: #444444;
+  text-decoration: none;
+}
+
+/* line 110, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-default {
+  color: #999;
+}
+
+/* line 113, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-single span {
+  margin-right: 26px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+/* line 122, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-single abbr {
+  display: block;
+  position: absolute;
+  right: 26px;
+  top: 6px;
+  width: 12px;
+  height: 13px;
+  font-size: 1px;
+  background: url("chosen-sprite.png") right top no-repeat;
+}
+
+/* line 132, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-single abbr:hover {
+  background-position: right -11px;
+}
+
+/* line 135, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-single div {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: 18px;
+}
+
+/* line 143, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-single div b {
+  background: url("chosen-sprite.png") no-repeat 0 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 149, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-search {
+  padding: 3px 4px;
+  position: relative;
+  margin: 0;
+  white-space: nowrap;
+  z-index: 1010;
+}
+
+/* line 156, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-search input {
+  background: #fff url("chosen-sprite.png") no-repeat 100% -22px;
+  background: url("chosen-sprite.png") no-repeat 100% -22px, -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+  background: url("chosen-sprite.png") no-repeat 100% -22px, -webkit-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: url("chosen-sprite.png") no-repeat 100% -22px, -moz-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: url("chosen-sprite.png") no-repeat 100% -22px, -o-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: url("chosen-sprite.png") no-repeat 100% -22px, -ms-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: url("chosen-sprite.png") no-repeat 100% -22px, linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  margin: 1px 0;
+  padding: 4px 20px 4px 5px;
+  outline: 0;
+  border: 1px solid #aaa;
+  font-family: sans-serif;
+  font-size: 1em;
+}
+
+/* line 171, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single .chzn-drop {
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+/* @end */
+/* line 181, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-single-nosearch .chzn-search input {
+  position: absolute;
+  left: -9000px;
+}
+
+/* @group Multi Chosen */
+/* line 187, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices {
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background-image: -moz-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background-image: -o-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background-image: -ms-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background-image: linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  border: 1px solid #aaa;
+  margin: 0;
+  padding: 0;
+  cursor: text;
+  overflow: hidden;
+  height: auto !important;
+  height: 1%;
+  position: relative;
+}
+
+/* line 204, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices li {
+  float: left;
+  list-style: none;
+}
+
+/* line 208, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices .search-field {
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 213, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices .search-field input {
+  color: #666;
+  background: transparent !important;
+  border: 0 !important;
+  font-family: sans-serif;
+  font-size: 100%;
+  height: 15px;
+  padding: 5px;
+  margin: 1px 0;
+  outline: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 228, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices .search-field .default {
+  color: #999;
+}
+
+/* line 231, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices .search-choice {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #e4e4e4;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#eeeeee', GradientType=0 );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: -ms-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
+  -webkit-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2px #ffffff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  color: #333;
+  border: 1px solid #aaaaaa;
+  line-height: 13px;
+  padding: 3px 20px 3px 5px;
+  margin: 3px 0 3px 5px;
+  position: relative;
+  cursor: default;
+}
+
+/* line 257, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices .search-choice-focus {
+  background: #d4d4d4;
+}
+
+/* line 260, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close {
+  display: block;
+  position: absolute;
+  right: 3px;
+  top: 4px;
+  width: 12px;
+  height: 13px;
+  font-size: 1px;
+  background: url("chosen-sprite.png") right top no-repeat;
+}
+
+/* line 270, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
+  background-position: right -11px;
+}
+
+/* line 273, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-choices .search-choice-focus .search-choice-close {
+  background-position: right -11px;
+}
+
+/* @end */
+/* @group Results */
+/* line 279, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results {
+  margin: 0 4px 4px 0;
+  max-height: 240px;
+  padding: 0 0 0 4px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* line 288, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-results {
+  margin: -1px 0 0;
+  padding: 0;
+}
+
+/* line 292, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results li {
+  display: none;
+  line-height: 15px;
+  padding: 5px 6px;
+  margin: 0;
+  list-style: none;
+}
+
+/* line 299, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results .active-result {
+  cursor: pointer;
+  display: list-item;
+}
+
+/* line 303, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results .highlighted {
+  background-color: #3875d7;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3875d7', endColorstr='#2a62bc', GradientType=0 );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc));
+  background-image: -webkit-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
+  background-image: -moz-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
+  background-image: -o-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
+  background-image: -ms-linear-gradient(top, #3875d7 20%, #2a62bc 90%);
+  background-image: linear-gradient(top, #3875d7 20%, #2a62bc 90%);
+  color: #fff;
+}
+
+/* line 314, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results li em {
+  background: #feffde;
+  font-style: normal;
+}
+
+/* line 318, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results .highlighted em {
+  background: transparent;
+}
+
+/* line 321, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results .no-results {
+  background: #f4f4f4;
+  display: list-item;
+}
+
+/* line 325, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results .group-result {
+  cursor: default;
+  color: #999;
+  font-weight: bold;
+}
+
+/* line 330, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results .group-option {
+  padding-left: 15px;
+}
+
+/* line 333, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-multi .chzn-drop .result-selected {
+  display: none;
+}
+
+/* line 336, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results-scroll {
+  background: white;
+  margin: 0 4px;
+  position: absolute;
+  text-align: center;
+  width: 321px;
+  /* This should by dynamic with js */
+  z-index: 1;
+}
+
+/* line 344, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results-scroll span {
+  display: inline-block;
+  height: 17px;
+  text-indent: -5000px;
+  width: 9px;
+}
+
+/* line 350, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results-scroll-down {
+  bottom: 0;
+}
+
+/* line 353, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results-scroll-down span {
+  background: url("chosen-sprite.png") no-repeat -4px -3px;
+}
+
+/* line 356, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container .chzn-results-scroll-up span {
+  background: url("chosen-sprite.png") no-repeat -22px -3px;
+}
+
+/* @end */
+/* @group Active  */
+/* line 362, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-active .chzn-single {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #5897fb;
+}
+
+/* line 369, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-active .chzn-single-with-drop {
+  border: 1px solid #aaa;
+  -webkit-box-shadow: 0 1px 0 #fff inset;
+  -moz-box-shadow: 0 1px 0 #fff inset;
+  -o-box-shadow: 0 1px 0 #fff inset;
+  box-shadow: 0 1px 0 #fff inset;
+  background-color: #eee;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff', GradientType=0 );
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #eeeeee), color-stop(80%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background-image: -moz-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background-image: -o-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background-image: -ms-linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  background-image: linear-gradient(top, #eeeeee 20%, #ffffff 80%);
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 390, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-active .chzn-single-with-drop div {
+  background: transparent;
+  border-left: none;
+}
+
+/* line 394, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-active .chzn-single-with-drop div b {
+  background-position: -18px 1px;
+}
+
+/* line 397, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-active .chzn-choices {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #5897fb;
+}
+
+/* line 404, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-container-active .chzn-choices .search-field input {
+  color: #111 !important;
+}
+
+/* @end */
+/* @group Disabled Support */
+/* line 410, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-disabled {
+  cursor: default;
+  opacity: 0.5 !important;
+}
+
+/* line 414, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-disabled .chzn-single {
+  cursor: default;
+}
+
+/* line 417, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-disabled .chzn-choices .search-choice .search-choice-close {
+  cursor: default;
+}
+
+/* @group Right to Left */
+/* line 422, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl {
+  text-align: right;
+}
+
+/* line 423, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-single {
+  padding: 0 8px 0 0;
+  overflow: visible;
+}
+
+/* line 424, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-single span {
+  margin-left: 26px;
+  margin-right: 0;
+  direction: rtl;
+}
+
+/* line 426, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-single div {
+  left: 3px;
+  right: auto;
+}
+
+/* line 427, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-single abbr {
+  left: 26px;
+  right: auto;
+}
+
+/* line 431, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-choices .search-field input {
+  direction: rtl;
+}
+
+/* line 432, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-choices li {
+  float: right;
+}
+
+/* line 433, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-choices .search-choice {
+  padding: 3px 5px 3px 19px;
+  margin: 3px 5px 3px 0;
+}
+
+/* line 434, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-choices .search-choice .search-choice-close {
+  left: 4px;
+  right: auto;
+  background-position: right top;
+}
+
+/* line 435, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl.chzn-container-single .chzn-results {
+  margin: 0 0 4px 4px;
+  padding: 0 4px 0 0;
+}
+
+/* line 436, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-results .group-option {
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+/* line 437, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl.chzn-container-active .chzn-single-with-drop div {
+  border-right: none;
+}
+
+/* line 438, /home/dilkhush/workspace/perfect/app/assets/stylesheets/a_shared.css.scss */
+.chzn-rtl .chzn-search input {
+  background: #fff url("chosen-sprite.png") no-repeat -38px -22px;
+  background: url("chosen-sprite.png") no-repeat -38px -22px, -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(1%, #eeeeee), color-stop(15%, #ffffff));
+  background: url("chosen-sprite.png") no-repeat -38px -22px, -webkit-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: url("chosen-sprite.png") no-repeat -38px -22px, -moz-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: url("chosen-sprite.png") no-repeat -38px -22px, -o-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: url("chosen-sprite.png") no-repeat -38px -22px, -ms-linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  background: url("chosen-sprite.png") no-repeat -38px -22px, linear-gradient(top, #eeeeee 1%, #ffffff 15%);
+  padding: 4px 5px 4px 20px;
+  direction: rtl;
+}
+
+/* @end */
+/* line 1, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/buttons.css.scss */
+.pricing_and_signup_button {
+  background: url(front/buttons/button_bg.png) no-repeat center top;
+  width: 332px;
+  height: 85px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  color: #728dab;
+  text-shadow: 1px 1px #FFF;
+  text-transform: uppercase;
+  font-family: 'Oswald','arial narrow',arial,helvetica,sans-serif;
+  font-size: 28px;
+  text-align: center;
+  padding-top: 16px;
+  line-height: 1;
+  font-weight: 400;
+}
+/* line 19, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/buttons.css.scss */
+.pricing_and_signup_button:active, .pricing_and_signup_button:visited, .pricing_and_signup_button:hover, .pricing_and_signup_button:link {
+  color: #728dab;
+}
+/* line 23, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/buttons.css.scss */
+.pricing_and_signup_button:hover {
+  text-decoration: none;
+}
+/* line 27, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/buttons.css.scss */
+.pricing_and_signup_button span {
+  color: #92a2c0;
+  text-shadow: 0px 1px #fff;
+  font-size: 18px;
+  font-weight: 300;
+  display: block;
+  margin-top: 5px;
+}
+
+/* line 37, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/buttons.css.scss */
+.pricing_and_signup_button_v2 {
+  background: url(front/buttons/button_bg_v2.png) no-repeat center top;
+  width: 330px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  color: #728dab;
+  text-shadow: 1px 1px #FFF;
+  text-transform: uppercase;
+  font-family: 'Oswald','arial narrow',arial,helvetica,sans-serif;
+  font-size: 28px;
+  text-align: center;
+  padding-top: 16px;
+  line-height: 1;
+  font-weight: 400;
+}
+/* line 55, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/buttons.css.scss */
+.pricing_and_signup_button_v2:active, .pricing_and_signup_button_v2:visited, .pricing_and_signup_button_v2:hover, .pricing_and_signup_button_v2:link {
+  color: #728dab;
+}
+/* line 59, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/buttons.css.scss */
+.pricing_and_signup_button_v2:hover {
+  text-decoration: none;
+}
+/* line 63, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/buttons.css.scss */
+.pricing_and_signup_button_v2 span {
+  color: #92a2c0;
+  text-shadow: 0px 1px #fff;
+  font-size: 18px;
+  font-weight: 300;
+  display: block;
+  margin-top: 5px;
+}
+/* line 1, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.cell {
+  float: left;
+}
+
+/*====== two_col_split_heavy_right ======*/
+/* line 8, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.two_col_split_heavy_right .cell_1 {
+  margin: 0;
+  padding: 0 80px 0 0;
+  width: 330px;
+}
+/* line 14, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.two_col_split_heavy_right .cell_2 {
+  margin: 0;
+  padding: 0;
+  width: 530px;
+}
+
+/*====== end two_col_split_heavy_right ======*/
+/*====== two_col_even_split ======*/
+/* line 26, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.two_col_even_split .cell_1 {
+  margin: 0;
+  padding: 0 80px 0 0;
+  width: 430px;
+}
+/* line 32, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.two_col_even_split .cell_2 {
+  margin: 0;
+  padding: 0;
+  width: 430px;
+}
+
+/*====== end two_col_even_split ======*/
+/*====== flash_notification ======*/
+/* line 42, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.flash_notification {
+  font-size: 1.3em;
+  padding: 0 0 30px 0;
+}
+/* line 46, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.flash_notification div {
+  padding: 10px 10px 10px 10px;
+  text-shadow: 0 1px #CCCCCC;
+}
+/* line 50, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.flash_notification div p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+/* line 57, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.flash_notification .good {
+  border: 1px solid #7C8657;
+  color: #7C8657;
+}
+/* line 63, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/containers.css.scss */
+.flash_notification .bad {
+  border: 1px solid #9B5D5D;
+  color: #9B5D5D;
+}
+
+/*====== flash_notification ======*/
+/* line 1, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/fonts.css.scss */
+.oswald_narrow {
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-weight: 300;
+}
+
+/* line 6, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/fonts.css.scss */
+.blue_med_oswald_text {
+  color: #6C88A6;
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-weight: 400;
+  text-shadow: 0 1px #FFFFFF;
+  font-size: 2em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* line 16, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/fonts.css.scss */
+.blue_small_oswald_text {
+  color: #6C88A6;
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-weight: 400;
+  text-shadow: 0 1px #FFFFFF;
+  font-size: 1.5em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* line 26, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/fonts.css.scss */
+.green_text {
+  color: #AFC56F;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 1.5em;
+  line-height: 1;
+  font-weight: 900;
+}
+
+/* line 34, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/fonts.css.scss */
+.dark_text {
+  color: #373737;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 1.5em;
+  line-height: 1;
+  font-weight: 900;
+}
+
+/* line 42, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/fonts.css.scss */
+.med_dark_text {
+  color: #373737;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  font-weight: 900;
+}
+
+/* line 50, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/fonts.css.scss */
+.v_large_dark_text {
+  color: #373737;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 4em;
+  line-height: 1;
+  font-weight: 900;
+}
+
+/* line 58, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/fonts.css.scss */
+.small_light_shadow_text {
+  color: #8A8A8A;
+  font-size: 1.3em;
+  text-shadow: 0 1px #FFFFFF;
+}
+/*====== form_row ======*/
+/* line 3, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.form_row {
+  padding: 0 0 15px 10px;
+}
+/* line 6, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.form_row .form_text {
+  color: #51494B;
+  font-size: 1.3em;
+  float: left;
+  padding: 2px 0 0 0;
+  width: 180px;
+}
+/* line 14, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.form_row .short_label {
+  width: 60px;
+}
+/* line 18, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.form_row .form_field {
+  float: left;
+  width: 500px;
+}
+
+/*====== end form_row ======*/
+/* error_explanation */
+/* line 27, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.error_explanation {
+  border: 1px solid #CCCCCC;
+  background: url("front/pages/tour/core_content_background.png") repeat-x left top;
+  margin: 0 0 20px 0;
+  padding: 10px 20px;
+}
+/* line 33, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.error_explanation p {
+  color: #6C88A6;
+  font-size: 1.3em;
+  margin: 0;
+  padding: 0 0 6px 0;
+}
+/* line 40, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.error_explanation ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 44, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.error_explanation ul li {
+  background: url(tool/icons/error_explanation_13.png) no-repeat left 6px;
+  color: #E68A8B;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0 0 8px 20px;
+}
+
+/* end error_explanation */
+/* line 56, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.explicit_text {
+  color: #8A8A8A;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 64, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+input.text {
+  border: 1px solid #CCCCCC;
+  color: #51494B;
+  font-size: 1.2em;
+  padding: 5px 10px;
+}
+
+/* line 71, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.field_with_errors input,
+.field_with_errors textarea,
+.field_with_errors select {
+  border-color: #E68A8B;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* line 79, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/forms.css.scss */
+.required {
+  color: #E68A8B;
+}
+/* line 1, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/headings.css.scss */
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/headings.css.scss */
+h1 {
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-weight: 900;
+}
+
+/* line 11, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/headings.css.scss */
+h2 {
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-weight: 700;
+}
+
+/* line 16, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/headings.css.scss */
+h3, h4, h5 {
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-weight: 700;
+}
+/*====== Layout ======*/
+/* line 3, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+body {
+  color: #373737;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Links */
+/* line 15, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+a,
+a:link,
+a:visited,
+a:active {
+  color: #007CD0;
+  outline: none;
+  text-decoration: none;
+}
+
+/* line 24, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+a:hover {
+  color: #499ED0;
+  text-decoration: underline;
+}
+
+/* Links */
+/* line 32, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+.outer_contaner {
+  width: 100%;
+}
+/* line 35, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+.outer_contaner .inner_container {
+  margin: auto;
+  padding: 0 10px;
+  text-align: left;
+  width: 940px;
+}
+
+/* product_nav */
+/* line 45, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+.ie7 #product_nav {
+  position: absolute;
+  left: 0;
+}
+
+/* line 50, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#product_nav {
+  background: url(front/layout/top_menu_background.png) repeat-x left top;
+  height: 55px;
+  margin: 0;
+  padding: 12px 0 0 0;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+/* line 59, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#product_nav .inner_container {
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 1.7em;
+  font-style: italic;
+  font-weight: 900;
+}
+/* line 67, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#product_nav .inner_container ul#product_nav_links li {
+  float: left;
+  padding: 0 20px 0 0;
+}
+/* line 71, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#product_nav .inner_container ul#product_nav_links li a,
+#product_nav .inner_container ul#product_nav_links li a:link,
+#product_nav .inner_container ul#product_nav_links li a:visited,
+#product_nav .inner_container ul#product_nav_links li a:active {
+  color: #66899F;
+  display: block;
+  height: 56px;
+  outline: none;
+  line-height: 1;
+  text-shadow: 1px 1px #CCCCCC;
+}
+/* line 85, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#product_nav .inner_container ul#product_nav_links li a:hover,
+#product_nav .inner_container ul#product_nav_links li a.active,
+#product_nav .inner_container ul#product_nav_links li a.active:link,
+#product_nav .inner_container ul#product_nav_links li a.active:visited,
+#product_nav .inner_container ul#product_nav_links li a.active:active {
+  background: url(front/layout/top_menu_active_background.png) no-repeat center bottom;
+  color: #FFFFFF;
+  display: block;
+  outline: none;
+  text-decoration: none;
+  text-shadow: 1px 1px #999999;
+}
+/* line 99, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#product_nav .inner_container ul#product_nav_links li.second {
+  background: url(front/layout/top_menu_divide.png) no-repeat left 4px;
+  padding-left: 30px;
+}
+
+/* end product_nav */
+/* line 110, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#outer_frame {
+  padding-top: 47px;
+}
+
+/* line 114, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer {
+  background: url(front/layout/top_blue_background.png) repeat-x left top;
+  padding: 20px 0 0 0;
+}
+/* line 119, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner {
+  position: relative;
+  /* second_nav */
+  /* end second_nav */
+}
+/* line 122, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner .logo_container {
+  width: 185px;
+  padding: 10px 0 20px 18px;
+}
+/* line 126, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner .logo_container #logo {
+  background-color: transparent;
+  background-image: url(front/layout/fleet-logo.png);
+  background-repeat: no-repeat;
+  width: 185px;
+  height: 52px;
+  display: block;
+}
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+  /* line 136, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+  #header_outer #header_inner .logo_container #logo {
+    background-image: url(front/layout/fleet-logo@2x.png);
+    background-size: 185px 52px;
+  }
+}
+/* line 144, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner .second_nav_container {
+  position: absolute;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  top: 17px;
+  right: 0;
+}
+/* line 151, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner .second_nav_container ul#second_nav {
+  float: right;
+}
+/* line 154, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner .second_nav_container ul#second_nav li {
+  float: left;
+  margin: 0;
+  padding: 0 0 0 15px;
+}
+/* line 159, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner .second_nav_container ul#second_nav li a,
+#header_outer #header_inner .second_nav_container ul#second_nav li a:link,
+#header_outer #header_inner .second_nav_container ul#second_nav li a:visited,
+#header_outer #header_inner .second_nav_container ul#second_nav li a:active {
+  background: #DDDDDD;
+  border-color: #C7C7C7 #D9E3E9 #DDDDDD #C7C7C7;
+  border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-style: solid;
+  border-width: 1px;
+  color: #718399;
+  display: block;
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  margin: 0;
+  padding: 8px 15px 7px 15px;
+  outline: none;
+  opacity: 0.6;
+  line-height: 1;
+  text-shadow: 1px 1px #CCCCCC;
+  text-transform: uppercase;
+}
+/* line 184, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner .second_nav_container ul#second_nav li a:hover,
+#header_outer #header_inner .second_nav_container ul#second_nav li a.active,
+#header_outer #header_inner .second_nav_container ul#second_nav li a.active:link,
+#header_outer #header_inner .second_nav_container ul#second_nav li a.active:visited,
+#header_outer #header_inner .second_nav_container ul#second_nav li a.active:active {
+  color: #8C966F;
+  opacity: 1;
+  text-decoration: none;
+}
+/* line 201, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner h1 {
+  color: #FFFFFF;
+  font-size: 4em;
+  padding: 10px 0 0 0;
+  text-shadow: 0 -2px #8698A6;
+  text-align: center;
+}
+/* line 209, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#header_outer #header_inner h2 {
+  color: #4E7F9F;
+  font-size: 2.2em;
+  line-height: 1.1;
+  padding: 0 100px 40px 100px;
+  text-shadow: 0 1px #FFFFFF;
+  text-align: center;
+}
+
+/* footer */
+/* line 222, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#footer_outer {
+  background: #CDD7DD;
+}
+/* line 225, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#footer_outer #footer_inner {
+  padding: 40px 0;
+}
+/* line 228, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#footer_outer #footer_inner .footer_left {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+/* line 234, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#footer_outer #footer_inner .footer_left span {
+  color: #65899F;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 1.7em;
+  font-style: italic;
+  font-weight: 900;
+  text-shadow: 1px 1px #CCCCCC;
+}
+/* line 244, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#footer_outer #footer_inner .footer_right {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 740px;
+}
+/* line 250, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#footer_outer #footer_inner .footer_right ul {
+  text-align: right;
+  padding: 8px 0 0 0;
+}
+/* line 254, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#footer_outer #footer_inner .footer_right ul li {
+  display: inline;
+  line-height: 1;
+  padding: 0 10px;
+}
+/* line 259, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/layout.css.scss */
+#footer_outer #footer_inner .footer_right ul li a,
+#footer_outer #footer_inner .footer_right ul li a:link,
+#footer_outer #footer_inner .footer_right ul li a:visited,
+#footer_outer #footer_inner .footer_right ul li a:active {
+  color: #6C88A6;
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-weight: 400;
+  text-shadow: 0 1px #FFFFFF;
+  font-size: 1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* end footer */
+/*====== end Layout ======*/
+/*====== grey_button ======*/
+/* line 3, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/links.css.scss */
+a.grey_button,
+a.grey_button:link,
+a.grey_button:visited,
+a.grey_button:active {
+  background: #DDDDDD;
+  border-color: #C7C7C7 #DDDDDD #DDDDDD #C7C7C7;
+  border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -webkit-border-radius: 0.3em;
+  border-style: solid;
+  border-width: 1px;
+  color: #949494;
+  display: block;
+  font-size: 1.4em;
+  line-height: 1;
+  margin: 0;
+  padding: 7px 0;
+  text-shadow: 0 1px #FFFFFF;
+  text-transform: uppercase;
+}
+
+/* line 24, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/links.css.scss */
+a.grey_button:hover {
+  background: #DEDEDE;
+  border-color: #CDCDCD #DEDEDE #DEDEDE #CDCDCD;
+  color: #AAAAAA;
+  text-decoration: none;
+}
+
+/*====== end grey_button ======*/
+/*====== feature_list ======*/
+/* line 5, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+ul.feature_list li {
+  background-repeat: no-repeat;
+  float: left;
+  margin: 0;
+  text-align: center;
+  width: 370px;
+}
+/* line 12, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+ul.feature_list li h2 {
+  padding-bottom: 10px;
+}
+/* line 16, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+ul.feature_list li p {
+  color: #8A8A8A;
+  font-size: 1.1em;
+}
+/* line 22, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+ul.feature_list li:nth-child(even) {
+  padding: 250px 50px 0 100px;
+}
+/* line 26, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+ul.feature_list li:nth-child(odd) {
+  padding: 250px 0 0 50px;
+}
+
+/* line 33, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+.ie7 ul.feature_list li.pos_1,
+.ie7 ul.feature_list li.pos_3,
+.ie7 ul.feature_list li.pos_5,
+.ie8 ul.feature_list li.pos_1,
+.ie8 ul.feature_list li.pos_3,
+.ie8 ul.feature_list li.pos_5 {
+  padding: 250px 0 0 50px;
+}
+/* line 39, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+.ie7 ul.feature_list li.pos_2,
+.ie7 ul.feature_list li.pos_4,
+.ie7 ul.feature_list li.pos_6,
+.ie8 ul.feature_list li.pos_2,
+.ie8 ul.feature_list li.pos_4,
+.ie8 ul.feature_list li.pos_6 {
+  padding: 250px 50px 0 100px;
+}
+
+/*====== end feature_list ======*/
+/*====== four_col_list ======*/
+/* line 51, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+ul.four_col_list li {
+  float: left;
+  text-align: center;
+  width: 220px;
+}
+/* line 57, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+ul.four_col_list li:nth-child(2) {
+  padding: 0 20px;
+}
+/* line 61, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/lists.css.scss */
+ul.four_col_list li:nth-child(3) {
+  padding: 0 20px 0 0;
+}
+
+/*====== end four_col_list ======*/
+/*====== pages_index ======*/
+/* Motion elements */
+@keyframes slide_0_mac {
+  from {
+    opacity: 0.5;
+    top: 30px;
+  }
+  to {
+    opacity: 1;
+    top: 60px;
+  }
+}
+@-webkit-keyframes slide_0_mac {
+  from {
+    opacity: 0.5;
+    top: 30px;
+  }
+  to {
+    opacity: 1;
+    top: 60px;
+  }
+}
+@keyframes slide_0_ipad {
+  from {
+    opacity: 0.5;
+    left: 310px;
+  }
+  to {
+    opacity: 1;
+    left: 270px;
+  }
+}
+@-webkit-keyframes slide_0_ipad {
+  from {
+    opacity: 0.5;
+    left: 310px;
+  }
+  to {
+    opacity: 1;
+    left: 270px;
+  }
+}
+@keyframes slide_0_text {
+  from {
+    opacity: 0.5;
+    right: 90px;
+  }
+  to {
+    opacity: 1;
+    right: 110px;
+  }
+}
+@-webkit-keyframes slide_0_text {
+  from {
+    opacity: 0.5;
+    right: 90px;
+  }
+  to {
+    opacity: 1;
+    right: 110px;
+  }
+}
+@keyframes slide_1_ipad {
+  from {
+    left: 20px;
+    top: 97px;
+    opacity: 0.5;
+  }
+  to {
+    left: 80px;
+    top: 27px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide_1_ipad {
+  from {
+    left: 20px;
+    top: 97px;
+    opacity: 0.5;
+  }
+  to {
+    left: 80px;
+    top: 27px;
+    opacity: 1;
+  }
+}
+@keyframes slide_1_text {
+  from {
+    top: 30px;
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    top: 80px;
+  }
+}
+@-webkit-keyframes slide_1_text {
+  from {
+    top: 30px;
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    top: 80px;
+  }
+}
+@keyframes slide_2_ipad {
+  from {
+    left: -20px;
+    top: 97px;
+    opacity: 0.5;
+  }
+  to {
+    left: 0;
+    top: 37px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide_2_ipad {
+  from {
+    left: -20px;
+    top: 97px;
+    opacity: 0.5;
+  }
+  to {
+    left: 0;
+    top: 37px;
+    opacity: 1;
+  }
+}
+@keyframes slide_2_text {
+  from {
+    top: 10px;
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    top: 60px;
+  }
+}
+@-webkit-keyframes slide_2_text {
+  from {
+    top: 10px;
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    top: 60px;
+  }
+}
+@keyframes slide_3_mac {
+  from {
+    left: -80px;
+    opacity: 0.5;
+  }
+  to {
+    left: 40px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide_3_mac {
+  from {
+    left: -80px;
+    opacity: 0.5;
+  }
+  to {
+    left: 40px;
+    opacity: 1;
+  }
+}
+@keyframes slide_3_text {
+  from {
+    right: 70px;
+    opacity: 0.5;
+  }
+  to {
+    right: 120px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide_3_text {
+  from {
+    right: 70px;
+    opacity: 0.5;
+  }
+  to {
+    right: 120px;
+    opacity: 1;
+  }
+}
+@keyframes slide_4_ipad {
+  from {
+    left: 20px;
+    top: 27px;
+    opacity: 0.5;
+  }
+  to {
+    left: 70px;
+    top: 20px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide_4_ipad {
+  from {
+    left: 20px;
+    top: 27px;
+    opacity: 0.5;
+  }
+  to {
+    left: 70px;
+    top: 20px;
+    opacity: 1;
+  }
+}
+@keyframes slide_4_text {
+  from {
+    right: 90px;
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    right: 110px;
+  }
+}
+@-webkit-keyframes slide_4_text {
+  from {
+    right: 90px;
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    right: 110px;
+  }
+}
+/* line 221, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index {
+  /* end top_grey_background */
+  /* tool_list */
+  /* end tool_list */
+  /* home_testimonial */
+  /* end home_testimonial */
+}
+/* line 223, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer {
+  background: none;
+  height: 580px;
+  min-width: 960px;
+  padding: 20px 0 0 0;
+  position: relative;
+  z-index: 1;
+}
+/* line 231, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #carousel_button_left {
+  position: absolute;
+  left: 20px;
+  top: 300px;
+}
+/* line 237, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #carousel_button_left {
+  background: url(front/pages/home/carousel_buttons.png) no-repeat left top;
+  height: 78px;
+  opacity: 0.6;
+  overflow: hidden;
+  position: absolute;
+  left: 2%;
+  text-indent: 100%;
+  transition: .75s;
+  -moz-transition: .75s;
+  -webkit-transition: .75s;
+  top: 261px;
+  white-space: nowrap;
+  width: 70px;
+  z-index: -1;
+}
+/* line 254, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #carousel_button_right {
+  background: url(front/pages/home/carousel_buttons.png) no-repeat left -100px;
+  height: 78px;
+  opacity: 0.6;
+  overflow: hidden;
+  position: absolute;
+  right: 2%;
+  text-indent: 100%;
+  transition: .75s;
+  -moz-transition: .75s;
+  -webkit-transition: .75s;
+  top: 261px;
+  white-space: nowrap;
+  width: 70px;
+  z-index: -1;
+}
+/* line 272, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #carousel_button_left:hover,
+#pages_index #header_outer #carousel_button_right:hover {
+  opacity: 1;
+}
+/* line 277, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer .slide_overlay {
+  background: url(front/pages/home/slide/bottom_overlay.png) repeat-x center bottom;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* line 285, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container {
+  height: 600px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+  /* slide animation */
+  /* end slide animation */
+  /* slides */
+  /* end slides */
+}
+/* line 293, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide {
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+}
+/* line 299, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .inside_content {
+  margin: auto;
+  padding: 0 10px;
+  position: relative;
+  text-align: left;
+  top: 100px;
+  width: 940px;
+  z-index: 2;
+}
+/* line 308, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .inside_content .right_text {
+  position: absolute;
+}
+/* line 311, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .inside_content .right_text h1 {
+  /*color: #D24A70;*/
+  color: #FFF;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  padding: 0 0 10px 0;
+  text-align: left;
+}
+/* line 322, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .inside_content .right_text h2 {
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  padding: 0 0 10px 0;
+  text-align: left;
+}
+/* line 331, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .inside_content .right_text .description {
+  color: #111;
+  font-family: 'Lato',arial,helvetica,sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0 0 15px 0;
+  text-align: left;
+}
+/* line 347, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_0 .mac_slide {
+  animation-name: slide_0_mac;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_0_mac;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 357, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_0 .ipad_slide {
+  animation-name: slide_0_ipad;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_0_ipad;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 367, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_0 .right_text {
+  animation-name: slide_0_text;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_0_text;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 382, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_1 .ipad_slide {
+  animation-name: slide_1_ipad;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_1_ipad;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 392, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_1 .right_text {
+  animation-name: slide_1_text;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_1_text;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 405, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_2 .ipad_slide {
+  animation-name: slide_2_ipad;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_2_ipad;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 415, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_2 .right_text {
+  animation-name: slide_2_text;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_2_text;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 427, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_3 .mac_slide {
+  animation-name: slide_3_mac;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_3_mac;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 437, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_3 .right_text {
+  animation-name: slide_3_text;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_3_text;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 450, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_4 .ipad_slide {
+  animation-name: slide_4_ipad;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_4_ipad;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 460, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .animate .inside_4 .right_text {
+  animation-name: slide_4_text;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-name: slide_4_text;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 1;
+}
+/* line 476, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_0 {
+  background: url(front/pages/home/slide/slide0.jpg) no-repeat center top;
+  background-size: cover;
+}
+/* line 482, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_0 .inside_0 .mac_slide {
+  background: url(front/pages/home/slide/fleetsuite/mac.png) no-repeat left top;
+  display: block;
+  left: 110px;
+  position: absolute;
+  height: 309px;
+  width: 332px;
+  top: 60px;
+}
+/* line 492, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_0 .inside_0 .ipad_slide {
+  background: url(front/pages/home/slide/fleetsuite/ipad.png) no-repeat left top;
+  display: block;
+  left: 270px;
+  position: absolute;
+  height: 167px;
+  width: 227px;
+  top: 195px;
+}
+/* line 502, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_0 .inside_0 .right_text {
+  right: 110px;
+  width: 330px;
+  top: 60px;
+}
+/* line 507, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_0 .inside_0 .right_text h2 {
+  color: #212121;
+  font-family: 'Lato',arial,helvetica,sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0 0 15px 0;
+  text-align: left;
+}
+/* line 523, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_1 {
+  background: url(front/pages/home/slide/slide1.jpg) no-repeat center top;
+  background-size: cover;
+  display: none;
+}
+/* line 530, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_1 .inside_1 .ipad_slide {
+  background: url(front/pages/home/slide/quote/ipad.png) no-repeat left top;
+  display: block;
+  left: 80px;
+  position: relative;
+  height: 479px;
+  width: 422px;
+  top: 27px;
+}
+/* line 540, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_1 .inside_1 .right_text {
+  right: 130px;
+  width: 330px;
+  top: 80px;
+}
+/* line 545, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_1 .inside_1 .right_text h2 {
+  /*color: #D24A70;*/
+  color: #FFF;
+}
+/* line 554, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_2 {
+  background: url(front/pages/home/slide/slide2.jpg) no-repeat center top;
+  background-size: cover;
+  display: none;
+}
+/* line 561, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_2 .inside_2 .ipad_slide {
+  background: url(front/pages/home/slide/schedule/ipad.png) no-repeat left top;
+  display: block;
+  left: 0;
+  position: relative;
+  height: 463px;
+  width: 463px;
+  top: 37px;
+}
+/* line 571, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_2 .inside_2 .right_text {
+  right: 110px;
+  width: 330px;
+  top: 60px;
+}
+/* line 576, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_2 .inside_2 .right_text h2 {
+  /*color: #CC4D1E;*/
+  color: #FFF;
+}
+/* line 585, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_3 {
+  background: url(front/pages/home/slide/slide3.jpg) no-repeat center top;
+  background-size: cover;
+  display: none;
+}
+/* line 592, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_3 .inside_3 .mac_slide {
+  background: url(front/pages/home/slide/track/mac.png) no-repeat left top;
+  display: block;
+  height: 325px;
+  left: 40px;
+  position: relative;
+  top: 60px;
+  width: 667px;
+}
+/* line 602, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_3 .inside_3 .right_text {
+  right: 120px;
+  width: 330px;
+  top: 80px;
+}
+/* line 607, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_3 .inside_3 .right_text h2 {
+  /*color: #3E8BA7;*/
+  color: #FFF;
+}
+/* line 615, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_4 {
+  background: url(front/pages/home/slide/slide4.jpg) no-repeat center top;
+  background-size: cover;
+  display: none;
+}
+/* line 622, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_4 .inside_4 .ipad_slide {
+  background: url(front/pages/home/slide/invoice/ipad.png) no-repeat left top;
+  display: block;
+  left: 70px;
+  position: relative;
+  height: 430px;
+  width: 415px;
+  top: 20px;
+}
+/* line 632, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_4 .inside_4 .right_text {
+  right: 110px;
+  width: 330px;
+  top: 80px;
+}
+/* line 637, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #header_outer #slide_container .slide_4 .inside_4 .right_text h2 {
+  /*color: #D24A70;*/
+  color: #FFF;
+}
+/* line 652, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background {
+  background: url(front/pages/tour/grey_background.png) repeat-x left top;
+}
+/* line 655, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features {
+  padding: 60px 0 10px 0;
+}
+/* line 659, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li {
+  background-image: url(front/pages/home/features_sprint.png);
+  background-repeat: no-repeat;
+  float: left;
+  padding: 110px 0 30px 0;
+  text-align: center;
+  width: 290px;
+}
+/* line 667, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li .title {
+  display: block;
+  padding: 0 0 5px 0;
+}
+/* line 672, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li .description {
+  color: #51494B;
+  font-size: 1.3em;
+}
+/* line 678, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li.pos_1 {
+  background-position: center -2000px;
+}
+/* line 682, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li.pos_2 {
+  background-position: center -1600px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+/* line 688, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li.pos_3 {
+  background-position: center -1200px;
+}
+/* line 692, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li.pos_4 {
+  background-position: center 0;
+}
+/* line 696, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li.pos_5 {
+  background-position: center -400px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+/* line 702, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #top_grey_background .features ul li.pos_6 {
+  background-position: center -800px;
+}
+/* line 714, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list {
+  background: url(front/pages/home/tool_list_background.png) repeat left top;
+}
+/* line 717, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle {
+  background: url(front/pages/home/tool_list_top.png) no-repeat center top;
+  padding: 90px 0 40px 0;
+}
+/* line 723, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner h3 {
+  text-align: center;
+}
+/* line 727, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner p.intro {
+  color: #51494B;
+  font-size: 1.3em;
+  padding: 0 0 40px 0;
+  text-align: center;
+}
+/* line 736, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner ul.homepage_tool_list li {
+  background-image: url(front/pages/home/homepage_tools.png);
+  background-repeat: no-repeat;
+  float: left;
+  margin: 0;
+  text-align: center;
+  width: 370px;
+}
+/* line 744, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner ul.homepage_tool_list li h4 {
+  padding-bottom: 10px;
+}
+/* line 748, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner ul.homepage_tool_list li .small_light_shadow_text {
+  padding-bottom: 20px;
+}
+/* line 752, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner ul.homepage_tool_list li .grey_button {
+  margin: auto;
+  width: 200px;
+}
+/* line 758, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner ul.homepage_tool_list li.quote {
+  background-position: -950px top;
+  padding: 250px 0 0 50px;
+}
+/* line 763, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner ul.homepage_tool_list li.schedule {
+  background-position: 101px top;
+  padding: 250px 50px 0 100px;
+}
+/* line 768, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner ul.homepage_tool_list li.time_tracking {
+  background-position: -499px top;
+  margin: 50px 0 0 50px;
+  padding: 250px 0 0 0;
+}
+/* line 774, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tool_list #tool_list_middle #tool_list_inner ul.homepage_tool_list li.invoice {
+  background-position: -1401px top;
+  margin: 50px 0 0 0;
+  padding: 250px 50px 0 100px;
+}
+/* line 789, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #home_testimonial {
+  background: url(front/pages/home/tool_list_background.png) repeat left top;
+  padding: 50px 0 0 0;
+}
+/* line 793, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #home_testimonial #home_testimonial_middle {
+  background: url(front/pages/home/testimonial_background_1.jpg) no-repeat center bottom;
+}
+/* line 796, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #home_testimonial #home_testimonial_middle #home_testimonial_middle_2 {
+  background: url(front/pages/home/testimonial_bottom_background.png) repeat-x left bottom;
+}
+/* line 799, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #home_testimonial #home_testimonial_middle #home_testimonial_middle_2 #testimonial_1_inner {
+  min-height: 412px;
+}
+/* line 802, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #home_testimonial #home_testimonial_middle #home_testimonial_middle_2 #testimonial_1_inner div.testimonial_container {
+  padding: 70px 0 0 540px;
+}
+/* line 804, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #home_testimonial #home_testimonial_middle #home_testimonial_middle_2 #testimonial_1_inner div.testimonial_container .name {
+  display: block;
+  padding: 0 0 5px 0;
+}
+/* line 809, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #home_testimonial #home_testimonial_middle #home_testimonial_middle_2 #testimonial_1_inner div.testimonial_container .position {
+  color: #8A8A8A;
+  display: block;
+  font-family: 'Lato', arial, helvetica, sans-serif;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0 0 20px 0;
+  text-shadow: 1px 1px #FFFFFF;
+}
+/* line 821, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #home_testimonial #home_testimonial_middle #home_testimonial_middle_2 #testimonial_1_inner div.testimonial_container .testimonial {
+  font-size: 1.2em;
+}
+/* line 833, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tweet_background {
+  background: url(front/pages/home/tool_list_background.png) repeat left top;
+}
+/* line 836, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tweet_background #tweet_inner {
+  background: url(front/pages/home/twitter_header.png) no-repeat center 40px;
+  padding: 120px 0 0 0;
+}
+/* line 841, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tweet_background #tweet_inner ul li {
+  float: left;
+  font-size: 1.1em;
+  padding: 0 0 30px 0;
+  width: 290px;
+}
+/* line 847, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tweet_background #tweet_inner ul li span {
+  color: #8A8A8A;
+  display: block;
+}
+/* line 853, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_index #tweet_background #tweet_inner ul li:nth-child(2) {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+/*====== end pages_index ======*/
+/*====== tour ======*/
+/* line 866, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#tour_features {
+  background: url(front/pages/tour/grey_background.png) repeat-x left top;
+}
+/* line 869, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#tour_features #tour_features_inner {
+  text-align: center;
+}
+/* line 872, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#tour_features #tour_features_inner h1.tool_title {
+  background: url(front/pages/tour/schedule/title_background.png) no-repeat center 54px;
+  color: #515151;
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  padding: 40px 0 40px 0;
+  text-transform: uppercase;
+}
+/* line 882, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#tour_features #tour_features_inner .core_intro {
+  padding: 0 0 30px 0;
+}
+/* line 885, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#tour_features #tour_features_inner .core_intro h1.core_title {
+  background: url(front/pages/tour/schedule/title_background.png) no-repeat center 14px;
+  color: #515151;
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0px 0 20px 0;
+  text-transform: uppercase;
+}
+
+/* line 899, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_select {
+  background: url(front/pages/tour/core_expand_background.png) repeat-x left bottom;
+}
+/* line 902, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_select div#core_features_select_inner {
+  height: 57px;
+  text-align: center;
+  /*a#core_expand,
+  a#core_expand:link,
+  a#core_expand:visited,
+  a#core_expand:active {
+      background: url("front/pages/tour/core_expand_button.png") no-repeat left top;
+      display: block;
+      height: 57px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 0;
+      width: 146px;
+      text-indent: -2999px
+  }*/
+}
+/* line 920, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_select div#core_features_select_inner div.core_expand {
+  background: url("front/pages/tour/core_expand_button.png") no-repeat left top;
+  display: block;
+  height: 57px;
+  margin: 0 auto;
+  padding: 0;
+  width: 146px;
+}
+/* line 929, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_select div#core_features_select_inner a#core_expand:hover {
+  background-position: left -60px;
+}
+
+/* line 937, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content {
+  background: url(front/pages/tour/core_content_background.png) repeat-x left top;
+}
+/* line 940, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content div#core_features_content_inner {
+  padding-top: 20px;
+}
+/* line 945, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content div#core_features_content_inner ul.four_col_list li {
+  background: url(front/icons/core_icon_sprite.png) no-repeat left top;
+  padding-top: 50px;
+}
+/* line 949, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content div#core_features_content_inner ul.four_col_list li p {
+  color: #8A8A8A;
+  padding: 10px 0 50px 0;
+}
+/* line 955, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content div#core_features_content_inner ul.four_col_list li.pos_1 {
+  background-position: 92px top;
+}
+/* line 959, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content div#core_features_content_inner ul.four_col_list li.pos_2 {
+  background-position: -185px top;
+}
+/* line 963, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content div#core_features_content_inner ul.four_col_list li.pos_3 {
+  background-position: -515px top;
+}
+/* line 967, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content div#core_features_content_inner ul.four_col_list li.pos_4 {
+  background-position: -804px top;
+}
+/* line 973, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+div#core_features_content .signup_button {
+  display: block;
+  margin: 0;
+  padding: 0 0 30px;
+  text-align: center;
+}
+
+/*====== end tour ======*/
+/*====== pages_quote_tool ======*/
+/* line 985, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_quote_tool #header_outer {
+  background: url("front/layout/top_blue_background_v2.png") repeat-x left -21px;
+}
+/* line 988, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_quote_tool #header_outer .mac_ipad_preview {
+  background: url(front/pages/tour/quote/top_preview.png) no-repeat center 15px;
+  height: 291px;
+}
+/* line 995, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_quote_tool ul.feature_list li {
+  background-image: url(front/pages/tour/quote/quote_screen_shots.png);
+  background-repeat: no-repeat;
+  min-height: 240px;
+}
+/* line 1001, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_quote_tool ul.feature_list li.pos_1 {
+  background-position: 51px top;
+}
+/* line 1005, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_quote_tool ul.feature_list li.pos_2 {
+  background-position: -897px top;
+}
+/* line 1010, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_quote_tool ul.feature_list li.pos_3 {
+  background-position: -449px top;
+  min-height: 260px;
+}
+/* line 1015, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_quote_tool ul.feature_list li.pos_4 {
+  background-position: -1397px top;
+  min-height: 260px;
+}
+
+/*====== end pages_quote_tool ======*/
+/*====== pages_scheduling_tool ======*/
+/* line 1026, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_scheduling_tool #header_outer {
+  background: url("front/layout/top_blue_background_v2.png") repeat-x left -21px;
+}
+/* line 1029, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_scheduling_tool #header_outer .mac_ipad_preview {
+  background: url(front/pages/tour/schedule/top_preview.png) no-repeat center 15px;
+  height: 291px;
+}
+/* line 1036, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_scheduling_tool ul.feature_list li {
+  background-image: url(front/pages/tour/schedule/feature_screen_shots.png);
+  background-repeat: no-repeat;
+  min-height: 200px;
+}
+/* line 1042, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_scheduling_tool ul.feature_list li.pos_1 {
+  background-position: 51px top;
+}
+/* line 1046, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_scheduling_tool ul.feature_list li.pos_2 {
+  background-position: -397px top;
+}
+/* line 1050, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_scheduling_tool ul.feature_list li.pos_3 {
+  background-position: -949px top;
+}
+/* line 1054, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_scheduling_tool ul.feature_list li.pos_4 {
+  background-position: -1397px top;
+}
+
+/*====== end pages_scheduling_tool ======*/
+/*====== pages_time_tracking_tool ======*/
+/* line 1064, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool #header_outer {
+  background: url("front/layout/top_blue_background_v2.png") repeat-x left -21px;
+}
+/* line 1067, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool #header_outer .mac_ipad_preview {
+  background: url(front/pages/tour/track/top_preview.png) no-repeat center 15px;
+  height: 291px;
+}
+/* line 1075, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool ul.feature_list li {
+  background-image: url(front/pages/tour/track/track_feature_screen_shots.png);
+  background-repeat: no-repeat;
+  min-height: 200px;
+}
+/* line 1081, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool ul.feature_list li.pos_1 {
+  background-position: 51px top;
+  min-height: 240px;
+}
+/* line 1086, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool ul.feature_list li.pos_2 {
+  background-position: -1397px top;
+  min-height: 240px;
+}
+/* line 1091, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool ul.feature_list li.pos_3 {
+  background-position: -949px top;
+  min-height: 220px;
+}
+/* line 1096, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool ul.feature_list li.pos_4 {
+  background-position: -397px top;
+  min-height: 220px;
+}
+/* line 1101, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool ul.feature_list li.pos_5 {
+  background-position: -2449px top;
+  min-height: 240px;
+}
+/* line 1106, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_time_tracking_tool ul.feature_list li.pos_6 {
+  background-position: -1897px top;
+  min-height: 240px;
+}
+
+/*====== end pages_time_tracking_tool ======*/
+/*====== pages_invoice_tool ======*/
+/* line 1117, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_invoice_tool #header_outer {
+  background: url("front/layout/top_blue_background_v2.png") repeat-x left -21px;
+}
+/* line 1120, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_invoice_tool #header_outer .mac_ipad_preview {
+  background: url(front/pages/tour/invoice/top_preview.png) no-repeat center 15px;
+  height: 291px;
+}
+/* line 1127, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_invoice_tool ul.feature_list li {
+  background-image: url(front/pages/tour/invoice/invoice_screen_shots.png);
+  background-repeat: no-repeat;
+  min-height: 240px;
+}
+/* line 1133, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_invoice_tool ul.feature_list li.pos_1 {
+  background-position: -951px top;
+}
+/* line 1137, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_invoice_tool ul.feature_list li.pos_2 {
+  background-position: -397px top;
+}
+/* line 1141, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_invoice_tool ul.feature_list li.pos_3 {
+  background-position: 51px top;
+  min-height: 220px;
+}
+/* line 1146, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_invoice_tool ul.feature_list li.pos_4 {
+  background-position: -1397px top;
+  min-height: 220px;
+}
+
+/*====== end pages_invoice_tool ======*/
+/*====== accounts_new ======*/
+/* line 1158, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #header_outer,
+#accounts_create #header_outer {
+  background: url("front/layout/top_blue_background_v3.png") repeat-x left bottom;
+}
+/* line 1162, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background,
+#accounts_create #new_account_background {
+  background: url("front/pages/tour/grey_background.png") repeat-x left top;
+}
+/* line 1167, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container,
+#accounts_create #new_account_background #new_account_inner #plan_container {
+  padding: 30px 30px 40px 30px;
+}
+/* line 1169, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container h3.stage_1,
+#accounts_create #new_account_background #new_account_inner #plan_container h3.stage_1 {
+  background: url("front/icons/number_sprite.png") no-repeat left top;
+  display: block;
+  margin: 0;
+  padding: 20px 0 30px 70px;
+}
+/* line 1176, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container h3.stage_2,
+#accounts_create #new_account_background #new_account_inner #plan_container h3.stage_2 {
+  background: url("front/icons/number_sprite.png") no-repeat left -80px;
+  display: block;
+  margin: 0;
+  padding: 40px 0 30px 70px;
+}
+/* line 1183, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container .main_form_instructions,
+#accounts_create #new_account_background #new_account_inner #plan_container .main_form_instructions {
+  color: #8A8A8A;
+  font-size: 1.2em;
+  padding: 0 0 15px 10px;
+}
+/* line 1189, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container .account_info,
+#accounts_create #new_account_background #new_account_inner #plan_container .account_info {
+  color: #8A8A8A;
+  font-size: 1.2em;
+  padding: 10px 0 15px 10px;
+}
+/* line 1195, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container .end_text,
+#accounts_create #new_account_background #new_account_inner #plan_container .end_text {
+  color: #51494B;
+  font-size: 1.3em;
+}
+/* line 1200, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container .submit_container,
+#accounts_create #new_account_background #new_account_inner #plan_container .submit_container {
+  padding: 10px 0 0 10px;
+}
+/* line 1203, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container .submit_container input,
+#accounts_create #new_account_background #new_account_inner #plan_container .submit_container input {
+  background-color: #EFEFEF;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  cursor: pointer;
+  color: #51494B;
+  font-size: 1.3em;
+  margin: 0;
+  padding: 5px 10px;
+}
+/* line 1216, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#accounts_new #new_account_background #new_account_inner #plan_container .submit_container input:active,
+#accounts_new #new_account_background #new_account_inner #plan_container .submit_container input:hover,
+#accounts_create #new_account_background #new_account_inner #plan_container .submit_container input:active,
+#accounts_create #new_account_background #new_account_inner #plan_container .submit_container input:hover {
+  color: #888;
+}
+
+/*====== end accounts_new ======*/
+/*====== pages_signup ======*/
+/* line 1230, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #header_outer {
+  background: url("front/layout/top_blue_background_v3.png") repeat-x left bottom;
+}
+/* line 1234, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background {
+  background: url(front/pages/pricing/top_grey_background.png) repeat-x left top;
+}
+/* line 1237, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner {
+  padding: 40px 0 40px 0;
+  /* end li.account_plan */
+}
+/* line 1240, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan {
+  float: left;
+}
+/* line 1243, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan .plan_header {
+  color: #838F49;
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-weight: 400;
+  height: 47px;
+  text-shadow: 1px 1px #D9E0B3;
+  font-size: 2.2em;
+  line-height: 1;
+  padding: 17px 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 1256, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan .price_container {
+  height: 140px;
+}
+/* line 1259, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan .price_container .no_users {
+  color: #5F5F5F;
+  display: block;
+  font-family: 'Oswald', 'arial narrow', arial, helvetica, sans-serif;
+  font-weight: 400;
+  height: 35px;
+  text-shadow: 1px 1px #FFFFFF;
+  font-size: 1.4em;
+  line-height: 1;
+  padding: 20px 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* line 1273, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan .price_container .price {
+  color: #5F5F5F;
+  font-family: 'Oswald','arial narrow',arial,helvetica,sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 1px #FFFFFF;
+  text-transform: uppercase;
+}
+/* line 1282, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan .price_container .price .doller {
+  color: #999999;
+  font-size: 2em;
+  left: -8px;
+  position: relative;
+  top: -18px;
+}
+/* line 1290, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan .price_container .price .number {
+  font-size: 3.7em;
+  left: -6px;
+  position: relative;
+}
+/* line 1296, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan .price_container .price .month {
+  color: #999999;
+  display: block;
+  font-size: 1em;
+  padding: 3px 0 0 0;
+}
+/* line 1306, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan ul.component_container li.account_component {
+  background: url(front/backgrounds/dashed_line.png) repeat-x left bottom;
+  padding: 20px 0;
+}
+/* line 1310, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan ul.component_container li.account_component .select {
+  float: left;
+  padding: 5px 10px 0 0;
+  text-align: center;
+  width: 30px;
+}
+/* line 1316, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan ul.component_container li.account_component .select input {
+  cursor: pointer;
+}
+/* line 1321, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan ul.component_container li.account_component .name {
+  float: left;
+  width: 145px;
+}
+/* line 1325, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan ul.component_container li.account_component .name .plan {
+  color: #8A8A8A;
+  cursor: pointer;
+  font-family: 'Oswald','arial narrow',arial,helvetica,sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-shadow: 0 1px #FFFFFF;
+  text-transform: uppercase;
+}
+/* line 1337, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan ul.component_container li.account_component .name .text_description {
+  color: #999999;
+  display: block;
+}
+/* line 1346, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan ul.component_container li:last-child {
+  background: none;
+}
+/* line 1351, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.account_plan input.signup {
+  background: url(front/pages/pricing/signup_button_bg.png) no-repeat left top;
+  border: 0;
+  color: #99A2B2;
+  cursor: pointer;
+  display: block;
+  font-family: 'Oswald','arial narrow',arial,helvetica,sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  height: 76px;
+  line-height: 1;
+  text-shadow: 0 1px #FFFFFF;
+  text-transform: uppercase;
+  width: 189px;
+}
+/* line 1375, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_1 {
+  width: 217px;
+}
+/* line 1378, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_1 .outer_plan_container {
+  background: url(front/pages/pricing/plan_left.png) no-repeat left top;
+}
+/* line 1382, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_1 .inner_plan_container {
+  padding: 45px 10px 0 18px;
+}
+/* line 1386, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_1 .inner_plan_container_bottom {
+  background: url(front/pages/pricing/plan_bottom.png) no-repeat left bottom;
+  padding: 0 10px 60px 18px;
+}
+/* line 1392, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_2 {
+  width: 209px;
+}
+/* line 1395, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_2 .outer_plan_container {
+  background: url(front/pages/pricing/plan_green.png) no-repeat left top;
+}
+/* line 1399, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_2 .inner_plan_container {
+  padding: 45px 10px 0 10px;
+}
+/* line 1403, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_2 .inner_plan_container_bottom {
+  background: url(front/pages/pricing/plan_bottom.png) no-repeat -253px bottom;
+  padding: 0 10px 60px 10px;
+}
+/* line 1409, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 {
+  width: 269px;
+}
+/* line 1412, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .outer_plan_container {
+  background: url(front/pages/pricing/plan_large.png) no-repeat left top;
+}
+/* line 1416, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container_bottom {
+  background: url(front/pages/pricing/plan_bottom.png) no-repeat -492px bottom;
+  padding: 0 20px 20px 18px;
+}
+/* line 1421, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container {
+  padding: 8px 20px 0 18px;
+}
+/* line 1424, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container .plan_header {
+  color: #6C88A6;
+  font-size: 2.4em;
+  height: 57px;
+  padding: 19px 0 0 0;
+  text-shadow: 1px 1px #D1DBDF;
+}
+/* line 1432, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container .price_container {
+  height: 165px;
+}
+/* line 1435, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container .price_container .no_users {
+  font-size: 1.6em;
+  height: 40px;
+  padding: 25px 0 0 0;
+}
+/* line 1442, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container .price_container .price .doller {
+  font-size: 2.2em;
+  left: -10px;
+  top: -17px;
+}
+/* line 1448, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container .price_container .price .number {
+  font-size: 3.9em;
+  left: -8px;
+}
+/* line 1453, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container .price_container .price .month {
+  font-size: 1.2em;
+}
+/* line 1462, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container ul.component_container li.account_component .select {
+  padding: 7px 10px 0 0;
+}
+/* line 1466, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container ul.component_container li.account_component .name {
+  width: 180px;
+}
+/* line 1469, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container ul.component_container li.account_component .name .plan {
+  font-size: 1.7em;
+}
+/* line 1473, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 .inner_plan_container ul.component_container li.account_component .name .text_description {
+  font-size: 1.1em;
+}
+/* line 1481, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_3 input.signup {
+  background: url(front/pages/pricing/signup_button_bg_large.png) no-repeat left top;
+  font-size: 2.4em;
+  height: 95px;
+  width: 231px;
+}
+/* line 1489, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_4 {
+  width: 217px;
+}
+/* line 1492, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_4 .outer_plan_container {
+  background: url(front/pages/pricing/plan_right.png) no-repeat right top;
+}
+/* line 1496, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_4 .inner_plan_container {
+  padding: 45px 18px 0 10px;
+}
+/* line 1500, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_signup #pricing_background #pricing_inner li.pos_4 .inner_plan_container_bottom {
+  background: url(front/pages/pricing/plan_bottom.png) no-repeat right bottom;
+  padding: 0 18px 60px 10px;
+}
+
+/* line 1512, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pricing_questions_background {
+  background: url(front/pages/pricing/bottom_grey_background.png) repeat-x left top;
+}
+/* line 1515, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pricing_questions_background #pricing_questions_inner {
+  background: url(front/pages/pricing/bottom_grey_background_center.png) no-repeat center top;
+  padding: 90px 0 30px 0;
+}
+/* line 1519, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pricing_questions_background #pricing_questions_inner .two_col_even_split {
+  padding: 0 0 30px 0;
+}
+/* line 1521, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pricing_questions_background #pricing_questions_inner .two_col_even_split h3.question {
+  background: url("front/icons/question.png") no-repeat scroll left top transparent;
+  color: #868686;
+  font-size: 1.7em;
+  font-weight: 900;
+  line-height: 1;
+  padding: 12px 0 20px 60px;
+  text-shadow: 0 1px #FFFFFF;
+}
+/* line 1531, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pricing_questions_background #pricing_questions_inner .two_col_even_split p {
+  color: #868686;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0 0 0 60px;
+}
+
+/*====== end pages_signup ======*/
+/*====== content page =======*/
+/* line 1547, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#pages_privacy #header_outer #header_inner h1,
+#pages_terms #header_outer #header_inner h1 {
+  padding-bottom: 20px;
+}
+
+/* line 1553, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#content_outer #content_inner {
+  font-size: 1.1em;
+  padding: 20px 0;
+}
+/* line 1557, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#content_outer #content_inner ol {
+  margin: 0 0 15px 20px;
+}
+/* line 1561, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#content_outer #content_inner ul {
+  margin: 0 0 15px 20px;
+  list-style-type: circle;
+}
+/* line 1564, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#content_outer #content_inner ul li {
+  padding: 0 0 10px 0;
+}
+/* line 1569, /home/dilkhush/workspace/perfect/app/assets/stylesheets/front/pages.css.scss */
+#content_outer #content_inner p {
+  padding-bottom: 15px;
+}
+
+/*====== end content page =======*/
