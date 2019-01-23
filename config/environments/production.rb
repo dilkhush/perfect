@@ -15,7 +15,7 @@ Scheduling::Application.configure do
   config.action_controller.perform_caching = true
   config.active_record.migration_error = :page_load
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.public_file_server.enabled = false
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.public_file_server.headers = "public, max-age=3600"
 
 
