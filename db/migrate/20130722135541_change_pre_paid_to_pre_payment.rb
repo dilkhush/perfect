@@ -1,9 +1,9 @@
 class ChangePrePaidToPrePayment < ActiveRecord::Migration[5.2]
   def up
-    execute("ALTER TABLE invoices CHANGE pre_paid pre_payment TINYINT(1)")
+    rename_column :invoices, :pre_paid, :pre_payment
   end
 
   def down
-    execute("ALTER TABLE invoices CHANGE pre_payment pre_paid TINYINT(1)")
+    rename_column :invoices, :pre_payment, :pre_paid
   end
 end
