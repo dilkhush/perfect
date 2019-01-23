@@ -1,4 +1,4 @@
-class QuoteActivity < ActiveRecord::Base
+class QuoteActivity < ApplicationRecord
 
 
   # External libs

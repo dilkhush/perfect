@@ -1,4 +1,4 @@
-class Feature < ActiveRecord::Base
+class Feature < ApplicationRecord
 
 
   # External libs

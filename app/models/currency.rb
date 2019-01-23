@@ -1,4 +1,4 @@
-class Currency < ActiveRecord::Base
+class Currency < ApplicationRecord
 
 
   # External libs
@@ -69,7 +69,7 @@ class Currency < ActiveRecord::Base
   # Get the exchange rate from one currency to another
   def self.get_exchange_for(from, to)
     return 1.0 if from.upcase == to.upcase
-    
+
     from_currency = Currency.find_by_iso_code(from)
     to_currency = Currency.find_by_iso_code(to)
     # If currencies dont both exist return 0
@@ -79,8 +79,8 @@ class Currency < ActiveRecord::Base
       0
     end
   end
-  
-  
+
+
   # Convert amount from one currency to another
   def self.convert_amount(from_currency, to_currency, amount_cents, custom_exchange_rate = nil)
     if custom_exchange_rate.present?
@@ -90,11 +90,11 @@ class Currency < ActiveRecord::Base
     end
     # Check isn't 1 and therefor same currency
     return amount_cents if exchange_rate == 1.0
-    
+
     Money.add_rate(from_currency, to_currency, exchange_rate)
     return Money.new(amount_cents, from_currency).exchange_to(to_currency).cents
   end
-  
+
 
 protected
 

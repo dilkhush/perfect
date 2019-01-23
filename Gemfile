@@ -5,15 +5,15 @@ source 'https://rubygems.org'
 # between major version releases.
 
 # Standard Rails Stuff
-gem 'rails', '~> 4.2.11'
+gem 'rails', '~> 5.0.0'
 gem 'mysql2', '~> 0.3.13'
-gem 'jquery-rails', '~> 2.1.1'
-gem 'jquery-ui-rails', '~> 2.0.0'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # # App Specific Stuff
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'chargify_api_ares', '0.4.4'
-gem 'execjs', '~> 1.4.0'
+gem 'execjs'
 gem 'will_paginate', '~> 3.0.3'
 gem 'acts_as_list'
 gem 'ejs', '~> 1.1.1'
@@ -33,7 +33,7 @@ gem 'faker'
 gem 'rdiscount'
 gem 'hopskip', github: 'dilkhush/hopskip'
 # Rails 4 update support
-gem 'protected_attributes' # https://github.com/rails/protected_attributes
+gem 'protected_attributes_continued'
 gem 'activeresource' # https://github.com/rails/activeresource
 gem 'actionpack-action_caching' # https://github.com/rails/actionpack-action_caching
 gem 'activerecord-session_store' # https://github.com/rails/activerecord-session_store
@@ -61,6 +61,9 @@ group :test do
   gem 'growl'
   gem 'ruby-prof'
   gem 'rails-perftest'
+  gem 'test-unit'
+  gem 'rails-controller-testing'
+  gem 'minitest', '5.10.3'
 end
 
 group :development do

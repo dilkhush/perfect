@@ -1,4 +1,4 @@
-class AccountSetting < ActiveRecord::Base
+class AccountSetting < ApplicationRecord
 
 
   # External libs
@@ -37,12 +37,12 @@ class AccountSetting < ActiveRecord::Base
 
   # Mass assignment protection
   attr_accessible :reached_limit_email_sent, :working_day_end_time, :working_day_start_time, :default_currency, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :invoice_alert_email, :schedule_mail_email, :schedule_mail_frequency, :expected_invoice_mail_email, :expected_invoice_mail_frequency, :logo, :rollover_alert_email, :budget_warning_email, :stale_opportunity_email, :issue_tracker_username, :issue_tracker_password, :issue_tracker_url, :hopscotch_enabled
-  
-  
+
+
   # Virtual attr
   attr_accessor :updating_issue_tracker_credentails
-  
-  
+
+
   # Logos
   has_attached_file :logo, :styles => { :thumb => '60x60#', :normal => 'x100' },
                            :path => "/:attachment/:id_partition/:fingerprint/:style/:filename",
@@ -139,14 +139,14 @@ class AccountSetting < ActiveRecord::Base
 # Mail methods
 #
 
-  
+
   # Sends the scheudle emails as defined in the account settings.
   def self.send_schedule_mail
     account_settings = AccountSetting.where(["schedule_mail_email IS NOT ?", nil])
-    
+
     account_settings.each do |account_setting|
       if account_setting.should_send_email?(:schedule)
-        
+
         if account_setting.schedule_mail_frequency == 0
           start_date = Date.today
           end_date = Date.today
@@ -157,25 +157,25 @@ class AccountSetting < ActiveRecord::Base
           start_date = Time.now.beginning_of_month.to_date
           end_date = Time.now.end_of_month.to_date
         end
-        
+
         ScheduleMailer.schedule_mail(account_setting.account, account_setting.account.teams, account_setting.schedule_mail_email, start_date, end_date).deliver
-        
+
         # Set to 10 mins in the past as the scheudled job only runs once a day and dont want to miss out on next day due to running a few seconds sooner.
         account_setting.schedule_mail_last_sent_at = (Time.now - 10.minutes)
         account_setting.save!
       end
     end
   end
-  
-  
+
+
   # Sends the expected invoice emails as defined in the account settings
   def self.send_expected_invoice_mail
     account_settings = AccountSetting.where(["expected_invoice_mail_email IS NOT ?", nil])
-    
+
     account_settings.each do |account_setting|
       if account_setting.should_send_email?(:expected_invoice)
         Money.default_currency = Money::Currency.new(account_setting.default_currency)
-        
+
         if account_setting.expected_invoice_mail_frequency == 0
           start_date = Date.today
           end_date = Date.today
@@ -186,27 +186,27 @@ class AccountSetting < ActiveRecord::Base
           start_date = Time.now.beginning_of_month.to_date
           end_date = Time.now.end_of_month.to_date
         end
-        
+
         payment_profiles = PaymentProfile.un_invoiced_expected_for_between_dates(start_date, end_date).order('projects.business_owner_id, payment_profiles.expected_payment_date')
         InvoiceMailer.expected_invoice_mail(account_setting.account, account_setting.schedule_mail_email, payment_profiles, start_date, end_date).deliver
 
         # Set to 10 mins in the past as the scheudled job only runs once a day and dont want to miss out on next day due to running a few seconds sooner.
         account_setting.expected_invoice_mail_last_sent_at = (Time.now - 10.minutes)
         account_setting.save!
-        
+
         # Reset after
         Money.default_currency = Money::Currency.new('USD')
       end
     end
   end
 
-  
+
   # Checks to see if account should recieve another email
   # Params:
   # which_mail {symbol} which email to consider
   def should_send_email?(which_mail)
     return false if self.send("#{which_mail}_mail_email").blank?
-    
+
     if self.send("#{which_mail}_mail_frequency") == 0
       # Daily
       return true if self.send("#{which_mail}_mail_last_sent_at").blank? || (Time.now - 1.day) > self.send("#{which_mail}_mail_last_sent_at")
@@ -221,11 +221,11 @@ class AccountSetting < ActiveRecord::Base
         return true if self.send("#{which_mail}_mail_last_sent_at").blank? || (Time.now - 1.month) > self.send("#{which_mail}_mail_last_sent_at")
       end
     end
-    
+
     false
   end
-  
-  
+
+
 #
 # encryption
 #
@@ -262,5 +262,5 @@ class AccountSetting < ActiveRecord::Base
       p.decrypt(self.issue_tracker_password)
     end
   end
-  
+
 end

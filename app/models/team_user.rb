@@ -1,8 +1,8 @@
-class TeamUser < ActiveRecord::Base
+class TeamUser < ApplicationRecord
 
 
   # External libs
-  
+
 
   # Relationships
   belongs_to :team

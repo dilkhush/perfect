@@ -1,4 +1,4 @@
-class AccountPlan < ActiveRecord::Base
+class AccountPlan < ApplicationRecord
 
   # External libs
 

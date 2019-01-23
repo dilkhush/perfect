@@ -1,8 +1,8 @@
-class PaymentProfileRollover < ActiveRecord::Base
-  
-  
+class PaymentProfileRollover < ApplicationRecord
+
+
   # External libs
-  
+
 
   # Relationships
   belongs_to :account
@@ -13,15 +13,15 @@ class PaymentProfileRollover < ActiveRecord::Base
 
   # Validation
   validates :old_expected_payment_date, :new_expected_payment_date, :reason_for_date_change, :account_id, presence: true
-  
+
 
   # Callbacks
   after_create :send_email
-  
+
 
   # Mass assignment protection
   attr_accessible :old_expected_payment_date, :new_expected_payment_date, :reason_for_date_change
-  
+
 
   # Plugins
 
@@ -43,7 +43,7 @@ class PaymentProfileRollover < ActiveRecord::Base
 # Create functions
 #
 
-  
+
   # Create a new entry for a payment profile
   #
   # payment_profile {PaymentProfile} A recently updated payment profile instance
@@ -78,7 +78,7 @@ class PaymentProfileRollover < ActiveRecord::Base
 #
 # General functions
 #
-  
+
 
 protected
 
@@ -90,5 +90,5 @@ protected
     end
   end
 
-  
+
 end

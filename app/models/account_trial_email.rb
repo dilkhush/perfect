@@ -5,7 +5,7 @@
 # email_4_sent - 5 days after expiry/suspension
 # trial_path == 1 = Account used path
 # trial path == 2 = Account not used path
-class AccountTrialEmail < ActiveRecord::Base
+class AccountTrialEmail < ApplicationRecord
 
 
   # External libs

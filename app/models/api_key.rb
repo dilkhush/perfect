@@ -1,4 +1,4 @@
-class ApiKey < ActiveRecord::Base
+class ApiKey < ApplicationRecord
 
   attr_accessible :access_token, :user_id
 

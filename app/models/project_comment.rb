@@ -1,4 +1,4 @@
-class ProjectComment < ActiveRecord::Base
+class ProjectComment < ApplicationRecord
 
 
   # External libs

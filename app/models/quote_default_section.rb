@@ -1,4 +1,4 @@
-class QuoteDefaultSection < ActiveRecord::Base
+class QuoteDefaultSection < ApplicationRecord
 
   # External libs
   include SharedMethods

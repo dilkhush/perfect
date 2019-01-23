@@ -1,10 +1,10 @@
 require 'jira_wrapper'
 
-class QaStat < ActiveRecord::Base
-  
-  
+class QaStat < ApplicationRecord
+
+
   # External libs
-  
+
 
   # Relationships
   belongs_to :project
@@ -19,8 +19,8 @@ class QaStat < ActiveRecord::Base
 
   # Mass assignment protection
   attr_accessible :ticket_breakdown, :total_tickets
-  
-  
+
+
   # Serialize
   serialize :ticket_breakdown, Hash
 
@@ -34,7 +34,7 @@ class QaStat < ActiveRecord::Base
 
 
   # Named scopes
-  
+
 
 
 #

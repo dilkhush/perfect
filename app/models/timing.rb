@@ -1,4 +1,4 @@
-class Timing < ActiveRecord::Base
+class Timing < ApplicationRecord
 
   # External libs
 

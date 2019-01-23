@@ -1,4 +1,4 @@
-class QuoteSection < ActiveRecord::Base
+class QuoteSection < ApplicationRecord
 
 
   # External libs

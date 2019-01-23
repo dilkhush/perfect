@@ -1,4 +1,4 @@
-class Phase < ActiveRecord::Base
+class Phase < ApplicationRecord
 
   belongs_to :account
   has_many :projects, dependent: :nullify

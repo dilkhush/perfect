@@ -5,7 +5,7 @@
  *= require_self
  *= require a_general
  *= require a_shared
- *= require jquery.ui.all
+ *= require jquery-ui
  *= require_tree ./tool
  *= require tool/color_picker
  *= require tool/select2

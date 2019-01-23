@@ -1,4 +1,4 @@
-class ClientRateCard < ActiveRecord::Base
+class ClientRateCard < ApplicationRecord
 
 
   # External libs

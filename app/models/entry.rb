@@ -2,7 +2,7 @@
 #
 # Calendar entries
 #
-class Entry < ActiveRecord::Base
+class Entry < ApplicationRecord
 
    # Relationships
 

@@ -1,4 +1,4 @@
-class PaymentProfile < ActiveRecord::Base
+class PaymentProfile < ApplicationRecord
 
 
   # External libs

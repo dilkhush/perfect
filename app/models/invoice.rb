@@ -1,4 +1,4 @@
-class Invoice < ActiveRecord::Base
+class Invoice < ApplicationRecord
 
 
   # External libs

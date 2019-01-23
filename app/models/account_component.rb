@@ -1,4 +1,4 @@
-class AccountComponent < ActiveRecord::Base
+class AccountComponent < ApplicationRecord
 
 
   # External libs

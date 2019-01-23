@@ -1,4 +1,4 @@
-class AccountAccountComponent < ActiveRecord::Base
+class AccountAccountComponent < ApplicationRecord
 
 
   # Relationships

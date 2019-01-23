@@ -1,4 +1,4 @@
-class InvoiceItem < ActiveRecord::Base
+class InvoiceItem < ApplicationRecord
 
 
   # External libs
@@ -47,8 +47,8 @@ class InvoiceItem < ActiveRecord::Base
       write_attribute(:amount_cents, 0)
     end
   end
-  
-  
+
+
   # Amount cents after quantity applied
   def amount_cents_incl_quantity
     self.amount_cents * self.quantity
@@ -59,7 +59,7 @@ class InvoiceItem < ActiveRecord::Base
   def default_currency_amount_cents_incl_quantity
     self.default_currency_amount_cents * self.quantity
   end
-  
+
 
 #
 # Create functions
@@ -97,14 +97,14 @@ protected
   def create_payment_profile_if_required
     if self.payment_profile.blank?
       project = self.invoice.project
-      
-      new_payment_profile = project.payment_profiles.new( 
-        :name => self.name, 
-        :expected_payment_date => self.invoice.invoice_date, 
-        :generate_cost_from_time => false, 
+
+      new_payment_profile = project.payment_profiles.new(
+        :name => self.name,
+        :expected_payment_date => self.invoice.invoice_date,
+        :generate_cost_from_time => false,
         :expected_cost => (self.amount * self.quantity))
-        
-        
+
+
       new_payment_profile.save!
       self.payment_profile_id = new_payment_profile.id
       self.save!
