@@ -82,6 +82,6 @@ group :test, :development do
 end
 
 gem 'newrelic_rpm'
-gem 'ey_config'
+# gem 'ey_config'
 gem 'exception_notification', '~> 2.6.1'
 

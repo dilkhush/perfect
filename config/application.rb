@@ -26,7 +26,7 @@ if Rails.env.development? || Rails.env.test?
     env_config = { 'env_config' => YAML.load(File.open("config/dist/dev.yml.config")) }
     APP_CONFIG.merge!(env_config)
 else
-    env_config = { 'env_config' => YAML.load(File.open("config/dist/#{ EY::Config.get(:base, :app_environment_name).split('/ ')[1].downcase }.yml.config")) }
+    env_config = { 'env_config' => YAML.load(File.open("config/dist/production.yml.config")) }
     APP_CONFIG.merge!(env_config)
 end
 

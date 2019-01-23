@@ -803,7 +803,6 @@ GEM
     exception_notification (2.6.1)
       actionmailer (>= 3.0.4)
     execjs (2.7.0)
-    ey_config (0.0.7)
     factory_girl (4.9.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.9.0)
@@ -1069,7 +1068,6 @@ DEPENDENCIES
   ejs (~> 1.1.1)
   exception_notification (~> 2.6.1)
   execjs
-  ey_config
   factory_girl_rails
   faker
   google-api-client (~> 0.11)
