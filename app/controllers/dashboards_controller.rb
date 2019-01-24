@@ -2,8 +2,7 @@ class DashboardsController < ToolApplicationController
 
 
   # Callbacks
-  skip_before_action :check_for_suspended_account
-
+  skip_before_action :check_for_suspended_account, raise: false
 
   def index
     authorize current_user, :read?
