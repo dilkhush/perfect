@@ -23,15 +23,15 @@ pagination:
 
 
 chargify:
-    subdomain: fleetsuite
-    api_key:  mXnnb6UXM6M_EBZGDLpw
-    shared_key: tapIY34_gznHNwpQLijh
-    
-    
+    subdomain: <%= ENV['CHARGIFY_SUBDOMAIN'] %>
+    api_key:  <%= ENV['CHARGIFY_API_KEY'] %>
+    shared_key: <%= ENV['CHARGIFY_SHARED_KEY'] %>
+
+
 gravatar:
     default_asset_domain: http://www.fleetsuite.com
     default_asset_ssl_domain: https://www.fleetsuite.com
-    
+
 
 twitter:
     user: fleet_suite
@@ -39,7 +39,7 @@ twitter:
 
 openexchangerates:
     app_id: 2b689bff7a3e4935aa546e92f6ceb942
-    
+
 pgp_key: fleetpasskey3765
 
 oauth:
