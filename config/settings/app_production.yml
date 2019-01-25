@@ -23,7 +23,7 @@ pagination:
 
 
 chargify:
-    subdomain: <%= ENV.fetch("CHARGIFY_SUBDOMAIN') %>
+    subdomain: <%= ENV.fetch("CHARGIFY_SUBDOMAIN") %>
     api_key:  <%= ENV.fetch("CHARGIFY_API_KEY") %>
     shared_key: <%= ENV.fetch("CHARGIFY_SHARED_KEY") %>
 
