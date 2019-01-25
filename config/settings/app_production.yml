@@ -23,9 +23,9 @@ pagination:
 
 
 chargify:
-    subdomain: <%= ENV['CHARGIFY_SUBDOMAIN'] %>
-    api_key:  <%= ENV['CHARGIFY_API_KEY'] %>
-    shared_key: <%= ENV['CHARGIFY_SHARED_KEY'] %>
+    subdomain: <%= ENV.fetch("CHARGIFY_SUBDOMAIN') %>
+    api_key:  <%= ENV.fetch("CHARGIFY_API_KEY") %>
+    shared_key: <%= ENV.fetch("CHARGIFY_SHARED_KEY") %>
 
 
 gravatar:
