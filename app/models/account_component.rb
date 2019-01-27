@@ -21,7 +21,7 @@ class AccountComponent < ApplicationRecord
 
 
   # Mass assignment protection
-  attr_accessible
+  attr_accessible :id, :name, :price_in_cents, :chargify_component_number, :description
 
 
   # Named scopes
