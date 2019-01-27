@@ -20,7 +20,7 @@ class AccountPlan < ApplicationRecord
 
   # Mass assignment protection
 
-  attr_accessible
+  attr_accessible :id, :name, :description, :price_in_cents, :chargify_product_handle, :chargify_product_number, :show_plan, :no_users
 
   # Named scopes
 

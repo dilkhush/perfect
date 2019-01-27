@@ -772,7 +772,7 @@ GEM
       aws-sigv4 (~> 1.0)
     aws-sigv2 (1.0.1)
     aws-sigv4 (1.0.3)
-    bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.1.2)
     builder (3.2.3)
     byebug (10.0.2)
     chargify_api_ares (0.4.4)
@@ -992,6 +992,8 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rdiscount (2.2.0.1)
+    record_tag_helper (1.0.0)
+      actionview (~> 5.x)
     ref (2.0.0)
     representable (3.0.4)
       declarative (< 0.1.0)
@@ -1063,7 +1065,7 @@ DEPENDENCIES
   activeresource
   acts_as_list
   aws-sdk
-  bcrypt-ruby (~> 3.0.1)
+  bcrypt-ruby (= 3.1.2)
   byebug
   chargify_api_ares (= 0.4.4)
   clbustos-rtf
@@ -1104,6 +1106,7 @@ DEPENDENCIES
   rails_12factor
   rb-fsevent (~> 0.9)
   rdiscount
+  record_tag_helper (~> 1.0)
   ruby-prof
   sass-rails
   shoulda-matchers

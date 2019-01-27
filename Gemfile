@@ -18,7 +18,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # # App Specific Stuff
-gem 'bcrypt-ruby', '~> 3.0.1'
+gem 'bcrypt-ruby', '3.1.2'
 gem 'chargify_api_ares', '0.4.4'
 gem 'execjs'
 gem 'will_paginate', '~> 3.0.3'
@@ -46,7 +46,7 @@ gem 'actionpack-action_caching' # https://github.com/rails/actionpack-action_cac
 gem 'activerecord-session_store' # https://github.com/rails/activerecord-session_store
 gem 'rails-observers' # https://github.com/rails/rails-observers
 # Note that there might be more functionalities that were extracted
-
+gem 'record_tag_helper', '~> 1.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

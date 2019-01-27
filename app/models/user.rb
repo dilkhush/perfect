@@ -50,7 +50,7 @@ class User < ApplicationRecord
                               :with => /\A([A-z0-9\.\-_]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   validates :password, :length => { :minimum => 6, :maximum => 35 }, :allow_blank => true
-  validate :check_account_holder_exists
+  # validate :check_account_holder_exists
 
 
 

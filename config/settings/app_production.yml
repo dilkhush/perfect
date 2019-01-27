@@ -23,9 +23,9 @@ pagination:
 
 
 chargify:
-    subdomain: vlady
-    api_key:  lXi0mOgasWkMxf49eUexc4wri9Wiu3b4WPYzbZ3RLmw
-    shared_key: BXU0h7JKtZZqAhnx6THG1DqFbrJhOiCJokLJkCwLSY
+    subdomain: arthurly-ltd
+    api_key:  XcieVoJiqHkohGSxKQP4LXTz0jPXY2lwCG7jEOeJ44
+    shared_key: shhRKseuoB3furQ3fjKCh3kkACDjlBMh90aGkE7s
 
 
 gravatar:
