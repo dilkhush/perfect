@@ -79,7 +79,7 @@ Scheduling::Application.configure do
     :address => "smtp.sendgrid.net",
     :port => 587,
     :domain => "perfect-dev.herokuapp.com",
-    :authentication => :plain,
+    :authentication => :login,
     :user_name => ENV["SMTP_USERNAME"],
     :password => ENV["SMTP_PASSWORD"],
     :enable_starttls_auto => true
