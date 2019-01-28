@@ -1,5 +1,5 @@
 class InvoiceMailer < ActionMailer::Base
-  
+  include SendGrid
   # Layout
   layout 'email'
 
@@ -17,8 +17,8 @@ class InvoiceMailer < ActionMailer::Base
     mail(:to => MailerTasks.recipients(user_email),
          :subject => MailerTasks.rendered_subject("New #{APP_CONFIG['env_config']['site_name']} invoice has just been raised"))
   end
-  
-  
+
+
   # Sends email to given email address highlighting expected invoices
   def expected_invoice_mail(account, to_email, payment_profiles, start_date, end_date)
     @account = account
@@ -31,6 +31,6 @@ class InvoiceMailer < ActionMailer::Base
     mail(:to => MailerTasks.recipients(to_email),
          :subject => MailerTasks.rendered_subject(APP_CONFIG['env_config']['site_name'] + ' - Expected invoices'))
   end
-  
+
 
 end

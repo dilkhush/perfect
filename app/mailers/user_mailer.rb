@@ -1,8 +1,8 @@
 class UserMailer < ActionMailer::Base
-   
+  include SendGrid
   # Layout
   layout 'email'
-  
+
   # Default
   default from: APP_CONFIG['main']['from-email']
 

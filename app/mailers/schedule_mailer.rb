@@ -1,9 +1,9 @@
 class ScheduleMailer < ActionMailer::Base
-  
+  include SendGrid
   # Layout
   layout 'email'
-  
-  
+
+
   # Default
   default from: APP_CONFIG['main']['from-email']
 
@@ -35,6 +35,6 @@ class ScheduleMailer < ActionMailer::Base
            subject: MailerTasks.rendered_subject("Next weeks schedule"))
     end
   end
-  
-  
+
+
 end

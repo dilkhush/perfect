@@ -1,8 +1,8 @@
 class AccountMailer < ActionMailer::Base
-  
+  include SendGrid
   # Layout
   layout 'email'
-  
+
 
   # Default
   default from: APP_CONFIG['main']['from-email']
@@ -97,8 +97,8 @@ class AccountMailer < ActionMailer::Base
     mail(:to => MailerTasks.recipients(user.email),
          :subject => MailerTasks.rendered_subject("Let us know your thoughts on FleetSuite"))
   end
-  
-  
+
+
   #
   # 5 days after trial is suspended
   def non_user_feedback_request(account, user)
@@ -110,8 +110,8 @@ class AccountMailer < ActionMailer::Base
     mail(:to => MailerTasks.recipients(user.email),
          :subject => MailerTasks.rendered_subject("Tell us why you're leaving"))
   end
-  
-  
+
+
   #
   # Sent when a user cancels their account
   def account_canceled(account, user)

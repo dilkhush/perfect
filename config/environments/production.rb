@@ -72,4 +72,14 @@ Scheduling::Application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.sendgrid.net",
+    :port => 25,
+    :domain => "perfect-dev.herokuapp.com",
+    :authentication => :plain,
+    :user_name => ENV["SMTP_USERNAME"],
+    :password => ENV["SMTP_PASSWORD"]
+  }
+
+
 end
