@@ -78,7 +78,7 @@ Scheduling::Application.configure do
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.sendgrid.net",
     :port => 587,
-    :domain => "heroku.com",
+    :domain => "herokuapp.com",
     :authentication => :plain,
     :user_name => ENV["SMTP_USERNAME"],
     :password => ENV["SMTP_PASSWORD"],
