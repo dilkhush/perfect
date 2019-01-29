@@ -309,7 +309,7 @@ class Account < ApplicationRecord
 
         # Send welcome email
         holder = User.account_holder_for_account(self)
-        AccountMailer.purchase_complete(self, holder).deliver
+        # AccountMailer.purchase_complete(self, holder).deliver
       else
         self.update_components_from_chargify(chargify_subscription)
       end

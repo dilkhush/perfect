@@ -75,7 +75,7 @@ class AccountTrialEmail < ApplicationRecord
   def send_15_days_till_expire_email
     unless self.email_1_sent?
       holder = User.account_holder_for_account(self.account)
-      AccountMailer.trial_email_1(self.account, holder).deliver
+      # AccountMailer.trial_email_1(self.account, holder).deliver
       self.update_attribute(:email_1_sent, true)
     end
   end
@@ -91,12 +91,12 @@ class AccountTrialEmail < ApplicationRecord
         # Reset trial date if first time in here
         self.account.trial_expires_at = 14.days.from_now
         self.account.save(:validate => false)
-        AccountMailer.trial_email_3(self.account, holder).deliver
+        # AccountMailer.trial_email_3(self.account, holder).deliver
 
         self.update_attributes(:email_3_sent => true, :trial_path => 2)
       end
     else
-      AccountMailer.trial_email_2(self.account, holder).deliver unless self.email_2_sent?
+      # AccountMailer.trial_email_2(self.account, holder).deliver unless self.email_2_sent?
       self.update_attributes(:email_2_sent => true, :trial_path => 1)
     end
   end
@@ -106,7 +106,7 @@ class AccountTrialEmail < ApplicationRecord
   def send_trial_expired_email
     if self.trial_path.present? && self.trial_path == 1
       holder = User.account_holder_for_account(account)
-      AccountMailer.trial_expired(account, holder).deliver
+      # AccountMailer.trial_expired(account, holder).deliver
     end
   end
 
@@ -115,7 +115,7 @@ class AccountTrialEmail < ApplicationRecord
   def send_non_user_feedback_request
     unless self.email_4_sent?
       holder = User.account_holder_for_account(self.account)
-      AccountMailer.non_user_feedback_request(self.account, holder).deliver
+      # AccountMailer.non_user_feedback_request(self.account, holder).deliver
       self.update_attributes(:email_4_sent => true)
     end
   end

@@ -49,7 +49,7 @@ class AccountSettingsController < ToolApplicationController
   def destroy
     @account.mark_to_be_deleted
     authorize @account, :destroy?
-    AccountMailer.account_canceled(@account, current_user).deliver
+    # AccountMailer.account_canceled(@account, current_user).deliver
 
     respond_to do |format|
       format.html {redirect_to root_url(:subdomain => 'www')}
