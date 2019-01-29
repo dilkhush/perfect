@@ -62,6 +62,6 @@ protected
     @account_components = AccountComponent.all
     raise ActiveRecord::RecordNotFound if @account_plan.blank? || @account_components.blank?
 
-    @account_components = @account_components.select {|componenet| !params[:component_id].include?(componenet.id.to_s) }
+    # @account_components = @account_components.select {|componenet| !params[:component_id].include?(componenet.id.to_s) }
   end
 end
