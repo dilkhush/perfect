@@ -43,7 +43,7 @@ class AccountsController < FrontApplicationController
         @account.save!
 
         format.html {
-          AccountMailer.signup_complete(@account.users.first).deliver
+          # AccountMailer.signup_complete(@account.users.first).deliver
           redirect_to thankyou_path(:account_name => @account.site_address)
         }
       else
